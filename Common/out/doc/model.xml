@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Model name="SKeyCommon" id="SKeyCommon" language="delphi">
+  <Diagram name="default" id="ID=4" metaclass="Namespace Diagram" file="default.txvpck.html">
+    <Property name="defaultDiagram">true</Property>
+    <DiagramReference id="ID=47" element="ID=3" metaclass="Namespace">
+      <Property name="Color Area">Whole Shape</Property>
+      <Property name="Gradient color 1">255, 255, 255</Property>
+      <Property name="Gradient Mode">Vertical</Property>
+      <Property name="Gradient color 2">255, 255, 255</Property>
+      <Property name="Gradient ON">False</Property>
+    </DiagramReference>
+  </Diagram>
+  <Package name="Model" id="ID=3">
+    <Diagram name="Model" id="ID=9" metaclass="Namespace Diagram" file="default.txvpck.html">
+      <Property name="defaultDiagram">true</Property>
+      <DiagramReference id="ID=55" element="ID=5" metaclass="Namespace">
+        <Property name="Color Area">Whole Shape</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient ON">False</Property>
+        <DiagramReference id="ID=59" element="ID=10" metaclass="Interface">
+          <Property name="Persistent">False</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=60" element="ID=11" metaclass="Module" />
+        <DiagramReference id="ID=61" element="ID=12" metaclass="Interface">
+          <Property name="Persistent">False</Property>
+          <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
+        </DiagramReference>
+      </DiagramReference>
+      <DiagramReference id="ID=56" element="ID=6" metaclass="Namespace">
+        <Property name="Color Area">Whole Shape</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient ON">False</Property>
+      </DiagramReference>
+      <DiagramReference id="ID=57" element="ID=7" metaclass="Namespace">
+        <Property name="Color Area">Whole Shape</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient ON">False</Property>
+      </DiagramReference>
+      <DiagramReference id="ID=58" element="ID=8" metaclass="Namespace">
+        <Property name="Color Area">Whole Shape</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient ON">False</Property>
+      </DiagramReference>
+    </Diagram>
+    <Package name="BaseIntf" id="ID=5">
+      <DesignElement name="Note for IBaseEntity" id="ID=13" metaclass="Note">
+        <Property name="Text">Basic interface for all entities.&lt;br /&gt;All entities interfaces will derive&lt;br /&gt;from this interface.&lt;br /&gt;</Property>
+        <Property name="TextOnly">False</Property>
+        <Link targetName="Note Link1" id="ID=16" metaclass="Note Link" idref="ID=13">
+          <Property name="Client">Model.BaseIntf.IBaseEntity</Property>
+          <Property name="Supplier">Model.BaseIntf.Note for IBaseEntity</Property>
+        </Link>
+      </DesignElement>
+      <DesignElement name="Note1" id="ID=14" metaclass="Note">
+        <Property name="Text">Basic interface for all named entities.&lt;br /&gt;All named entities interfaces  will&lt;br /&gt;derive from this interface.&lt;br /&gt;</Property>
+        <Property name="TextOnly">False</Property>
+        <Link targetName="Note Link1" id="ID=17" metaclass="Note Link" idref="ID=14">
+          <Property name="Client">Model.BaseIntf.IBaseNamedEntity</Property>
+          <Property name="Supplier">Model.BaseIntf.Note1</Property>
+        </Link>
+      </DesignElement>
+      <Diagram name="BaseIntf" id="ID=15" metaclass="Namespace Diagram" file="default.txvpck.html">
+        <Property name="defaultDiagram">true</Property>
+        <DiagramReference id="ID=18" element="ID=11" metaclass="Module">
+          <Property name="Gradient ON">False</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=19" element="ID=10" metaclass="Interface">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">50,137,150,235</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=20" element="ID=12" metaclass="Interface">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">279,130,400,243</Property>
+          <DiagramReference id="ID=41" element="ID=36" metaclass="Generalization Link">
+            <Property name="Client">IBaseNamedEntity</Property>
+            <Property name="Supplier">IBaseEntity</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=21" element="ID=13" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Basic interface for all entities.&lt;br /&gt;All entities interfaces will derive&lt;br /&gt;from this interface.&lt;br /&gt;</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="TextOnly">False</Property>
+          <Property name="Backward">False</Property>
+          <Property name="bounds">20,20,240,80</Property>
+          <DiagramReference id="ID=44" element="ID=16" metaclass="Note Link">
+            <Property name="Client">Model.BaseIntf.IBaseEntity</Property>
+            <Property name="Supplier">Model.BaseIntf.Note for IBaseEntity</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=22" element="ID=14" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Basic interface for all named entities.&lt;br /&gt;All named entities interfaces  will&lt;br /&gt;derive from this interface.&lt;br /&gt;</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="TextOnly">False</Property>
+          <Property name="Backward">False</Property>
+          <Property name="bounds">280,20,500,80</Property>
+          <DiagramReference id="ID=45" element="ID=17" metaclass="Note Link">
+            <Property name="Client">Model.BaseIntf.IBaseNamedEntity</Property>
+            <Property name="Supplier">Model.BaseIntf.Note1</Property>
+          </DiagramReference>
+        </DiagramReference>
+      </Diagram>
+      <Classifier name="globals BaseIntf" id="ID=11" type="Module" visibility="public">
+        <Uses />
+      </Classifier>
+      <Classifier name="IBaseEntity" id="ID=10" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Uses />
+        <Field fieldType="Field" elementName="ID" id="ID=24" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Method id="ID=23" name="GetID" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=23" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+      </Classifier>
+      <Classifier name="IBaseNamedEntity" id="ID=12" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
+        <Field fieldType="Field" elementName="Name" id="ID=34" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Method id="ID=32" name="SetName" isSubroutine="true" visibility="public">
+          <Parameter elementName="AName" id="ID3=32_6570122" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=32" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=33" name="GetName" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=33" type="String" isPrimitive="true" />
+        </Method>
+        <Link targetName="Model.BaseIntf.IBaseEntity" id="ID=36" metaclass="Generalization Link" idref="ID=10">
+          <Property name="Client">IBaseNamedEntity</Property>
+          <Property name="Supplier">IBaseEntity</Property>
+        </Link>
+        <Extends idref="ID=10" refFN="Model.BaseIntf.IBaseEntity" />
+        <Uses />
+      </Classifier>
+    </Package>
+    <Package name="MasterIntf" id="ID=6">
+      <Diagram name="MasterIntf" id="ID=51" metaclass="Namespace Diagram" file="default.txvpck.html">
+        <Property name="defaultDiagram">true</Property>
+      </Diagram>
+    </Package>
+    <Package name="CustomerIntf" id="ID=7">
+      <Diagram name="CustomerIntf" id="ID=54" metaclass="Namespace Diagram" file="default.txvpck.html">
+        <Property name="defaultDiagram">true</Property>
+      </Diagram>
+    </Package>
+    <Package name="SWHouseIntf" id="ID=8">
+      <Diagram name="SWHouseIntf" id="ID=53" metaclass="Namespace Diagram" file="default.txvpck.html">
+        <Property name="defaultDiagram">true</Property>
+      </Diagram>
+    </Package>
+  </Package>
+</Model>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="mmo10oi7f9apyk60t_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::1jlzce54rnjng2hus_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="Model" />
+      <reference referencedUin="design:view:::p1o427rof6li9q1dj_v">
+        <property name="@__package_fqn" value="Model.BaseIntf" />
+      </reference>
+      <reference referencedUin="design:view:::qg9yhfycw4neev9wp_v">
+        <property name="@__package_fqn" value="Model.SWHouseIntf" />
+      </reference>
+      <reference referencedUin="design:view:::zyy64bw5jrqdj48vt_v">
+        <property name="@__package_fqn" value="Model.CustomerIntf" />
+      </reference>
+      <reference referencedUin="design:view:::hvrd6y604b8h5ftl_v" />
+    </reference>
+  </view>
+</nodeSet>
