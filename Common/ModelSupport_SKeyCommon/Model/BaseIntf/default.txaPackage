@@ -23,6 +23,17 @@
       <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" role="Client" />
       <participant referencedUin="design:node:::mhp33grgo5a4t7vdj_n" role="Supplier" />
     </link>
+    <link uin="o0hnebd1c5o_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="design:node:::mhp33grgo5a4t7vdj_n" role="Supplier" />
+    </link>
+    <link uin="dl8v3zb0bfm_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link3" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" role="Client" />
+      <participant referencedUin="design:node:::mhp33grgo5a4t7vdj_n" role="Supplier" />
+    </link>
   </node>
   <node uin="assp8ol6i4nrpx95g_n">
     <property name="$metaclass" value="Note" />
@@ -44,13 +55,12 @@
     <link uin="1rdtdc4bojr9pakth_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" role="Client" />
       <participant referencedUin="design:node:::d5qa1tkejr91cfhpo_n" role="Supplier" />
     </link>
     <link uin="ysrbh4il4xskq7bgt_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link2" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseLogin&lt;1&gt;" role="Client" />
       <participant referencedUin="design:node:::d5qa1tkejr91cfhpo_n" role="Supplier" />
     </link>
   </node>
@@ -62,20 +72,8 @@
     <link uin="l501uu9bg4co0f8dj_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" role="Client" />
       <participant referencedUin="design:node:::6irmeepxn4r_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="zjor78ytlgto7zbt_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note4" />
-    <property name="$note_text" value="Potrebbe diventare&#xD;&#xA;un componente&#xD;&#xA;di iORM?" />
-    <property name="text_only" value="True" />
-    <link uin="vz1vniivhul8ocwgj_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseLogin&lt;1&gt;" role="Client" />
-      <participant referencedUin="design:node:::zjor78ytlgto7zbt_n" role="Supplier" />
     </link>
   </node>
   <node uin="7h24d0hnwll_n">
@@ -100,6 +98,30 @@
       <property name="$name" value="Note Link1" />
       <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" role="Client" />
       <participant referencedUin="design:node:::i03gdslatd8khv3el_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="3b7x5du1u3m_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note4" />
+    <property name="$note_text" value="&#xD;&#xA;NB:&#xD;&#xA;Aggiungiamo una proprietà note da&#xD;&#xA;qualche parte in una classe base?&#xD;&#xA;" />
+    <property name="text_only" value="True" />
+    <link uin="xn0vhmr9yoi_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseEntity" role="Client" />
+      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
+    </link>
+    <link uin="wxynj3ybokj_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" role="Client" />
+      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
+    </link>
+    <link uin="ds92bincooo_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link3" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseContactableEntity" role="Client" />
+      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
     </link>
   </node>
 </nodeSet>
