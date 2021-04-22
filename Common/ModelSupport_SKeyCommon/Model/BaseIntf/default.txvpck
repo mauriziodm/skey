@@ -37,6 +37,11 @@
         <property name="targetAnchor" value="290,80" />
         <property name="bendpoints" value="" />
       </reference>
+      <reference referencedUin="design:link:::3ohylyv02bm9fkjen_l:mhp33grgo5a4t7vdj_n">
+        <property name="sourceAnchor" value="282,140" />
+        <property name="targetAnchor" value="282,80" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser">
       <property name="$shortcutReference" value="true" />
