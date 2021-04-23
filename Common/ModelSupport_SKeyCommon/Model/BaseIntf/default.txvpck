@@ -32,11 +32,6 @@
       <property name="bounds" value="260,20,220,60" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="design:link:::dl8v3zb0bfm_l:mhp33grgo5a4t7vdj_n">
-        <property name="sourceAnchor" value="290,140" />
-        <property name="targetAnchor" value="290,80" />
-        <property name="bendpoints" value="" />
-      </reference>
       <reference referencedUin="design:link:::3ohylyv02bm9fkjen_l:mhp33grgo5a4t7vdj_n">
         <property name="sourceAnchor" value="282,140" />
         <property name="targetAnchor" value="282,80" />
@@ -161,9 +156,9 @@
       <property name="hideEnumValue" value="False" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.urReadOnly" />
-      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.urReadWrite" />
-      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.urSuperUser" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.upReadOnly" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.upReadWrite" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.BaseIntf.TUserPermission.upSuperUser" />
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.TLoginState">
       <property name="$shortcutReference" value="true" />

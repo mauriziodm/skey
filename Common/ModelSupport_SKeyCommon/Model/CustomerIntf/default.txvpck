@@ -4,5 +4,56 @@
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="220,280,183,277" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.StartDate" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetStartDate(System.TDate)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetStartDate()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.ExpirationDate" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetExpirationDate()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.ExpirationDays" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetExpirationDays()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Active" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.RevertToModel()">
+        <property name="bounds" value="175,-3,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Model" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetModel()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="220,40,206,112" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ICustomer.GetLicenses()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ICustomer.Licenses" />
+      <reference referencedUin="design:link:::00sey00cs908cw0wr_l">
+        <property name="sourceAnchor" value="311,152" />
+        <property name="targetAnchor" value="311,280" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:@clientRole:design:link:::00sey00cs908cw0wr_l">
+          <property name="bounds" value="297,156,11,16" />
+        </reference>
+        <reference referencedUin="label:@supplierRole:design:link:::00sey00cs908cw0wr_l">
+          <property name="bounds" value="285,254,23,16" />
+        </reference>
+      </reference>
+    </reference>
   </view>
+  <link uin="00sey00cs908cw0wr_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <property name="@clientRole" value="1" />
+    <property name="@supplierRole" value="0..*" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer" role="Client" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense" role="Supplier" />
+  </link>
 </nodeSet>

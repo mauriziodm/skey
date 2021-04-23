@@ -44,7 +44,7 @@ type
     property Address: String read GetAddress write SetAddress;
   end;
 
-  TUserPermission = (urReadOnly, urReadWrite, urSuperUser);
+  TUserPermission = (upReadOnly, upReadWrite, upSuperUser);
 
   IBaseUser = interface(IBaseContactableEntity)
     procedure SetLoginPassword(val: String);

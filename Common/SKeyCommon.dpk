@@ -32,6 +32,7 @@ requires
 
 contains
   Model.BaseIntf in 'Model.BaseIntf.pas',
-  Model.SWHouseIntf in 'Model.SWHouseIntf.pas';
+  Model.SWHouseIntf in 'Model.SWHouseIntf.pas',
+  Model.CustomerIntf in 'Model.CustomerIntf.pas';
 
 end.

@@ -28,12 +28,6 @@
       <property name="$name" value="Note Link2" />
       <participant referencedUin="design:node:::mhp33grgo5a4t7vdj_n" role="Supplier" />
     </link>
-    <link uin="dl8v3zb0bfm_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link3" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" role="Client" />
-      <participant referencedUin="design:node:::mhp33grgo5a4t7vdj_n" role="Supplier" />
-    </link>
   </node>
   <node uin="assp8ol6i4nrpx95g_n">
     <property name="$metaclass" value="Note" />

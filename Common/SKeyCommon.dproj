@@ -113,6 +113,7 @@
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="Model.BaseIntf.pas"/>
         <DCCReference Include="Model.SWHouseIntf.pas"/>
+        <DCCReference Include="Model.CustomerIntf.pas"/>
         <None Include="ModelSupport_SKeyCommon\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\default.txaPackage"/>
