@@ -21,6 +21,10 @@
     </reference>
     <reference referencedUin="design:view:::zyy64bw5jrqdj48vt_v">
       <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.IHWHistoryItem" />
     </reference>
     <reference referencedUin="design:view:::qg9yhfycw4neev9wp_v">
       <property name="$shortcutReference" value="true" />
@@ -28,8 +32,9 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.@unitclass" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWProduct" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator" />
-      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseSession" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.THWLockType" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel" />
     </reference>
   </view>
 </nodeSet>

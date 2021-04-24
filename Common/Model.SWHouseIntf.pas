@@ -30,6 +30,12 @@ type
         THWLockType = (hwFree, hwLocked, hwLockedButNew);
 
         ISWLicenseModel = interface(IBaseNamedEntity)
+          procedure SetMaximumNumersOfUsers(val: Integer);
+          function GetMaximumNumersOfUsers(): Integer;
+          property MaximumNumersOfUsers: Integer read GetMaximumNumersOfUsers write SetMaximumNumersOfUsers;
+          procedure SetMinimumNumberOfUsers(val: Integer);
+          function GetMinimumNumberOfUsers(): Integer;
+          property MinimumNumberOfUsers: Integer read GetMinimumNumberOfUsers write SetMinimumNumberOfUsers;
           procedure SetUserAuthentication(val: Boolean);
           function GetUserAuthentication(): Boolean;
           property UserAuthentication: Boolean read GetUserAuthentication write SetUserAuthentication;
@@ -56,10 +62,6 @@ type
           function GetLicenseTokenValidityMinutes(): Integer;
           /// <semantics>Minuti di validità del LicenseToken espresso in minuti, deve sempre essere maggiore della proprietà "SessionTokenExmirationMinutes"</semantics>
           property LicenseTokenValidityMinutes: Integer read GetLicenseTokenValidityMinutes write SetLicenseTokenValidityMinutes;
-          procedure SetHowManyUsers(val: Integer);
-          function GetHowManyUsers(): Integer;
-          /// <semantics>Numero di utenti/postazioni permessi</semantics>
-          property HowManyUsers: Integer read GetHowManyUsers write SetHowManyUsers;
           procedure SetPayload(val: String);
           function GetPayload(): String;
           /// <semantics>Contenitore a disposizioine della SWHouse dovre poter memorizzare, ad es., impostazioni, autorizzazioni o altro</semantics>
