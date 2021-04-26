@@ -27,49 +27,60 @@ type
   ISWHouseSession = interface(IBaseSession<ISWHouse, ISWHouseOperator>)
         end;
 
-        THWLockType = (hwFree, hwLocked, hwLockedButNew);
-
         ISWLicenseModel = interface(IBaseNamedEntity)
-          procedure SetMaximumNumersOfUsers(val: Integer);
-          function GetMaximumNumersOfUsers(): Integer;
-          property MaximumNumersOfUsers: Integer read GetMaximumNumersOfUsers write SetMaximumNumersOfUsers;
-          procedure SetMinimumNumberOfUsers(val: Integer);
-          function GetMinimumNumberOfUsers(): Integer;
-          property MinimumNumberOfUsers: Integer read GetMinimumNumberOfUsers write SetMinimumNumberOfUsers;
+          procedure SetSessionSign_IncludeAppUser(val: Integer);
+          function GetSessionSign_IncludeAppUser(): Integer;
+          property SessionSign_IncludeAppUser: Integer read GetSessionSign_IncludeAppUser write SetSessionSign_IncludeAppUser;
+          procedure SetSessionSign_IncludeOSUser(val: Boolean);
+          function GetSessionSign_IncludeOSUser(): Boolean;
+          property SessionSign_IncludeOSUser: Boolean read GetSessionSign_IncludeOSUser write SetSessionSign_IncludeOSUser;
+          procedure SetSessionSign_IncludeHWSign(val: Boolean);
+          function GetSessionSign_IncludeHWSign(): Boolean;
+          property SessionSign_IncludeHWSign: Boolean read GetSessionSign_IncludeHWSign write SetSessionSign_IncludeHWSign;
+          procedure SetSessionToken_RefreshIntervalMinutes(val: Integer);
+          function GetSessionToken_RefreshIntervalMinutes(): Integer;
+          property SessionToken_RefreshIntervalMinutes: Integer read GetSessionToken_RefreshIntervalMinutes write SetSessionToken_RefreshIntervalMinutes;
+          procedure SetLicenseToken_RefreshIntervalMinutes(val: Integer);
+          function GetLicenseToken_RefreshIntervalMinutes(): Integer;
+          /// <semantics>Sempre minore della validità del token (anche di parecchio)</semantics>
+          property LicenseToken_RefreshIntervalMinutes: Integer read GetLicenseToken_RefreshIntervalMinutes write SetLicenseToken_RefreshIntervalMinutes;
+          procedure SetMaxNumberOfSessions(val: Integer);
+          function GetMaxNumberOfSessions(): Integer;
+          property MaxNumberOfSessions: Integer read GetMaxNumberOfSessions write SetMaxNumberOfSessions;
+          procedure SetMinNumberOfSessions(val: Integer);
+          function GetMinNumberOfSessions(): Integer;
+          property MinNumberOfSessions: Integer read GetMinNumberOfSessions write SetMinNumberOfSessions;
           procedure SetUserAuthentication(val: Boolean);
           function GetUserAuthentication(): Boolean;
           property UserAuthentication: Boolean read GetUserAuthentication write SetUserAuthentication;
-          procedure SetValidityDaysTolerance(val: Integer);
-          function GetValidityDaysTolerance(): Integer;
-          property ValidityDaysTolerance: Integer read GetValidityDaysTolerance write SetValidityDaysTolerance;
-          procedure SetUserMultiSessionAllowed(val: Boolean);
-          function GetUserMultiSessionAllowed(): Boolean;
-          /// <semantics>Se True un singolo client user potrà aprire più sessioni contemporaneamente su una stesso macchina e stesso login (verrà conteggiato come una sola sessione/utente)</semantics>
-          property UserMultiSessionAllowed: Boolean read GetUserMultiSessionAllowed write SetUserMultiSessionAllowed;
-          procedure SetClientHWLock(val: THWLockType);
-          function GetClientHWLock(): THWLockType;
-          /// <semantics>Indica se, sul client, l'esecuzione deve essere legata ad un HW specifico e in che modo</semantics>
-          property ClientHWLock: THWLockType read GetClientHWLock write SetClientHWLock;
+          procedure SetLicenseExpirationDaysTolerance(val: Integer);
+          function GetLicenseExpirationDaysTolerance(): Integer;
+          property LicenseExpirationDaysTolerance: Integer read GetLicenseExpirationDaysTolerance write SetLicenseExpirationDaysTolerance;
           procedure SetLocalSessionServer(val: Boolean);
           function GetLocalSessionServer(): Boolean;
           /// <semantics>Se True significa che 'è un LocalSessionServer dal cliente finale altrimenti no</semantics>
           property LocalSessionServer: Boolean read GetLocalSessionServer write SetLocalSessionServer;
-          procedure SetSessionTokenValidityMinutes(val: Integer);
-          function GetSessionTokenValidityMinutes(): Integer;
+          procedure SetSessionToken_ExpirationMinutes(val: Integer);
+          function GetSessionToken_ExpirationMinutes(): Integer;
           /// <semantics>Minuti di validità del SessionToken espresso in minuti, deve sempre essere minore del "LicenseTokenExpirationMInutes"</semantics>
-          property SessionTokenValidityMinutes: Integer read GetSessionTokenValidityMinutes write SetSessionTokenValidityMinutes;
-          procedure SetLicenseTokenValidityMinutes(val: Integer);
-          function GetLicenseTokenValidityMinutes(): Integer;
-          /// <semantics>Minuti di validità del LicenseToken espresso in minuti, deve sempre essere maggiore della proprietà "SessionTokenExmirationMinutes"</semantics>
-          property LicenseTokenValidityMinutes: Integer read GetLicenseTokenValidityMinutes write SetLicenseTokenValidityMinutes;
+          property SessionToken_ExpirationMinutes: Integer read GetSessionToken_ExpirationMinutes write SetSessionToken_ExpirationMinutes;
+          procedure SetLicenseToken_ExpirationMinutes(val: Integer);
+          function GetLicenseToken_ExpirationMinutes(): Integer;
+          property LicenseToken_ExpirationMinutes: Integer read GetLicenseToken_ExpirationMinutes write SetLicenseToken_ExpirationMinutes;
           procedure SetPayload(val: String);
           function GetPayload(): String;
           /// <semantics>Contenitore a disposizioine della SWHouse dovre poter memorizzare, ad es., impostazioni, autorizzazioni o altro</semantics>
           property Payload: String read GetPayload write SetPayload;
-          procedure SetValidityDays(val: Integer);
-          function GetValidityDays(): Integer;
+          procedure SetLicenseExpirationDays(val: Integer);
+          function GetLicenseExpirationDays(): Integer;
           /// <semantics>Giorni di validità della licenza</semantics>
-          property ValidityDays: Integer read GetValidityDays write SetValidityDays;
+          property LicenseExpirationDays: Integer read GetLicenseExpirationDays write SetLicenseExpirationDays;
+        end;
+
+      implementation
+
+end.iorni di validità della licenza</semantics>
+          property LicenseExpirationDays: Integer read GetLicenseExpirationDays write SetLicenseExpirationDays;
         end;
 
       implementation
