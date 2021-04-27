@@ -3,7 +3,7 @@ unit Model.CustomerIntf;
 interface
 
 uses
-  Model.BaseIntf, Model.SWHouseIntf;
+  Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections;
 
 type
   /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
@@ -22,8 +22,8 @@ type
     property Active: Boolean read GetActive write SetActive;
     function GetExpirationDays(): Integer;
     property ExpirationDays: Integer read GetExpirationDays;
-    function GetExpirationDate(): Date;
-    property ExpirationDate: Date read GetExpirationDate;
+    function GetExpirationDate(): TDate;
+    property ExpirationDate: TDate read GetExpirationDate;
     procedure SetStartDate(val: TDate);
     function GetStartDate(): TDate;
     property StartDate: TDate read GetStartDate write SetStartDate;
@@ -48,7 +48,7 @@ type
     property ActiveSince: TDateTime read GetActiveSince;
     function GetActive(): Boolean;
     /// <semantics>Quando di disattiva una sessione viene creato e persistito una istanza di ISWSessionHistory per mantenere uno storico</semantics>
-    procedure SetActive;
+    procedure SetActive(val: Boolean);
     property Active: Boolean read GetActive write SetActive;
     function GetInfo(): String;
     /// <semantics>Eventuali informazioni in chiaro sull'HW per renderlo identificabile da noi essere umani</semantics>
@@ -58,7 +58,15 @@ type
     property Sign: String read GetSign;
   end;
 
-  IHWHistory = interface
+  ISWSessionManager = interface
+    function GetOverallSessionCount(): Integer;
+    property OverallSessionCount: Integer read GetOverallSessionCount;
+    function GetOverbookingSessionCount(): Integer;
+    property OverbookingSessionCount: Integer read GetOverbookingSessionCount;
+    function GetActiveSessionCount(): Integer;
+    property ActiveSessionCount: Integer read GetActiveSessionCount;
+    function GetSessionToken(const ASessionGUID, ASign: String): String;
+    procedure ReleaseSessionToken(const ASessionGUID, ASign: String);
   end;
 
   /// <stereotype>riceve ActiveFrom e ActiveTo oltre all'ID del padre come parametri del costruttore</stereotype>
