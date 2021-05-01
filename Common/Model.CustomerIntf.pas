@@ -77,8 +77,15 @@ type
     property ActiveUntil: TDateTime read GetActiveUntil;
     function GetActiveSince(): TDateTime;
     property ActiveSince: TDateTime read GetActiveSince;
-  end;
+        end;
 
-implementation
+        ISWSessionToken = interface(IBaseEntity)
+          function GetActiveUntil(): TDateTime;
+          property ActiveUntil: TDateTime read GetActiveUntil;
+          function GetActiveSince(): TDateTime;
+          property ActiveSince: TDateTime read GetActiveSince;
+        end;
+
+      implementation
 
 end.

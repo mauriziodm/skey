@@ -188,6 +188,15 @@
         </reference>
       </reference>
     </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="700,820,176,142" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.ActiveSince" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.GetActiveSince()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.ActiveUntil" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.GetActiveUntil()" />
+    </reference>
   </view>
   <link uin="8gxgxp7qwsdt27cse_l">
     <property name="$description" value="" />
