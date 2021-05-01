@@ -12,21 +12,21 @@ type
     function GetHowManySessionPermitted(): Integer;
     /// <semantics>Numero di utenti/postazioni permessi</semantics>
     property HowManySessionPermitted: Integer read GetHowManySessionPermitted write SetHowManySessionPermitted;
-    function GetSWLIcenseModel(): ISWLicenseModel;
-    property SWLicenseModel: ISWLicenseModel read GetSWLIcenseModel;
-    function GetSWProduct(): ISWProduct;
-    property SWProduct: ISWProduct read GetSWProduct;
+    function GetLicenseModel(): ISWLicenseModel;
+    property LicenseModel: ISWLicenseModel read GetLicenseModel;
+    function GetProduct(): ISWProduct;
+    property Product: ISWProduct read GetProduct;
     procedure RevertToModel;
     procedure SetActive(val: Boolean);
     function GetActive(): Boolean;
     property Active: Boolean read GetActive write SetActive;
     function GetExpirationDays(): Integer;
     property ExpirationDays: Integer read GetExpirationDays;
-    function GetExpirationDate(): TDate;
-    property ExpirationDate: TDate read GetExpirationDate;
-    procedure SetStartDate(val: TDate);
-    function GetStartDate(): TDate;
-    property StartDate: TDate read GetStartDate write SetStartDate;
+    function GetExpiration(): TDate;
+    property Expiration: TDate read GetExpiration;
+    procedure SetActiveSince(val: TDate);
+    function GetActiveSince(): TDate;
+    property ActiveSince: TDate read GetActiveSince write SetActiveSince;
   end;
 
   ICustomer = interface(IBaseCompany)
@@ -40,9 +40,9 @@ type
     function GetOverbookingCycles(): Integer;
     /// <preconditions>Normalmente rimane a zero ma se questo HW è stato creto in una situazione di overbooking allora assume valore 1 e il numero aumenta per ogni ciclo/richiesta di token permanendo in situazione di overbooking. Se la situazione di overbooking si risolve viene rimessa a zero, se invece il valore di questa proprietà supera la soglia massima consentita senza che sia risolto l'overbooking allora vienenegato il token e viene disattiva l'HW</preconditions>
     property OverbookingCycles: Integer read GetOverbookingCycles write SetOverbookingCycles;
-    function GetActiveUntil(): TDateTime;
+    function GetExpiration(): TDateTime;
     /// <semantics>Indica la data fino alla quale questo HW è autorizzato a essere attivo</semantics>
-    property ActiveUntil: TDateTime read GetActiveUntil;
+    property Expiration: TDateTime read GetExpiration;
     function GetActiveSince(): TDateTime;
     /// <semantics>Indica la data a partire dalla quale questo HW risulta attivato</semantics>
     property ActiveSince: TDateTime read GetActiveSince;
@@ -65,7 +65,8 @@ type
     property OverbookingSessionCount: Integer read GetOverbookingSessionCount;
     function GetActiveSessionCount(): Integer;
     property ActiveSessionCount: Integer read GetActiveSessionCount;
-    function GetSessionToken(const ASessionGUID, ASign: String): String;
+    function GetSessionToken(const AlicenseID: Integer; const AActivationKey, ASign: String; const AUserName: String = '';
+      const APassword: String = ''): String;
     procedure ReleaseSessionToken(const ASessionGUID, ASign: String);
   end;
 
@@ -77,15 +78,32 @@ type
     property ActiveUntil: TDateTime read GetActiveUntil;
     function GetActiveSince(): TDateTime;
     property ActiveSince: TDateTime read GetActiveSince;
-        end;
+  end;
 
-        ISWSessionToken = interface(IBaseEntity)
-          function GetActiveUntil(): TDateTime;
-          property ActiveUntil: TDateTime read GetActiveUntil;
-          function GetActiveSince(): TDateTime;
-          property ActiveSince: TDateTime read GetActiveSince;
-        end;
+  ISWSessionToken = interface(IBaseEntity)
+    procedure SetHash(val: String);
+    function GetHash(): String;
+    property Hash: String read GetHash write SetHash;
+    procedure SetRefreshIintervalMinutes(const val: Integer);
+    function GetRefreshIintervalMinutes(): Integer;
+    property RefreshIintervalMinutes: Integer read GetRefreshIintervalMinutes write SetRefreshIintervalMinutes;
+    procedure SetSign(const val: String);
+    function GetSign(): String;
+    property Sign: String read GetSign write SetSign;
+    procedure SetPayload(const val: String);
+    function GetPayload(): String;
+    property Payload: String read GetPayload write SetPayload;
+    procedure SetLicenseID(const val: integer);
+    function GetLicenseID(): Integer;
+    property LicenseID: Integer read GetLicenseID write SetLicenseID;
+    procedure SetExpiration(const val: TDateTime);
+    function GetExpiration(): TDateTime;
+    property Expiration: TDateTime read GetExpiration write SetExpiration;
+    procedure SetActiveSince(const val: TDateTime);
+    function GetActiveSince(): TDateTime;
+    property ActiveSince: TDateTime read GetActiveSince write SetActiveSince;
+  end;
 
-      implementation
+implementation
 
 end.

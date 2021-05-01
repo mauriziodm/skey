@@ -66,8 +66,19 @@ type
   TLoginState = (lsLoggedOut, lsLoginFailed, lsAuthenticating, lsLoggedOn);
 
   IBaseSession<T_Company: IBaseCompany; T_User: IBaseUser> = interface
+    procedure SetProperty1(val: TLoginState);
     function GetState(): TLoginState;
-    property State: TLoginState read GetState;
+    property State: TLoginState read GetState write SetProperty1;
+    procedure SetUser(val: IBaseUser);
+    function GetUser(): IBaseUser;
+    property User: IBaseUser read GetUser write SetUser;
+    procedure SetToken(val: String);
+    function GetToken(): String;
+    property Token: String read GetToken write SetToken;
+    function SetState(const val: TLoginState): Integer;
+    procedure SetCompany(val: IBaseCompany);
+    function GetCompany(): IBaseCompany;
+    property Company: IBaseCompany read GetCompany write SetCompany;
     function Login: Boolean;
     procedure SetLoginPassword(const val: string);
     function GetLoginPassword(): string;
@@ -75,17 +86,7 @@ type
     procedure SetLoginUserName(const val: string);
     function GetLoginUserName(): string;
     property LoginUserName: string read GetLoginUserName write SetLoginUserName;
-    function GetCompany(): IBaseCompany;
-    /// <supplierCardinality>1</supplierCardinality>
-    /// <clientCardinality>1</clientCardinality>
-    property Company: IBaseCompany read GetCompany;
-    function GetToken(): String;
-    property Token: String read GetToken;
     procedure Logout;
-    function GetUser(): IBaseUser;
-    /// <clientCardinality>1</clientCardinality>
-    /// <supplierCardinality>1</supplierCardinality>
-    property User: IBaseUser read GetUser;
   end;
 
 implementation

@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodeSet version="1.0" />
+<nodeSet version="1.0">
+  <node uin="y5f4a8d9v3njn50ft_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="Persistito dal client&#xD;&#xA;component come file&#xD;&#xA;locale di testo&#xD;&#xA;" />
+    <property name="text_only" value="True" />
+    <link uin="96fgf5n5dks00m1kt_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
+      <participant referencedUin="design:node:::y5f4a8d9v3njn50ft_n" role="Supplier" />
+    </link>
+    <link uin="l03imiugy7t_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
+      <participant referencedUin="design:node:::y5f4a8d9v3njn50ft_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="ubi1astfb0g_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note2" />
+    <property name="$note_text" value="Manteniamo uno storico dei token rilasciati?&#xD;&#xA;Per tutti i token emessi in qualunque momento?&#xD;&#xA;Oppure solo da quanto è nata la sessione?&#xD;&#xA;Oppure quelli scaduti dopo un pò vengono eliminati?&#xD;&#xA;" />
+    <property name="text_only" value="True" />
+    <link uin="lbavnsmhv1m_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
+      <participant referencedUin="design:node:::ubi1astfb0g_n" role="Supplier" />
+    </link>
+    <link uin="1r3ksi4h9cm_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
+      <participant referencedUin="design:node:::ubi1astfb0g_n" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>
