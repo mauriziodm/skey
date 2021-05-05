@@ -22,21 +22,9 @@ type
   end;
 
   ISWLicenseModel = interface(IBaseNamedEntity)
-    procedure SetSessionSign_IncludeSessionGUID(val: Boolean);
-    function GetSessionSign_IncludeSessionGUID(): Boolean;
-    property SessionSign_IncludeSessionGUID: Boolean read GetSessionSign_IncludeSessionGUID write SetSessionSign_IncludeSessionGUID;
     procedure SetSessionOverbooking_PermittedCycles(val: Integer);
     function GetSessionOverbooking_PermittedCycles(): Integer;
     property SessionOverbooking_PermittedCycles: Integer read GetSessionOverbooking_PermittedCycles write SetSessionOverbooking_PermittedCycles;
-    procedure SetSessionSign_IncludeAppUser(val: Boolean);
-    function GetSessionSign_IncludeAppUser(): Boolean;
-    property SessionSign_IncludeAppUser: Boolean read GetSessionSign_IncludeAppUser write SetSessionSign_IncludeAppUser;
-    procedure SetSessionSign_IncludeOSUser(val: Boolean);
-    function GetSessionSign_IncludeOSUser(): Boolean;
-    property SessionSign_IncludeOSUser: Boolean read GetSessionSign_IncludeOSUser write SetSessionSign_IncludeOSUser;
-    procedure SetSessionSign_IncludeHWSign(val: Boolean);
-    function GetSessionSign_IncludeHWSign(): Boolean;
-    property SessionSign_IncludeHWSign: Boolean read GetSessionSign_IncludeHWSign write SetSessionSign_IncludeHWSign;
     procedure SetSessionToken_RefreshIntervalMinutes(val: Integer);
     function GetSessionToken_RefreshIntervalMinutes(): Integer;
     property SessionToken_RefreshIntervalMinutes: Integer read GetSessionToken_RefreshIntervalMinutes write SetSessionToken_RefreshIntervalMinutes;

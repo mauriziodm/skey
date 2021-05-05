@@ -30,9 +30,9 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetProduct()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.LicenseModel" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetLicenseModel()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.HowManySessionPermitted" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetHowManySessionPermitted(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetHowManySessionPermitted()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SessionsPermitted" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetSessionsPermitted(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetSessionsPermitted()" />
       <reference referencedUin="design:link:::8gxgxp7qwsdt27cse_l">
         <property name="sourceAnchor" value="237,640" />
         <property name="targetAnchor" value="237,860" />
@@ -85,8 +85,9 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="760,380,242,306" />
+      <property name="bounds" value="760,380,242,360" />
       <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSession.Sign" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.GetSign()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSession.Info" />
@@ -101,11 +102,19 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.SetOverbookingCycles(System.Integer)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.GetOverbookingCycles()" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSession.State" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.SetState(Model.CustomerIntf.TSWSessionState)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.GetState()" />
+      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.ISWSession.State">
+        <property name="sourceAnchor" value="1002,406" />
+        <property name="targetAnchor" value="1100,406" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="540,840,240,260" />
+      <property name="bounds" value="760,40,240,260" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.GetSessionToken(System.Integer,System.string,System.string,System.string,System.string)" />
@@ -118,12 +127,12 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.ReleaseSessionToken()">
         <property name="bounds" value="155,11,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.ReleaseSessionToken(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.DisposeSession(System.Integer,System.string)" />
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="224, 224, 224" />
-      <property name="bounds" value="60,860,360,820" />
+      <property name="bounds" value="60,860,360,660" />
       <property name="foreground_color" value="128, 128, 128" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
@@ -160,21 +169,9 @@
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionToken_RefreshIntervalMinutes" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionToken_RefreshIntervalMinutes(System.Integer)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionToken_RefreshIntervalMinutes()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionSign_IncludeHWSign" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionSign_IncludeHWSign(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionSign_IncludeHWSign()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionSign_IncludeOSUser" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionSign_IncludeOSUser(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionSign_IncludeOSUser()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionSign_IncludeAppUser" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionSign_IncludeAppUser(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionSign_IncludeAppUser()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionOverbooking_PermittedCycles" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionOverbooking_PermittedCycles(System.Integer)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionOverbooking_PermittedCycles()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionSign_IncludeSessionGUID" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionSign_IncludeSessionGUID(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionSign_IncludeSessionGUID()" />
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionHistory">
       <property name="$shortcutReference" value="true" />
@@ -202,7 +199,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="1200,820,300,420" />
+      <property name="bounds" value="1200,780,300,460" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.ActiveSince" />
@@ -226,11 +223,19 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.SetPayload(System.string)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.SetLicenseID(System.Integer)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.SetExpiration(System.TDateTime)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.State" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.SetState(Model.CustomerIntf.TSWSessionTokenState)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.GetState()" />
+      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken.State">
+        <property name="sourceAnchor" value="1277,1240" />
+        <property name="targetAnchor" value="1277,1300" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="design:node:::y5f4a8d9v3njn50ft_n">
       <property name="$shortcutReference" value="true" />
       <property name="bounds" value="880,960,128,49" />
-      <property name="foreground_color" value="255, 0, 0" />
+      <property name="foreground_color" value="192, 0, 0" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::96fgf5n5dks00m1kt_l:y5f4a8d9v3njn50ft_n">
         <property name="sourceAnchor" value="1200,984" />
@@ -245,19 +250,99 @@
     </reference>
     <reference referencedUin="design:node:::ubi1astfb0g_n">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="820,860,302,62" />
-      <property name="foreground_color" value="255, 0, 0" />
+      <property name="bounds" value="820,820,302,62" />
+      <property name="foreground_color" value="192, 0, 0" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::lbavnsmhv1m_l:ubi1astfb0g_n">
-        <property name="sourceAnchor" value="911,686" />
-        <property name="targetAnchor" value="911,860" />
+        <property name="sourceAnchor" value="911,740" />
+        <property name="targetAnchor" value="911,820" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="design:link:::1r3ksi4h9cm_l:ubi1astfb0g_n">
-        <property name="sourceAnchor" value="1200,891" />
-        <property name="targetAnchor" value="1122,891" />
+        <property name="sourceAnchor" value="1200,851" />
+        <property name="targetAnchor" value="1122,851" />
         <property name="bendpoints" value="" />
       </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSWSessionState">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1100,320,119,113" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionState.ssInactive" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionState.ssDisposed" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionState.ssOverbooking" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionState.ssActive" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="520,860,209,553" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.LicenseID" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FLicenseID" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetLicenseID(System.Integer)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.ActivationKey" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FActivationKey" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetActivationKey(System.string)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.UserName" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FUserName" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetUserName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.Password" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FPassword" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetPassword(System.string)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SignIncludeAppUser" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSignIncludeAppUser" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSignIncludeAppUser(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SignIncludeHW" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSignIncludeHW" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSignIncludeHW(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SignIncludeOSUser" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSignIncludeOSUser" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSignIncludeOSUser(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SignIncludeGUID" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSignIncludeGUID" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSignIncludeGUID(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.Session" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSession" />
+      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.Session">
+        <property name="sourceAnchor" value="729,1050" />
+        <property name="targetAnchor" value="1200,1050" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSession">
+        <property name="sourceAnchor" value="729,1042" />
+        <property name="targetAnchor" value="1200,1042" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.OpenSession()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.CloseSession()">
+        <property name="bounds" value="135,13,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.DisposeSessionOnClose" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FDisposeSessionOnClose" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetDisposeSessionOnClose(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.DisposeSession()">
+        <property name="bounds" value="115,-2,0,0" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::ch6ttj08bd6t3bg0q_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="800,1280,199,117" />
+      <property name="foreground_color" value="192, 0, 0" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::goawcb2u51bnxj2bi_l:ch6ttj08bd6t3bg0q_n">
+        <property name="sourceAnchor" value="729,1338" />
+        <property name="targetAnchor" value="800,1338" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSWSessionTokenState">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1200,1300,154,113" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionTokenState.stsExpired" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionTokenState.stsOverbooking" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionTokenState.stsUnauthorized" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSWSessionTokenState.stsOK" />
     </reference>
   </view>
   <link uin="8gxgxp7qwsdt27cse_l">
