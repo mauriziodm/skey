@@ -43,7 +43,6 @@ type
     property ActiveSessionCount: Integer read GetActiveSessionCount;
     function GetSessionToken(const AlicenseID: Integer; const AActivationKey, ASign: String; const AUserName: String = '';
       const APassword: String = ''): String;
-    procedure DisposeSession(const AlicenseID: Integer; ASign: String);
   end;
 
   /// <stereotype>riceve ActiveFrom e ActiveTo oltre all'ID del padre come parametri del costruttore</stereotype>
@@ -57,10 +56,18 @@ type
   end;
 
   ISWSessionToken = interface;
-  TSWSessionState = (ssInactive, ssDisposed, ssOverbooking, ssActive);
-
+  TSWSessionState = (ssInactive, ssOverbooking, ssActive);
   /// <stereotype>riceve la firma hardware (Sign) nel costruttore</stereotype>
   ISWSession = interface(IBaseEntity)
+    procedure SetPayload(val: String);
+    function GetPayload(): String;
+    property Payload: String read GetPayload write SetPayload;
+    procedure SetHash(val: String);
+    function GetHash(): String;
+    property Hash: String read GetHash write SetHash;
+    procedure SetLicenseID(val: Integer);
+    function GetLicenseID(): Integer;
+    property LicenseID: Integer read GetLicenseID write SetLicenseID;
     procedure SetState(val: TSWSessionState);
     function GetState(): TSWSessionState;
     property State: TSWSessionState read GetState write SetState;
@@ -74,13 +81,6 @@ type
     function GetActiveSince(): TDateTime;
     /// <semantics>Indica la data a partire dalla quale questo HW risulta attivato</semantics>
     property ActiveSince: TDateTime read GetActiveSince;
-    function GetActive(): Boolean;
-    /// <semantics>Quando di disattiva una sessione viene creato e persistito una istanza di ISWSessionHistory per mantenere uno storico</semantics>
-    procedure SetActive(val: Boolean);
-    property Active: Boolean read GetActive write SetActive;
-    function GetInfo(): String;
-    /// <semantics>Eventuali informazioni in chiaro sull'HW per renderlo identificabile da noi essere umani</semantics>
-    property Info: String read GetInfo;
     function GetSign(): String;
     /// <preconditions>Firma HW che identifica questo HW eventualmente integrata dello username del sistema operativo in caso di server RDP</preconditions>
     property Sign: String read GetSign;
@@ -97,7 +97,6 @@ type
     FSignIncludeOSUser: Boolean;
     FSignIncludeGUID: Boolean;
     FSession: ISWSessionToken;
-    FDisposeSessionOnClose: Boolean;
     procedure SetLicenseID(val: Integer);
     procedure SetActivationKey(val: String);
     procedure SetUserName(val: String);
@@ -106,7 +105,6 @@ type
     procedure SetSignIncludeHW(val: Boolean);
     procedure SetSignIncludeOSUser(val: Boolean);
     procedure SetSignIncludeGUID(val: Boolean);
-    procedure SetDisposeSessionOnClose(val: Boolean);
   public
     property LicenseID: Integer read FLicenseID write SetLicenseID;
     property ActivationKey: String read FActivationKey write SetActivationKey;
@@ -119,8 +117,6 @@ type
     property Session: ISWSessionToken read FSession;
     function OpenSession: Boolean;
     procedure CloseSession;
-    property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
-    procedure DisposeSession;
   end;
 
   TSWSessionTokenState = (stsUnauthorized, stsExpired, stsOverbooking, stsOK);
@@ -191,14 +187,6 @@ begin
 end;
 
 procedure TSKeyClientComponent.CloseSession;
-begin
-end;
-
-procedure TSKeyClientComponent.SetDisposeSessionOnClose(val: Boolean);
-begin
-end;
-
-procedure TSKeyClientComponent.DisposeSession;
 begin
 end;
 
