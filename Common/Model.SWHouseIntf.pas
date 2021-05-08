@@ -25,6 +25,9 @@ type
   end;
 
   ISWLicenseModel = interface(IBaseNamedEntity)
+    procedure SetExpirationDaysWarning(val: Integer);
+    function GetExpirationDaysWarning(): Integer;
+    property ExpirationDaysWarning: Integer read GetExpirationDaysWarning write SetExpirationDaysWarning;
     procedure SetProductID(val: Integer);
     function GetProductID(): Integer;
     property ProductID: Integer read GetProductID write SetProductID;

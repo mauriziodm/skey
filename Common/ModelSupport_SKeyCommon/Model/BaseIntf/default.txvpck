@@ -49,8 +49,8 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions.SetPermission(Model.BaseIntf.TUserPermission)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions.GetPermission()" />
       <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions.Permission">
-        <property name="sourceAnchor" value="960,223" />
-        <property name="targetAnchor" value="960,300" />
+        <property name="sourceAnchor" value="971,223" />
+        <property name="targetAnchor" value="971,300" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_gnt:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions:Model.BaseIntf.IBaseUser">
@@ -98,25 +98,15 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetLoginPassword(System.string)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.GetLoginPassword()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.Company" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetCompany(Model.BaseIntf.IBaseCompany)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetCompany(T_Company)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.GetCompany()" />
-      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.Company">
-        <property name="sourceAnchor" value="480,760" />
-        <property name="targetAnchor" value="480,693" />
-        <property name="bendpoints" value="" />
-      </reference>
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetState(Model.BaseIntf.TLoginState)" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.Token" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetToken(System.string)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.GetToken()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.User" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetUser(Model.BaseIntf.IBaseUserWithPermissions)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.SetUser(T_User)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.GetUser()" />
-      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.User">
-        <property name="sourceAnchor" value="686,760" />
-        <property name="targetAnchor" value="913,223" />
-        <property name="bendpoints" value="" />
-      </reference>
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.State" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.GetState()" />
       <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;.State">
@@ -127,7 +117,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.TUserPermission">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="900,300,120,100" />
+      <property name="bounds" value="920,300,120,100" />
       <property name="hideEnumValue" value="False" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
@@ -146,11 +136,11 @@
     </reference>
     <reference referencedUin="design:node:::i03gdslatd8khv3el_n">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="580,420,240,89" />
+      <property name="bounds" value="580,400,240,89" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::598j8f9qweaazt2jq_l:i03gdslatd8khv3el_n">
         <property name="sourceAnchor" value="682,283" />
-        <property name="targetAnchor" value="682,420" />
+        <property name="targetAnchor" value="682,400" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -241,6 +231,16 @@
       <reference referencedUin="delphi:l_gnt:src:SKeyCommon:Model.BaseIntf.IBaseUser:Model.BaseIntf.IBaseContactableEntity">
         <property name="sourceAnchor" value="600,181" />
         <property name="targetAnchor" value="529,181" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::o5sxggj5dvj_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="900,820,202,76" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::0yi9f0mwcjn_l:o5sxggj5dvj_n">
+        <property name="sourceAnchor" value="804,858" />
+        <property name="targetAnchor" value="900,858" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>

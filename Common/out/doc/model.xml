@@ -1,192 +1,964 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Model name="SKeyCommon" id="SKeyCommon" language="delphi">
-  <Diagram name="default" id="ID=4" metaclass="Namespace Diagram" file="default.txvpck.html">
-    <Property name="defaultDiagram">true</Property>
-    <DiagramReference id="ID=47" element="ID=3" metaclass="Namespace">
-      <Property name="Color Area">Whole Shape</Property>
-      <Property name="Gradient color 1">255, 255, 255</Property>
-      <Property name="Gradient Mode">Vertical</Property>
-      <Property name="Gradient color 2">255, 255, 255</Property>
-      <Property name="Gradient ON">False</Property>
-    </DiagramReference>
-  </Diagram>
   <Package name="Model" id="ID=3">
-    <Diagram name="Model" id="ID=9" metaclass="Namespace Diagram" file="default.txvpck.html">
-      <Property name="defaultDiagram">true</Property>
-      <DiagramReference id="ID=55" element="ID=5" metaclass="Namespace">
-        <Property name="Color Area">Whole Shape</Property>
-        <Property name="Gradient color 1">255, 255, 255</Property>
-        <Property name="Gradient Mode">Vertical</Property>
-        <Property name="Gradient color 2">255, 255, 255</Property>
-        <Property name="Gradient ON">False</Property>
-        <DiagramReference id="ID=59" element="ID=10" metaclass="Interface">
-          <Property name="Persistent">False</Property>
-        </DiagramReference>
-        <DiagramReference id="ID=60" element="ID=11" metaclass="Module" />
-        <DiagramReference id="ID=61" element="ID=12" metaclass="Interface">
-          <Property name="Persistent">False</Property>
-          <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
-        </DiagramReference>
-      </DiagramReference>
-      <DiagramReference id="ID=56" element="ID=6" metaclass="Namespace">
-        <Property name="Color Area">Whole Shape</Property>
-        <Property name="Gradient color 1">255, 255, 255</Property>
-        <Property name="Gradient Mode">Vertical</Property>
-        <Property name="Gradient color 2">255, 255, 255</Property>
-        <Property name="Gradient ON">False</Property>
-      </DiagramReference>
-      <DiagramReference id="ID=57" element="ID=7" metaclass="Namespace">
-        <Property name="Color Area">Whole Shape</Property>
-        <Property name="Gradient color 1">255, 255, 255</Property>
-        <Property name="Gradient Mode">Vertical</Property>
-        <Property name="Gradient color 2">255, 255, 255</Property>
-        <Property name="Gradient ON">False</Property>
-      </DiagramReference>
-      <DiagramReference id="ID=58" element="ID=8" metaclass="Namespace">
-        <Property name="Color Area">Whole Shape</Property>
-        <Property name="Gradient color 1">255, 255, 255</Property>
-        <Property name="Gradient Mode">Vertical</Property>
-        <Property name="Gradient color 2">255, 255, 255</Property>
-        <Property name="Gradient ON">False</Property>
-      </DiagramReference>
-    </Diagram>
-    <Package name="BaseIntf" id="ID=5">
-      <DesignElement name="Note for IBaseEntity" id="ID=13" metaclass="Note">
-        <Property name="Text">Basic interface for all entities.&lt;br /&gt;All entities interfaces will derive&lt;br /&gt;from this interface.&lt;br /&gt;</Property>
+    <Package name="CustomerIntf" id="ID=8">
+      <Classifier name="TSKeyClientComponent" id="ID=444" type="Class" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Property name="Abstract">False</Property>
+        <Property name="Sealed">False</Property>
+        <Field fieldType="Field" elementName="ActivationKey" id="ID=1426" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="LicenseID" id="ID=794" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Integer</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="UserName" id="ID=796" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Password" id="ID=797" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Session" id="ID=1440" typeref="ID=443" type="ISWSession" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">ISWSession</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="DisposeSessionOnClose" id="ID=1563" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Boolean</Property>
+          <Property name="Class">False</Property>
+        </Field>
+        <Method id="ID=786" name="SetLicenseID" isSubroutine="true" visibility="internal">
+          <Parameter elementName="val" id="ID3=786_12920939" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=786" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=788" name="SetUserName" isSubroutine="true" visibility="internal">
+          <Parameter elementName="val" id="ID3=788_49179595" type="String" isPrimitive="true" />
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=788" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=789" name="SetPassword" isSubroutine="true" visibility="internal">
+          <Parameter elementName="val" id="ID3=789_39963178" type="String" isPrimitive="true" />
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=789" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1430" name="SetActivationKey" isSubroutine="true" visibility="internal">
+          <Parameter elementName="val" id="ID3=1430_15792018" type="String" isPrimitive="true" />
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=1430" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1567" name="SetDisposeSessionOnClose" isSubroutine="true" visibility="internal">
+          <Parameter elementName="val" id="ID3=1567_4085066" type="Boolean" systemType="Boolean" isPrimitive="false" />
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=1567" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=803" name="OpenSession" visibility="public">
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=803" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=804" name="CloseSession" isSubroutine="true" visibility="public">
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=804" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1577" name="DisposeSession" isSubroutine="true" visibility="public">
+          <Property name="Override">False</Property>
+          <Property name="Final">False</Property>
+          <Property name="Class">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Reintroduce">False</Property>
+          <Property name="Virtual">False</Property>
+          <ReturnType id="ID=1577" type="" isPrimitive="true" />
+        </Method>
+        <Link targetName="FSession" id="ID=1442" metaclass="Association Link" idref="ID=443">
+          <Property name="Client">FSession</Property>
+          <Property name="Supplier">ISWSession</Property>
+          <Property name="Directed">False</Property>
+          <Property name="Type">association</Property>
+        </Link>
+        <Link targetName="Session" id="ID=1444" metaclass="Association Link" idref="ID=443">
+          <Property name="Client">Session</Property>
+          <Property name="Supplier">ISWSession</Property>
+          <Property name="Directed">False</Property>
+          <Property name="Type">association</Property>
+        </Link>
+        <Uses />
+        <Field fieldType="Field" elementName="FLicenseID" id="ID=777" type="Integer" systemType="Integer" isPrimitive="false" visibility="internal">
+          <Property name="Type">Integer</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="FUserName" id="ID=779" type="String" isPrimitive="true" visibility="internal">
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="FPassword" id="ID=780" type="String" isPrimitive="true" visibility="internal">
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="FSession" id="ID=1438" typeref="ID=443" type="ISWSession" isPrimitive="false" visibility="internal">
+          <Property name="Type">ISWSession</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="FActivationKey" id="ID=1428" type="String" isPrimitive="true" visibility="internal">
+          <Property name="Type">String</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+        <Field fieldType="Field" elementName="FDisposeSessionOnClose" id="ID=1565" type="Boolean" systemType="Boolean" isPrimitive="false" visibility="internal">
+          <Property name="Type">Boolean</Property>
+          <Property name="Class">False</Property>
+          <Property name="Const">False</Property>
+        </Field>
+      </Classifier>
+      <DesignElement name="Note1" id="ID=452" metaclass="Note">
+        <Property name="TextOnly">True</Property>
+      </DesignElement>
+      <DesignElement name="Note3" id="ID=454" metaclass="Note">
+        <Property name="Text">Possibili event handlers:&lt;br /&gt;- onAfterSessionServerRequest&lt;br /&gt;- onBeforeSessionServerRequest&lt;br /&gt;- onBeforeOpen&lt;br /&gt;- onSessionStateChange&lt;br /&gt;- onSessionExpire&lt;br /&gt;- onLoginOK&lt;br /&gt;- onLoginKO</Property>
         <Property name="TextOnly">False</Property>
-        <Link targetName="Note Link1" id="ID=16" metaclass="Note Link" idref="ID=13">
-          <Property name="Client">Model.BaseIntf.IBaseEntity</Property>
-          <Property name="Supplier">Model.BaseIntf.Note for IBaseEntity</Property>
+        <Link targetName="Note Link1" id="ID=862" metaclass="Note Link" idref="ID=454">
+          <Property name="Client">Model.CustomerIntf.TSKeyClientComponent</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note3</Property>
         </Link>
       </DesignElement>
-      <DesignElement name="Note1" id="ID=14" metaclass="Note">
-        <Property name="Text">Basic interface for all named entities.&lt;br /&gt;All named entities interfaces  will&lt;br /&gt;derive from this interface.&lt;br /&gt;</Property>
+      <DesignElement name="Note2" id="ID=1049" metaclass="Note">
+        <Property name="Text">Solo locale sul session server? (in caso di session server)&lt;br /&gt;oppure viene trasmessa anche al license server&lt;br /&gt;mantenendo quindi uno storico di tute le sessioni create&lt;br /&gt;in precedenza?&lt;br /&gt;Dopo un pò magari le eliminiamo?&lt;br /&gt;Oppure le manteniamo tutte?&lt;br /&gt;</Property>
         <Property name="TextOnly">False</Property>
-        <Link targetName="Note Link1" id="ID=17" metaclass="Note Link" idref="ID=14">
-          <Property name="Client">Model.BaseIntf.IBaseNamedEntity</Property>
-          <Property name="Supplier">Model.BaseIntf.Note1</Property>
+        <Link targetName="Note Link1" id="ID=1051" metaclass="Note Link" idref="ID=1049">
+          <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note2</Property>
         </Link>
       </DesignElement>
-      <Diagram name="BaseIntf" id="ID=15" metaclass="Namespace Diagram" file="default.txvpck.html">
+      <DesignElement name="Note4" id="ID=1053" metaclass="Note">
+        <Property name="Text">Persistite sul SessionServer?&lt;br /&gt;Il SessionServer ha un DB (SQLite/FirebirdEmbedded)?&lt;br /&gt;Il ClientComponent persiste la sessione&lt;br /&gt;localmente su un file di testo (JSON)?&lt;br /&gt;Se si il nome del file dovrebbe comprendere&lt;br /&gt;l'HWSign+AppUserSign e anche ID della sessione</Property>
+        <Property name="TextOnly">False</Property>
+        <Link targetName="Note Link1" id="ID=1055" metaclass="Note Link" idref="ID=1053">
+          <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+        </Link>
+        <Link targetName="Note Link2" id="ID=1057" metaclass="Note Link" idref="ID=1053">
+          <Property name="Client">Model.CustomerIntf.TSKeyClientComponent</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+        </Link>
+        <Link targetName="Note Link3" id="ID=1059" metaclass="Note Link" idref="ID=1053">
+          <Property name="Client">Model.CustomerIntf.ISWSessionManager</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+        </Link>
+      </DesignElement>
+      <DesignElement name="Note5" id="ID=1184" metaclass="Note">
+        <Property name="Text">Essendoci le proprietà ActiveSince&lt;br /&gt;e Expiration il programma è&lt;br /&gt;al sicuro anche se l'utente tenta di&lt;br /&gt;mandare indietro l'orologio del PC&lt;br /&gt;</Property>
+        <Property name="TextOnly">False</Property>
+        <Link targetName="Note Link1" id="ID=1186" metaclass="Note Link" idref="ID=1184">
+          <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+          <Property name="Supplier">Model.CustomerIntf.Note5</Property>
+        </Link>
+      </DesignElement>
+      <Diagram name="CustomerIntf" id="ID=455" metaclass="Namespace Diagram" file="default.txvpck.html">
         <Property name="defaultDiagram">true</Property>
-        <DiagramReference id="ID=18" element="ID=11" metaclass="Module">
+        <DiagramReference id="ID=456" element="ID=449" metaclass="Module">
           <Property name="Gradient ON">False</Property>
           <Property name="Gradient color 2">255, 255, 255</Property>
           <Property name="Color Area">Whole Shape</Property>
           <Property name="Gradient Mode">Vertical</Property>
           <Property name="Gradient color 1">255, 255, 255</Property>
         </DiagramReference>
-        <DiagramReference id="ID=19" element="ID=10" metaclass="Interface">
+        <DiagramReference id="ID=457" element="ID=451" metaclass="Interface">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Stereotype">riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Extends">Model.SWHouseIntf.ISWLicenseModel</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">60,280,414,880</Property>
+          <DiagramReference id="ID=516" element="ID=489" metaclass="Generalization Link">
+            <Property name="Client">ISWLicense</Property>
+            <Property name="Supplier">ISWLicenseModel</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=517" element="ID=490" metaclass="Dependency Link">
+            <Property name="Client">Model.CustomerIntf.ISWLicense</Property>
+            <Property name="Label">inherit from</Property>
+            <Property name="Supplier">Model.SWHouseIntf.ISWLicenseModel</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=518" element="ID=491" metaclass="Dependency Link">
+            <Property name="Client Role">1</Property>
+            <Property name="Client">Model.CustomerIntf.ISWLicense</Property>
+            <Property name="Supplier Role">0..*</Property>
+            <Property name="Supplier">Model.CustomerIntf.ISWSession</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=519" element="ID=493" metaclass="Association Link">
+            <Property name="Client">LicenseModel</Property>
+            <Property name="Supplier">ISWLicenseModel</Property>
+            <Property name="Directed">False</Property>
+            <Property name="Type">association</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=999" element="ID=998" metaclass="Association Link">
+            <Property name="Client">State</Property>
+            <Property name="Supplier">TSWLicenseState</Property>
+            <Property name="Directed">False</Property>
+            <Property name="Type">association</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=1406" element="ID=1405" metaclass="Dependency Link">
+            <Property name="Client Role">1</Property>
+            <Property name="Client">Model.CustomerIntf.ISWLicense</Property>
+            <Property name="Supplier Role">0..*</Property>
+            <Property name="Supplier">Model.CustomerIntf.ISWLicenseUser</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=458" element="ID=447" metaclass="Interface">
           <Property name="Color Area">Whole Shape</Property>
           <Property name="Gradient color 1">255, 255, 255</Property>
           <Property name="Persistent">False</Property>
           <Property name="Gradient Mode">Vertical</Property>
           <Property name="Gradient color 2">255, 255, 255</Property>
           <Property name="Circle view">False</Property>
+          <Property name="Extends">Model.BaseIntf.IBaseCompany</Property>
           <Property name="Gradient ON">False</Property>
-          <Property name="bounds">50,137,150,235</Property>
+          <Property name="bounds">60,40,243,137</Property>
+          <DiagramReference id="ID=540" element="ID=536" metaclass="Dependency Link">
+            <Property name="Client Role">1</Property>
+            <Property name="Client">Model.CustomerIntf.ICustomer</Property>
+            <Property name="Supplier Role">0..*</Property>
+            <Property name="Supplier">Model.CustomerIntf.ISWLicense</Property>
+          </DiagramReference>
         </DiagramReference>
-        <DiagramReference id="ID=20" element="ID=12" metaclass="Interface">
+        <DiagramReference id="ID=459" element="ID=443" metaclass="Interface">
           <Property name="Color Area">Whole Shape</Property>
           <Property name="Gradient color 1">255, 255, 255</Property>
           <Property name="Persistent">False</Property>
           <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Stereotype">riceve la firma hardware (Sign) nel costruttore</Property>
           <Property name="Gradient color 2">255, 255, 255</Property>
           <Property name="Circle view">False</Property>
           <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
           <Property name="Gradient ON">False</Property>
-          <Property name="bounds">279,130,400,243</Property>
-          <DiagramReference id="ID=41" element="ID=36" metaclass="Generalization Link">
-            <Property name="Client">IBaseNamedEntity</Property>
-            <Property name="Supplier">IBaseEntity</Property>
+          <Property name="bounds">840,220,1082,1020</Property>
+          <DiagramReference id="ID=596" element="ID=570" metaclass="Association Link">
+            <Property name="Client">State</Property>
+            <Property name="Supplier">TSWSessionState</Property>
+            <Property name="Directed">False</Property>
+            <Property name="Type">association</Property>
           </DiagramReference>
         </DiagramReference>
-        <DiagramReference id="ID=21" element="ID=13" metaclass="Note">
+        <DiagramReference id="ID=460" element="ID=445" metaclass="Interface">
           <Property name="Color Area">Whole Shape</Property>
           <Property name="Gradient color 1">255, 255, 255</Property>
-          <Property name="Text">Basic interface for all entities.&lt;br /&gt;All entities interfaces will derive&lt;br /&gt;from this interface.&lt;br /&gt;</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">520,40,760,220</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=461" isShortcut="true">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Extends">Model.BaseIntf.IBaseNamedEntity</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">60,960,420,1700</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=464" element="ID=452" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="TextOnly">True</Property>
+          <Property name="Backward">False</Property>
+          <Property name="bounds">880,980,930,1010</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=466" element="ID=446" metaclass="Enum">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">1160,300,1294,428</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=467" element="ID=444" metaclass="Class">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Abstract">False</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Sealed">False</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">520,960,729,1360</Property>
+          <DiagramReference id="ID=1443" element="ID=1442" metaclass="Association Link">
+            <Property name="Client">FSession</Property>
+            <Property name="Supplier">ISWSession</Property>
+            <Property name="Directed">False</Property>
+            <Property name="Type">association</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=1445" element="ID=1444" metaclass="Association Link">
+            <Property name="Client">Session</Property>
+            <Property name="Supplier">ISWSession</Property>
+            <Property name="Directed">False</Property>
+            <Property name="Type">association</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=468" element="ID=454" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Possibili event handlers:&lt;br /&gt;- onAfterSessionServerRequest&lt;br /&gt;- onBeforeSessionServerRequest&lt;br /&gt;- onBeforeOpen&lt;br /&gt;- onSessionStateChange&lt;br /&gt;- onSessionExpire&lt;br /&gt;- onLoginOK&lt;br /&gt;- onLoginKO</Property>
           <Property name="Gradient color 2">255, 255, 255</Property>
           <Property name="Gradient Mode">Vertical</Property>
           <Property name="Gradient ON">False</Property>
           <Property name="TextOnly">False</Property>
           <Property name="Backward">False</Property>
-          <Property name="bounds">20,20,240,80</Property>
-          <DiagramReference id="ID=44" element="ID=16" metaclass="Note Link">
-            <Property name="Client">Model.BaseIntf.IBaseEntity</Property>
-            <Property name="Supplier">Model.BaseIntf.Note for IBaseEntity</Property>
+          <Property name="bounds">780,1160,979,1277</Property>
+          <DiagramReference id="ID=863" element="ID=862" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.TSKeyClientComponent</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note3</Property>
           </DiagramReference>
         </DiagramReference>
-        <DiagramReference id="ID=22" element="ID=14" metaclass="Note">
+        <DiagramReference id="ID=978" element="ID=977" metaclass="Enum">
           <Property name="Color Area">Whole Shape</Property>
           <Property name="Gradient color 1">255, 255, 255</Property>
-          <Property name="Text">Basic interface for all named entities.&lt;br /&gt;All named entities interfaces  will&lt;br /&gt;derive from this interface.&lt;br /&gt;</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">440,560,557,658</Property>
+        </DiagramReference>
+        <DiagramReference id="ID=1050" element="ID=1049" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Solo locale sul session server? (in caso di session server)&lt;br /&gt;oppure viene trasmessa anche al license server&lt;br /&gt;mantenendo quindi uno storico di tute le sessioni create&lt;br /&gt;in precedenza?&lt;br /&gt;Dopo un pò magari le eliminiamo?&lt;br /&gt;Oppure le manteniamo tutte?&lt;br /&gt;</Property>
           <Property name="Gradient color 2">255, 255, 255</Property>
           <Property name="Gradient Mode">Vertical</Property>
           <Property name="Gradient ON">False</Property>
           <Property name="TextOnly">False</Property>
           <Property name="Backward">False</Property>
-          <Property name="bounds">280,20,500,80</Property>
-          <DiagramReference id="ID=45" element="ID=17" metaclass="Note Link">
-            <Property name="Client">Model.BaseIntf.IBaseNamedEntity</Property>
-            <Property name="Supplier">Model.BaseIntf.Note1</Property>
+          <Property name="bounds">1160,480,1490,569</Property>
+          <DiagramReference id="ID=1052" element="ID=1051" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note2</Property>
           </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=1054" element="ID=1053" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Persistite sul SessionServer?&lt;br /&gt;Il SessionServer ha un DB (SQLite/FirebirdEmbedded)?&lt;br /&gt;Il ClientComponent persiste la sessione&lt;br /&gt;localmente su un file di testo (JSON)?&lt;br /&gt;Se si il nome del file dovrebbe comprendere&lt;br /&gt;l'HWSign+AppUserSign e anche ID della sessione</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="TextOnly">False</Property>
+          <Property name="Backward">False</Property>
+          <Property name="bounds">440,680,780,782</Property>
+          <DiagramReference id="ID=1056" element="ID=1055" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=1058" element="ID=1057" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.TSKeyClientComponent</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+          </DiagramReference>
+          <DiagramReference id="ID=1060" element="ID=1059" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.ISWSessionManager</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note4</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=1185" element="ID=1184" metaclass="Note">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Text">Essendoci le proprietà ActiveSince&lt;br /&gt;e Expiration il programma è&lt;br /&gt;al sicuro anche se l'utente tenta di&lt;br /&gt;mandare indietro l'orologio del PC&lt;br /&gt;</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="TextOnly">False</Property>
+          <Property name="Backward">False</Property>
+          <Property name="bounds">1160,600,1365,662</Property>
+          <DiagramReference id="ID=1187" element="ID=1186" metaclass="Note Link">
+            <Property name="Client">Model.CustomerIntf.ISWSession</Property>
+            <Property name="Supplier">Model.CustomerIntf.Note5</Property>
+          </DiagramReference>
+        </DiagramReference>
+        <DiagramReference id="ID=1241" element="ID=1240" metaclass="Interface">
+          <Property name="Color Area">Whole Shape</Property>
+          <Property name="Gradient color 1">255, 255, 255</Property>
+          <Property name="Persistent">False</Property>
+          <Property name="Gradient Mode">Vertical</Property>
+          <Property name="Gradient color 2">255, 255, 255</Property>
+          <Property name="Circle view">False</Property>
+          <Property name="Extends">Model.BaseIntf.IBaseUser</Property>
+          <Property name="Gradient ON">False</Property>
+          <Property name="bounds">480,340,609,437</Property>
         </DiagramReference>
       </Diagram>
-      <Classifier name="globals BaseIntf" id="ID=11" type="Module" visibility="public">
+      <Classifier name="globals CustomerIntf" id="ID=449" type="Module" visibility="public">
         <Uses />
       </Classifier>
-      <Classifier name="IBaseEntity" id="ID=10" type="Interface" visibility="public">
-        <Property name="Persistent">False</Property>
-        <Uses />
-        <Field fieldType="Field" elementName="ID" id="ID=24" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
-          <Property name="Access">read</Property>
-          <Property name="Type">Integer</Property>
-        </Field>
-        <Method id="ID=23" name="GetID" visibility="public">
-          <Property name="Returns">Integer</Property>
-          <Property name="Reintroduce">False</Property>
-          <ReturnType id="ID=23" type="Integer" systemType="Integer" isPrimitive="false" />
-        </Method>
+      <Classifier name="TSWSessionState" id="ID=446" type="Enum" visibility="public">
+        <Uses>
+          <Use element="ID=771" type="field_type" />
+          <Use element="ID=1116" type="field_type" />
+          <Use element="ID=1011" type="field_type" />
+          <Use element="ID=772" type="field_type" />
+          <Use element="ID=773" type="field_type" />
+          <Use element="ID3=553_14847679" type="parameter_type" />
+          <Use element="ID=554" type="method_return_type" />
+          <Use element="ID=555" type="field_type" />
+        </Uses>
+        <Field fieldType="Field" elementName="ssExpired" id="ID=771" typeref="ID=446" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="ssExpiredOverbooked" id="ID=1116" typeref="ID=446" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="ssDisposed" id="ID=1011" typeref="ID=446" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="ssOverbooked" id="ID=772" typeref="ID=446" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="ssActive" id="ID=773" typeref="ID=446" isPrimitive="false" type="Enumeration Value" visibility="public" />
       </Classifier>
-      <Classifier name="IBaseNamedEntity" id="ID=12" type="Interface" visibility="public">
+      <Classifier name="ISWSession" id="ID=443" type="Interface" visibility="public">
         <Property name="Persistent">False</Property>
+        <Property name="Stereotype">riceve la firma hardware (Sign) nel costruttore</Property>
         <Property name="Extends">Model.BaseIntf.IBaseEntity</Property>
-        <Field fieldType="Field" elementName="Name" id="ID=34" type="String" isPrimitive="true" isProperty="true" visibility="public">
+        <Field fieldType="Field" elementName="PayLoadUser" id="ID=1409" type="String" isPrimitive="true" isProperty="true" visibility="public">
           <Property name="Access">read/write</Property>
           <Property name="Type">String</Property>
         </Field>
-        <Method id="ID=32" name="SetName" isSubroutine="true" visibility="public">
-          <Parameter elementName="AName" id="ID3=32_6570122" type="String" isPrimitive="true" />
+        <Field fieldType="Field" elementName="PollingIntervalExpired" id="ID=1188" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="PollingLast" id="ID=1169" type="TDateTime" systemType="TDateTime" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">TDateTime</Property>
+        </Field>
+        <Field fieldType="Field" elementName="PollingIntervalMinutes" id="ID=1158" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="OverbookedMax" id="ID=1147" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsDisposed" id="ID=1084" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsExpired" id="ID=1073" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsOverbooked" id="ID=1062" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="SignAppUser" id="ID=1038" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsActive" id="ID=1014" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Payload" id="ID=546" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Hash" id="ID=549" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Field fieldType="Field" elementName="LicenseID" id="ID=552" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="State" id="ID=555" typeref="ID=446" type="TSWSessionState" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">TSWSessionState</Property>
+        </Field>
+        <Field fieldType="Field" elementName="OverbookedCount" id="ID=558" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">Integer</Property>
+          <Property name="Precondition">Normalmente rimane a zero ma se questo HW è stato creto in una situazione di overbooking allora assume valore 1 e il numero aumenta per ogni ciclo/richiesta di token permanendo in situazione di overbooking. Se la situazione di overbooking si risolve viene rimessa a zero, se invece il valore di questa proprietà supera la soglia massima consentita senza che sia risolto l'overbooking allora vienenegato il token e viene disattiva l'HW</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Expiration" id="ID=560" type="TDateTime" systemType="TDateTime" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">TDateTime</Property>
+          <Property name="Semantics">Indica la data fino alla quale questo HW è autorizzato a essere attivo</Property>
+        </Field>
+        <Field fieldType="Field" elementName="ActiveSince" id="ID=562" type="TDateTime" systemType="TDateTime" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">TDateTime</Property>
+          <Property name="Semantics">Indica la data a partire dalla quale questo HW risulta attivato</Property>
+        </Field>
+        <Field fieldType="Field" elementName="SignHW" id="ID=564" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">String</Property>
+          <Property name="Precondition">Firma HW che identifica questo HW eventualmente integrata dello username del sistema operativo in caso di server RDP</Property>
+          <Property name="Semantics">HW sign + OSUser</Property>
+        </Field>
+        <Method id="ID=1411" name="SetPayLoadUser" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1411_47557461" type="String" isPrimitive="true" />
           <Property name="Reintroduce">False</Property>
-          <ReturnType id="ID=32" type="" isPrimitive="true" />
+          <ReturnType id="ID=1411" type="" isPrimitive="true" />
         </Method>
-        <Method id="ID=33" name="GetName" visibility="public">
+        <Method id="ID=1413" name="GetPayLoadUser" visibility="public">
           <Property name="Returns">String</Property>
           <Property name="Reintroduce">False</Property>
-          <ReturnType id="ID=33" type="String" isPrimitive="true" />
+          <ReturnType id="ID=1413" type="String" isPrimitive="true" />
         </Method>
-        <Link targetName="Model.BaseIntf.IBaseEntity" id="ID=36" metaclass="Generalization Link" idref="ID=10">
-          <Property name="Client">IBaseNamedEntity</Property>
-          <Property name="Supplier">IBaseEntity</Property>
+        <Method id="ID=1192" name="GetPollingIntervalExpired" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1192" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1171" name="SetPollingLast" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1171_25363965" type="TDateTime" systemType="TDateTime" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1171" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1173" name="GetPollingLast" visibility="public">
+          <Property name="Returns">TDateTime</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1173" type="TDateTime" systemType="TDateTime" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1160" name="SetPollingIntervalMinutes" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1160_26949099" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1160" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1162" name="GetPollingIntervalMinutes" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1162" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1149" name="SetOverbookedMax" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1149_41215303" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1149" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1151" name="GetOverbookedMax" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1151" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1088" name="GetIsDisposed" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1088" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1077" name="GetIsExpired" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1077" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1066" name="GetIsOverbooked" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1066" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1040" name="SetSignAppUser" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1040_12818511" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1040" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1042" name="GetSignAppUser" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1042" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1018" name="GetIsActive" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1018" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=544" name="SetPayload" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=544_48257739" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=544" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=545" name="GetPayload" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=545" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=547" name="SetHash" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=547_31666475" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=547" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=548" name="GetHash" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=548" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=550" name="SetLicenseID" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=550_16562823" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=550" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=551" name="GetLicenseID" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=551" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=553" name="SetState" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=553_14847679" typeref="ID=446" type="TSWSessionState" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=553" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=554" name="GetState" visibility="public">
+          <Property name="Returns">TSWSessionState</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=554" typeref="ID=446" type="TSWSessionState" isPrimitive="false" />
+        </Method>
+        <Method id="ID=556" name="SetOverbookedCount" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=556_66520254" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=556" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=557" name="GetOverbookedCount" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=557" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=559" name="GetExpiration" visibility="public">
+          <Property name="Returns">TDateTime</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=559" type="TDateTime" systemType="TDateTime" isPrimitive="false" />
+        </Method>
+        <Method id="ID=561" name="GetActiveSince" visibility="public">
+          <Property name="Returns">TDateTime</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=561" type="TDateTime" systemType="TDateTime" isPrimitive="false" />
+        </Method>
+        <Method id="ID=563" name="GetSignHW" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=563" type="String" isPrimitive="true" />
+        </Method>
+        <Link targetName="State" id="ID=570" metaclass="Association Link" idref="ID=446">
+          <Property name="Client">State</Property>
+          <Property name="Supplier">TSWSessionState</Property>
+          <Property name="Directed">False</Property>
+          <Property name="Type">association</Property>
         </Link>
-        <Extends idref="ID=10" refFN="Model.BaseIntf.IBaseEntity" />
+        <Extends idref="ID=12" refFN="Model.BaseIntf.IBaseEntity" doom="true" />
+        <Uses>
+          <Use element="ID=1438" type="field_type" />
+          <Use element="ID=1440" type="field_type" />
+        </Uses>
+      </Classifier>
+      <Classifier name="ISWLicenseUser" id="ID=1240" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Property name="Extends">Model.BaseIntf.IBaseUser</Property>
+        <Extends idref="ID=1307" refFN="Model.BaseIntf.IBaseUser" doom="true" />
+        <Uses />
+        <Field fieldType="Field" elementName="Payload" id="ID=1383" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Method id="ID=1385" name="SetPayload" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1385_517399" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1385" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1387" name="GetPayload" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1387" type="String" isPrimitive="true" />
+        </Method>
+      </Classifier>
+      <Classifier name="TSWLicenseState" id="ID=977" type="Enum" visibility="public">
+        <Uses>
+          <Use element="ID=979" type="field_type" />
+          <Use element="ID=983" type="field_type" />
+          <Use element="ID=985" type="field_type" />
+          <Use element="ID3=1305_26746116" type="parameter_type" />
+          <Use element="ID=991" type="method_return_type" />
+          <Use element="ID=987" type="field_type" />
+        </Uses>
+        <Field fieldType="Field" elementName="lsSuspended" id="ID=979" typeref="ID=977" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="lsExpired" id="ID=983" typeref="ID=977" isPrimitive="false" type="Enumeration Value" visibility="public" />
+        <Field fieldType="Field" elementName="lsActive" id="ID=985" typeref="ID=977" isPrimitive="false" type="Enumeration Value" visibility="public" />
+      </Classifier>
+      <Classifier name="ISWLicense" id="ID=451" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Property name="Stereotype">riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</Property>
+        <Property name="Extends">Model.SWHouseIntf.ISWLicenseModel</Property>
+        <Field fieldType="Field" elementName="Users" id="ID=1394" type="TList&amp;lt;ISWLicenseUser&amp;gt;" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">TList&amp;lt;ISWLicenseUser&amp;gt;</Property>
+        </Field>
+        <Field fieldType="Field" elementName="CounterSessions" id="ID=1229" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="CounterAppUsers" id="ID=1218" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="CounterHW" id="ID=1207" type="Integer" systemType="Integer" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Integer</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsExpired" id="ID=1132" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsSuspended" id="ID=1121" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Hash" id="ID=1025" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Note" id="ID=1000" type="String" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">String</Property>
+        </Field>
+        <Field fieldType="Field" elementName="State" id="ID=987" typeref="ID=977" type="TSWLicenseState" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">TSWLicenseState</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Sessions" id="ID=963" type="IioList&amp;lt;ISWSession&amp;gt;" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">IioList&amp;lt;ISWSession&amp;gt;</Property>
+          <Property name="Semantics">LazyLoad?</Property>
+        </Field>
+        <Field fieldType="Field" elementName="LicenseModel" id="ID=474" typeref="ID=275" type="ISWLicenseModel" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">ISWLicenseModel</Property>
+        </Field>
+        <Field fieldType="Field" elementName="IsActive" id="ID=480" type="Boolean" systemType="Boolean" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">Boolean</Property>
+        </Field>
+        <Field fieldType="Field" elementName="Expiration" id="ID=484" type="TDate" systemType="TDate" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">TDate</Property>
+        </Field>
+        <Field fieldType="Field" elementName="ActiveSince" id="ID=487" type="TDate" systemType="TDate" isPrimitive="false" isProperty="true" visibility="public">
+          <Property name="Access">read/write</Property>
+          <Property name="Type">TDate</Property>
+        </Field>
+        <Method id="ID=1424" name="SetUsers" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1424_41909343" type="TList&amp;lt;ISWLicenseUser&amp;gt;" systemType="TList" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1424" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1398" name="GetUsers" visibility="public">
+          <Property name="Returns">TList&amp;lt;ISWLicenseUser&amp;gt;</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1398" type="TList&amp;lt;ISWLicenseUser&amp;gt;" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1233" name="GetCounterSessions" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1233" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1222" name="GetCounterAppUsers" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1222" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1211" name="GetCounterHW" visibility="public">
+          <Property name="Returns">Integer</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1211" type="Integer" systemType="Integer" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1136" name="GetIsExpired" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1136" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1125" name="GetIsSuspended" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1125" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=1027" name="SetHash" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1027_29327856" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1027" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1029" name="GetHash" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1029" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1002" name="SetNote" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1002_62624114" type="String" isPrimitive="true" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1002" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1004" name="GetNote" visibility="public">
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1004" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1305" name="SetState" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=1305_26746116" typeref="ID=977" type="TSWLicenseState" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1305" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=991" name="GetState" visibility="public">
+          <Property name="Returns">TSWLicenseState</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=991" typeref="ID=977" type="TSWLicenseState" isPrimitive="false" />
+        </Method>
+        <Method id="ID=967" name="GetSessions" visibility="public">
+          <Property name="Returns">IioList&amp;lt;ISWSession&amp;gt;</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=967" type="IioList&amp;lt;ISWSession&amp;gt;" isPrimitive="true" />
+        </Method>
+        <Method id="ID=473" name="GetLicenseModel" visibility="public">
+          <Property name="Returns">ISWLicenseModel</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=473" typeref="ID=275" type="ISWLicenseModel" isPrimitive="false" />
+        </Method>
+        <Method id="ID=477" name="RevertToModel" isSubroutine="true" visibility="public">
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=477" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=479" name="GetIsActive" visibility="public">
+          <Property name="Returns">Boolean</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=479" type="Boolean" systemType="Boolean" isPrimitive="false" />
+        </Method>
+        <Method id="ID=483" name="GetExpiration" visibility="public">
+          <Property name="Returns">TDate</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=483" type="TDate" systemType="TDate" isPrimitive="false" />
+        </Method>
+        <Method id="ID=485" name="SetActiveSince" isSubroutine="true" visibility="public">
+          <Parameter elementName="val" id="ID3=485_39388455" type="TDate" systemType="TDate" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=485" type="" isPrimitive="true" />
+        </Method>
+        <Method id="ID=486" name="GetActiveSince" visibility="public">
+          <Property name="Returns">TDate</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=486" type="TDate" systemType="TDate" isPrimitive="false" />
+        </Method>
+        <Link targetName="Dependency Link4" id="ID=491" metaclass="Dependency Link" idref="ID=443">
+          <Property name="Client Role">1</Property>
+          <Property name="Client">Model.CustomerIntf.ISWLicense</Property>
+          <Property name="Supplier Role">0..*</Property>
+          <Property name="Supplier">Model.CustomerIntf.ISWSession</Property>
+        </Link>
+        <Link targetName="Dependency Link3" id="ID=1405" metaclass="Dependency Link" idref="ID=1240">
+          <Property name="Client Role">1</Property>
+          <Property name="Client">Model.CustomerIntf.ISWLicense</Property>
+          <Property name="Supplier Role">0..*</Property>
+          <Property name="Supplier">Model.CustomerIntf.ISWLicenseUser</Property>
+        </Link>
+        <Link targetName="State" id="ID=998" metaclass="Association Link" idref="ID=977">
+          <Property name="Client">State</Property>
+          <Property name="Supplier">TSWLicenseState</Property>
+          <Property name="Directed">False</Property>
+          <Property name="Type">association</Property>
+        </Link>
+        <Extends idref="ID=275" refFN="Model.SWHouseIntf.ISWLicenseModel" doom="true" />
         <Uses />
       </Classifier>
-    </Package>
-    <Package name="MasterIntf" id="ID=6">
-      <Diagram name="MasterIntf" id="ID=51" metaclass="Namespace Diagram" file="default.txvpck.html">
-        <Property name="defaultDiagram">true</Property>
-      </Diagram>
-    </Package>
-    <Package name="CustomerIntf" id="ID=7">
-      <Diagram name="CustomerIntf" id="ID=54" metaclass="Namespace Diagram" file="default.txvpck.html">
-        <Property name="defaultDiagram">true</Property>
-      </Diagram>
-    </Package>
-    <Package name="SWHouseIntf" id="ID=8">
-      <Diagram name="SWHouseIntf" id="ID=53" metaclass="Namespace Diagram" file="default.txvpck.html">
-        <Property name="defaultDiagram">true</Property>
-      </Diagram>
+      <Classifier name="ICustomer" id="ID=447" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Property name="Extends">Model.BaseIntf.IBaseCompany</Property>
+        <Field fieldType="Field" elementName="Licenses" id="ID=534" type="TList&amp;lt;ISWLicense&amp;gt;" isPrimitive="true" isProperty="true" visibility="public">
+          <Property name="Access">read</Property>
+          <Property name="Type">TList&amp;lt;ISWLicense&amp;gt;</Property>
+        </Field>
+        <Method id="ID=533" name="GetLicenses" visibility="public">
+          <Property name="Returns">TList&amp;lt;ISWLicense&amp;gt;</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=533" type="TList&amp;lt;ISWLicense&amp;gt;" isPrimitive="true" />
+        </Method>
+        <Link targetName="Dependency Link1" id="ID=536" metaclass="Dependency Link" idref="ID=451">
+          <Property name="Client Role">1</Property>
+          <Property name="Client">Model.CustomerIntf.ICustomer</Property>
+          <Property name="Supplier Role">0..*</Property>
+          <Property name="Supplier">Model.CustomerIntf.ISWLicense</Property>
+        </Link>
+        <Extends idref="ID=14" refFN="Model.BaseIntf.IBaseCompany" doom="true" />
+        <Uses />
+      </Classifier>
+      <Classifier name="ISWSessionManager" id="ID=445" type="Interface" visibility="public">
+        <Property name="Persistent">False</Property>
+        <Uses />
+        <Method id="ID=616" name="NewSession" visibility="public">
+          <Parameter elementName="AlicenseID" id="ID3=616_38701080" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Parameter elementName="AActivationKey" id="ID3=616_12765406" type="String" isPrimitive="true" />
+          <Parameter elementName="AHWSign" id="ID3=616_47779794" type="String" isPrimitive="true" />
+          <Parameter elementName="AUserName" id="ID3=616_27364965" type="String" isPrimitive="true" />
+          <Parameter elementName="APassword" id="ID3=616_44958096" type="String" isPrimitive="true" />
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=616" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1203" name="PollSession" visibility="public">
+          <Parameter elementName="ASessionID" id="ID3=1203_1969684" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Parameter elementName="AlicenseID" id="ID3=1203_58899170" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Parameter elementName="AActivationKey" id="ID3=1203_60330482" type="String" isPrimitive="true" />
+          <Parameter elementName="AHWSign" id="ID3=1203_6103433" type="String" isPrimitive="true" />
+          <Parameter elementName="AUserName" id="ID3=1203_54930903" type="String" isPrimitive="true" />
+          <Parameter elementName="APassword" id="ID3=1203_24616085" type="String" isPrimitive="true" />
+          <Property name="Returns">String</Property>
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1203" type="String" isPrimitive="true" />
+        </Method>
+        <Method id="ID=1205" name="DisposeSession" isSubroutine="true" visibility="public">
+          <Parameter elementName="ASessionID" id="ID3=1205_20218181" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Parameter elementName="AlicenseID" id="ID3=1205_47745902" type="Integer" systemType="Integer" isPrimitive="false" />
+          <Property name="Reintroduce">False</Property>
+          <ReturnType id="ID=1205" type="" isPrimitive="true" />
+        </Method>
+      </Classifier>
     </Package>
   </Package>
 </Model>

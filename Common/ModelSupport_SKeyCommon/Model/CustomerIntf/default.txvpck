@@ -83,14 +83,14 @@
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Users" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetUsers()" />
       <reference referencedUin="design:link:::d1bwa9wqjek83acle_l">
-        <property name="sourceAnchor" value="414,403" />
-        <property name="targetAnchor" value="480,403" />
+        <property name="sourceAnchor" value="414,388" />
+        <property name="targetAnchor" value="500,388" />
         <property name="bendpoints" value="" />
         <reference referencedUin="label:@supplierRole:design:link:::d1bwa9wqjek83acle_l">
-          <property name="bounds" value="447,406,23,16" />
+          <property name="bounds" value="467,391,23,16" />
         </reference>
         <reference referencedUin="label:@clientRole:design:link:::d1bwa9wqjek83acle_l">
-          <property name="bounds" value="424,406,11,16" />
+          <property name="bounds" value="424,391,11,16" />
         </reference>
       </reference>
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetUsers(System.Generics.Collections.TList&lt;Model.CustomerIntf.ISWLicenseUser&gt;)" />
@@ -98,19 +98,19 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="60,40,206,112" />
+      <property name="bounds" value="60,40,183,97" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ICustomer.GetLicenses()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ICustomer.Licenses" />
       <reference referencedUin="design:link:::00sey00cs908cw0wr_l">
-        <property name="sourceAnchor" value="163,152" />
-        <property name="targetAnchor" value="163,280" />
+        <property name="sourceAnchor" value="151,137" />
+        <property name="targetAnchor" value="151,280" />
         <property name="bendpoints" value="" />
         <reference referencedUin="label:@clientRole:design:link:::00sey00cs908cw0wr_l">
-          <property name="bounds" value="149,156,11,16" />
+          <property name="bounds" value="137,141,11,16" />
         </reference>
         <reference referencedUin="label:@supplierRole:design:link:::00sey00cs908cw0wr_l">
-          <property name="bounds" value="137,254,23,16" />
+          <property name="bounds" value="125,254,23,16" />
         </reference>
       </reference>
     </reference>
@@ -234,6 +234,9 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionExpirationMinutes(System.Integer)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionExpirationMinutes()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionExpirationMinutes" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.ExpirationDaysWarning" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetExpirationDaysWarning(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetExpirationDaysWarning()" />
     </reference>
     <reference referencedUin="design:node:::y5f4a8d9v3njn50ft_n">
       <property name="$shortcutReference" value="true" />
@@ -360,7 +363,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicenseUser">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="480,340,129,127" />
+      <property name="bounds" value="500,340,129,97" />
       <property name="grd_color_one" value="255, 255, 255" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicenseUser.Payload" />

@@ -27,18 +27,18 @@
 <b >Help</b></font></a>&nbsp;</td></tr></table><td  align='right' valign='top' rowspan='3'>
 <em ></em></td></td></tr><tr >
 <td  class='NavBarCellPrevNext'>
-<font  size='-2'><a href="../../Model/BaseIntf/globals BaseIntf.html" target="classFrame" onclick="doClick('../../Model/BaseIntf/doc-files/default.txvpck.html')">PREV </a> &nbsp;&nbsp;<a href="../../Model/BaseIntf/IBaseNamedEntity.html" target="classFrame" onclick="doClick('../../Model/BaseIntf/doc-files/default.txvpck.html')">NEXT </a> </font></td><td  class='NavBarCellPrevNext'>
+<font  size='-2'><a href="../../Model/CustomerIntf/ISWLicense.html" target="classFrame" onclick="doClick('../../Model/CustomerIntf/doc-files/default.txvpck.html')">PREV </a> &nbsp;&nbsp;<a href="../../Model/CustomerIntf/ISWSessionManager.html" target="classFrame" onclick="doClick('../../Model/CustomerIntf/doc-files/default.txvpck.html')">NEXT </a> </font></td><td  class='NavBarCellPrevNext'>
 <font  size='-2'>
 <a  href='../../index.html' target='_top'>
-<b >FRAMES</b></a>&nbsp;<a  href='../../Model/BaseIntf/IBaseEntity.html' target='_top'>
+<b >FRAMES</b></a>&nbsp;<a  href='../../Model/CustomerIntf/ICustomer.html' target='_top'>
 <b >NO FRAMES</b></a></font></td></tr><tr >
 <td  valign='top' class='NavBarCell3'>
 <font  size='-2'>SUMMARY:&nbsp;INNER&nbsp;|&nbsp;<a  href='#field_summary'>FIELD</a>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;DESTR&nbsp;|&nbsp;<a  href='#method_summary'>METHOD</a></font></td><td  valign='top' class='NavBarCell3'>
 <font  size='-2'>DETAIL:&nbsp;<a  href='#field_detail'>FIELD</a>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;DESTR&nbsp;|&nbsp;<a  href='#method_detail'>METHOD</a></font></td></tr></table><hr /><h2 >
 <font  size='-1'>
-<i >Namespace: </i>Model.BaseIntf<br /></font><br />Interface IBaseEntity</h2><dl >
-<dt /><b >All Known Subinterfaces: </b><dd ><a href="../../Model/BaseIntf/IBaseNamedEntity.html" target="classFrame" onclick="doClick('../../Model/BaseIntf/doc-files/default.txvpck.html')"><i>IBaseNamedEntity</i></a>   </dd></dl><hr /><dl >
-<dt />public&nbsp;interface <b >IBaseEntity</b></dl><p /><dl >
+<i >Namespace: </i>Model.CustomerIntf<br /></font><br />Interface ICustomer</h2><dl >
+<dt /><b >All Superinterfaces: </b><dd >Model.BaseIntf.IBaseCompany  </dd></dl><hr /><dl >
+<dt />public&nbsp;interface <b >ICustomer</b> ( Model.BaseIntf.IBaseCompany  </dl><p /><dl >
 <dt /><b >Persistent</b><dd >False</dd></dl><hr /><p /><a  name='field_summary'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
 <tr  class='TableHeaderStyle'>
 <td  colspan='2'>
@@ -48,10 +48,10 @@
 <font  size='-1'>
 <code >
 						&nbsp; public&nbsp; 
-							<b >Integer</b></code></font></td><td >
+							<b >TList&lt;ISWLicense&gt;</b></code></font></td><td >
 <code >
 <b >
-<a  href='../../Model/BaseIntf/IBaseEntity.html#ID'>ID</a></b></code><br />	 </td></tr></table> <p /><a  name='method_summary'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
+<a  href='../../Model/CustomerIntf/ICustomer.html#Licenses'>Licenses</a></b></code><br />	 </td></tr></table> <p /><a  name='method_summary'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
 <tr  class='TableHeaderStyle'>
 <td  colspan='2'>
 <font  size='+2'>
@@ -59,24 +59,32 @@
 <td  align='right' valign='top' width='20%'>
 <font  size='-1'>
 <code >
-                                                &nbsp; public <b >function Integer</b></code></font></td><td >
+                                                &nbsp; public <b >function TList&lt;ISWLicense&gt;</b></code></font></td><td >
 <code >
 <b >
-<a  href='../../Model/BaseIntf/IBaseEntity.html#GetID()'>GetID</a></b>()</code><br />	 </td></tr></table> <p /><p /><a  Name='field_detail'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
+<a  href='../../Model/CustomerIntf/ICustomer.html#GetLicenses()'>GetLicenses</a></b>()</code><br />	 </td></tr></table> <p /><p /><a  Name='field_detail'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
 <tr  class='TableHeaderStyle'>
 <td  colspan='2'>
 <font  size='+2'>
-<b >Property Detail</b></font></td></tr></table><br /><a  name='ID'>
-<h3 >ID</h3></a><pre >public&nbsp;ID: Integer</pre><dl >
+<b >Property Detail</b></font></td></tr></table><br /><a  name='Licenses'>
+<h3 >Licenses</h3></a><pre >public&nbsp;Licenses: TList&lt;ISWLicense&gt;</pre><dl >
 <dt /><b >Access</b><dd >read</dd></dl><dl >
-<dt /><b >Type</b><dd >Integer</dd></dl><hr /><a  name='method_detail'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
+<dt /><b >Type</b><dd >TList&lt;ISWLicense&gt;</dd></dl><hr /><a  name='method_detail'/><table  border='1' cellpadding='3' cellspacing='0' width='100%'>
 <tr  class='TableHeaderStyle'>
 <td  colspan='2'>
 <font  size='+2'>
-<b >Method Detail</b></font></td></tr></table><br /><a  name='GetID()'>
-<h3 >GetID</h3></a><pre >public&nbsp;function GetID(): Integer</pre><dl >
-<dt /><b >Returns</b><dd >Integer</dd></dl><dl >
-<dt /><b >Reintroduce</b><dd >False</dd></dl><hr /><hr /><table  border='0' width='100%' cellpadding='1' cellspacing='0'>
+<b >Method Detail</b></font></td></tr></table><br /><a  name='GetLicenses()'>
+<h3 >GetLicenses</h3></a><pre >public&nbsp;function GetLicenses(): TList&lt;ISWLicense&gt;</pre><dl >
+<dt /><b >Returns</b><dd >TList&lt;ISWLicense&gt;</dd></dl><dl >
+<dt /><b >Reintroduce</b><dd >False</dd></dl><hr /><p /><table  border='0' cellpadding='0' cellspacing='0'>
+<tr  class='TableHeaderStyle'>
+<td >
+<font  size='+0'>
+<b >Dependency Link</b></font></td></tr></table><br />to Interface  <a href="../../Model/CustomerIntf/ISWLicense.html" target="classFrame" onclick="doClick('../../Model/CustomerIntf/doc-files/default.txvpck.html')"><i>ISWLicense</i></a> <p /><dl >
+<dt /><b >Client Role</b><dd >1</dd></dl><dl >
+<dt /><b >Client</b><dd >Model.CustomerIntf.ICustomer</dd></dl><dl >
+<dt /><b >Supplier Role</b><dd >0..*</dd></dl><dl >
+<dt /><b >Supplier</b><dd >Model.CustomerIntf.ISWLicense</dd></dl><br /><hr /><table  border='0' width='100%' cellpadding='1' cellspacing='0'>
 <tr >
 <td  colspan='2' class='NavBarCellCommon'>
 <table  border='0' cellpadding='0' cellspacing='3'>
@@ -99,10 +107,10 @@
 <b >Help</b></font></a>&nbsp;</td></tr></table><td  align='right' valign='top' rowspan='3'>
 <em ></em></td></td></tr><tr >
 <td  class='NavBarCellPrevNext'>
-<font  size='-2'><a href="../../Model/BaseIntf/globals BaseIntf.html" target="classFrame" onclick="doClick('../../Model/BaseIntf/doc-files/default.txvpck.html')">PREV </a> &nbsp;&nbsp;<a href="../../Model/BaseIntf/IBaseNamedEntity.html" target="classFrame" onclick="doClick('../../Model/BaseIntf/doc-files/default.txvpck.html')">NEXT </a> </font></td><td  class='NavBarCellPrevNext'>
+<font  size='-2'><a href="../../Model/CustomerIntf/ISWLicense.html" target="classFrame" onclick="doClick('../../Model/CustomerIntf/doc-files/default.txvpck.html')">PREV </a> &nbsp;&nbsp;<a href="../../Model/CustomerIntf/ISWSessionManager.html" target="classFrame" onclick="doClick('../../Model/CustomerIntf/doc-files/default.txvpck.html')">NEXT </a> </font></td><td  class='NavBarCellPrevNext'>
 <font  size='-2'>
 <a  href='../../index.html' target='_top'>
-<b >FRAMES</b></a>&nbsp;<a  href='../../Model/BaseIntf/IBaseEntity.html' target='_top'>
+<b >FRAMES</b></a>&nbsp;<a  href='../../Model/CustomerIntf/ICustomer.html' target='_top'>
 <b >NO FRAMES</b></a></font></td></tr><tr >
 <td  valign='top' class='NavBarCell3'>
 <font  size='-2'>SUMMARY:&nbsp;INNER&nbsp;|&nbsp;<a  href='#field_summary'>FIELD</a>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;DESTR&nbsp;|&nbsp;<a  href='#method_summary'>METHOD</a></font></td><td  valign='top' class='NavBarCell3'>

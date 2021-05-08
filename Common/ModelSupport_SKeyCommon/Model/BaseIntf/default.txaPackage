@@ -53,4 +53,15 @@
       <participant referencedUin="design:node:::i03gdslatd8khv3el_n" role="Supplier" />
     </link>
   </node>
+  <node uin="o5sxggj5dvj_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note2" />
+    <property name="$note_text" value="Il metodo &quot;LogOut&quot; lo togliamo?&#xD;&#xA;Probabilmente non serve a nulla!!!&#xD;&#xA;A meno che non serva per fare&#xD;&#xA;l'applicazione client&#xD;&#xA;con Delphi&#xD;&#xA;" />
+    <link uin="0yi9f0mwcjn_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" role="Client" />
+      <participant referencedUin="design:node:::o5sxggj5dvj_n" role="Supplier" />
+    </link>
+  </node>
 </nodeSet>
