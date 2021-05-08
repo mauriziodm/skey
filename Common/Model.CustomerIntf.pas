@@ -129,10 +129,12 @@ type
     FPassword: String;
     FSession: ISWSession;
     FActivationKey: String;
+    FDisposeSessionOnClose: Boolean;
     procedure SetLicenseID(val: Integer);
     procedure SetUserName(val: String);
     procedure SetPassword(val: String);
     procedure SetActivationKey(val: String);
+    procedure SetDisposeSessionOnClose(val: Boolean);
   public
     property ActivationKey: String read FActivationKey write SetActivationKey;
     property LicenseID: Integer read FLicenseID write SetLicenseID;
@@ -141,6 +143,8 @@ type
     property Session: ISWSession read FSession;
     function OpenSession: Boolean;
     procedure CloseSession;
+    property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
+    procedure DisposeSession;
   end;
 
 implementation
@@ -166,6 +170,14 @@ begin
 end;
 
 procedure TSKeyClientComponent.SetActivationKey(val: String);
+begin
+end;
+
+procedure TSKeyClientComponent.SetDisposeSessionOnClose(val: Boolean);
+begin
+end;
+
+procedure TSKeyClientComponent.DisposeSession;
 begin
 end;
 

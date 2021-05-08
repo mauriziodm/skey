@@ -175,7 +175,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="520,40,240,140" />
+      <property name="bounds" value="520,40,240,180" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.NewSession(System.Integer,System.string,System.string,System.string,System.string)" />
@@ -253,8 +253,9 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="520,960,152,313" />
+      <property name="bounds" value="520,960,209,400" />
       <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.LicenseID" />
       <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FLicenseID" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetLicenseID(System.Integer)" />
@@ -274,14 +275,20 @@
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.Session" />
       <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSession" />
       <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSession">
-        <property name="sourceAnchor" value="672,990" />
+        <property name="sourceAnchor" value="729,990" />
         <property name="targetAnchor" value="840,990" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.Session">
-        <property name="sourceAnchor" value="672,982" />
+        <property name="sourceAnchor" value="729,982" />
         <property name="targetAnchor" value="840,982" />
         <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.DisposeSessionOnClose" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FDisposeSessionOnClose" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetDisposeSessionOnClose(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.DisposeSession()">
+        <property name="bounds" value="135,-2,0,0" />
       </reference>
     </reference>
     <reference referencedUin="design:node:::ch6ttj08bd6t3bg0q_n">
@@ -293,8 +300,8 @@
       <property name="grd_mode" value="Vertical" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::goawcb2u51bnxj2bi_l:ch6ttj08bd6t3bg0q_n">
-        <property name="sourceAnchor" value="672,1216" />
-        <property name="targetAnchor" value="780,1216" />
+        <property name="sourceAnchor" value="729,1218" />
+        <property name="targetAnchor" value="780,1218" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -335,7 +342,7 @@
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="design:link:::3cv6y45upgciq7yps_l:cos5pn0o0rtfp3b8h_n">
-        <property name="sourceAnchor" value="640,180" />
+        <property name="sourceAnchor" value="640,220" />
         <property name="targetAnchor" value="640,680" />
         <property name="bendpoints" value="" />
       </reference>
