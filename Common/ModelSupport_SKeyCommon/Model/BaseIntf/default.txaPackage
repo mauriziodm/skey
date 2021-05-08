@@ -34,52 +34,11 @@
     <property name="$name" value="Note1" />
     <property name="$note_text" value="Email/Phone: facciamo una interfaccia ContactInfo&#xD;&#xA;che conterrà tutti i tipi di contatto (email/Telefono ecc.)&#xD;&#xA;in relazione HasMany? Una sola proprietà Contacts&#xD;&#xA;sia negli utenti che nemme company oppure una&#xD;&#xA;proprietà Phones e una proprietà EMails separate?&#xD;&#xA;" />
     <property name="text_only" value="True" />
-    <link uin="5nwsoiv1552zso6wf_l">
+    <link uin="10z0nix79ifsvuamo_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseContactableEntity" role="Client" />
       <participant referencedUin="design:node:::assp8ol6i4nrpx95g_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="d5qa1tkejr91cfhpo_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note2" />
-    <property name="$note_text" value="La classe che implementerà IBaseSession avrà&#xD;&#xA;come campo privato un riferimento a &quot;IbaseLogin&quot;&#xD;&#xA;in modo da poterne richiamare il metodo Logout&#xD;&#xA;all'interno del proprio omonimo metodo." />
-    <property name="text_only" value="True" />
-    <link uin="1rdtdc4bojr9pakth_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" role="Client" />
-      <participant referencedUin="design:node:::d5qa1tkejr91cfhpo_n" role="Supplier" />
-    </link>
-    <link uin="ysrbh4il4xskq7bgt_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link2" />
-      <participant referencedUin="design:node:::d5qa1tkejr91cfhpo_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="6irmeepxn4r_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note3" />
-    <property name="$note_text" value="Token lo teniamo come stringa&#xD;&#xA;oppure la trasformiamo come classe&#xD;&#xA;in modo da avere proprietà come&#xD;&#xA;&quot;Expiration&quot;, &quot;Payload&quot;, &quot;Bearer&quot; ecc.&#xD;&#xA;&#xD;&#xA;" />
-    <property name="text_only" value="True" />
-    <link uin="l501uu9bg4co0f8dj_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" role="Client" />
-      <participant referencedUin="design:node:::6irmeepxn4r_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="7h24d0hnwll_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note5" />
-    <property name="$note_text" value="Nel sistema ogni nome&#xD;&#xA;utente sarà univoco. Non&#xD;&#xA;ci potranno quindi essere&#xD;&#xA;due users con lo stesso&#xD;&#xA;nome anche se appartenenti&#xD;&#xA;a due SWHouse o Customers&#xD;&#xA;diversi" />
-    <property name="text_only" value="True" />
-    <link uin="80pkdd9bu7o_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
-      <participant referencedUin="design:node:::7h24d0hnwll_n" role="Supplier" />
     </link>
   </node>
   <node uin="i03gdslatd8khv3el_n">
@@ -87,35 +46,11 @@
     <property name="$name" value="Note6" />
     <property name="$note_text" value="La classe User avrà anche un campo &#xD;&#xA;privato &quot;LoginPasswordHash&quot; che&#xD;&#xA;sarà calcolato a partire dalla Password&#xD;&#xA;ma che non sarà esposto pubblicamente.&#xD;&#xA;L'Hash sarà persistito sul DB al posto &#xD;&#xA;della password." />
     <property name="text_only" value="True" />
-    <link uin="dvllws7i5qla8osxq_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
-      <participant referencedUin="design:node:::i03gdslatd8khv3el_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="3b7x5du1u3m_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note4" />
-    <property name="$note_text" value="&#xD;&#xA;NB:&#xD;&#xA;Aggiungiamo una proprietà note da&#xD;&#xA;qualche parte in una classe base?&#xD;&#xA;" />
-    <property name="text_only" value="True" />
-    <link uin="xn0vhmr9yoi_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseEntity" role="Client" />
-      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
-    </link>
-    <link uin="wxynj3ybokj_l">
+    <link uin="598j8f9qweaazt2jq_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link2" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" role="Client" />
-      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
-    </link>
-    <link uin="ds92bincooo_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link3" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseContactableEntity" role="Client" />
-      <participant referencedUin="design:node:::3b7x5du1u3m_n" role="Supplier" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" role="Client" />
+      <participant referencedUin="design:node:::i03gdslatd8khv3el_n" role="Supplier" />
     </link>
   </node>
 </nodeSet>

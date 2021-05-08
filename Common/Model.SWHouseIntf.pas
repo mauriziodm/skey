@@ -16,31 +16,34 @@ type
   end;
 
   ISWHouseOperator = interface(IBaseUserWithPermissions)
+    procedure SetSWHouseID(val: Integer);
+    function GetSWHouseID(): Integer;
+    property SWHouseID: Integer read GetSWHouseID write SetSWHouseID;
   end;
 
   ISWHouseSession = interface(IBaseSession<ISWHouse, ISWHouseOperator>)
   end;
 
   ISWLicenseModel = interface(IBaseNamedEntity)
-    procedure SetProduct(val: ISWProduct);
-    function GetProduct(): ISWProduct;
-    property Product: ISWProduct read GetProduct write SetProduct;
+    procedure SetProductID(val: Integer);
+    function GetProductID(): Integer;
+    property ProductID: Integer read GetProductID write SetProductID;
     procedure SetMaxAppUserCount(val: Integer);
     function GetMaxAppUserCount(): Integer;
     property MaxAppUserCount: Integer read GetMaxAppUserCount write SetMaxAppUserCount;
     procedure SetMaxHWCount(val: Integer);
     function GetMaxHWCount(): Integer;
     property MaxHWCount: Integer read GetMaxHWCount write SetMaxHWCount;
-    procedure SetSessionOverbooking_PermittedCycles(val: Integer);
-    function GetSessionOverbooking_PermittedCycles(): Integer;
-    property SessionOverbooking_PermittedCycles: Integer read GetSessionOverbooking_PermittedCycles write SetSessionOverbooking_PermittedCycles;
-    procedure SetSessionToken_RefreshIntervalMinutes(val: Integer);
-    function GetSessionToken_RefreshIntervalMinutes(): Integer;
-    property SessionToken_RefreshIntervalMinutes: Integer read GetSessionToken_RefreshIntervalMinutes write SetSessionToken_RefreshIntervalMinutes;
-    procedure SetLicenseToken_RefreshIntervalMinutes(val: Integer);
-    function GetLicenseToken_RefreshIntervalMinutes(): Integer;
+    procedure SetOverbookingMaxCycles(val: Integer);
+    function GetOverbookingMaxCycles(): Integer;
+    property OverbookingMaxCycles: Integer read GetOverbookingMaxCycles write SetOverbookingMaxCycles;
+    procedure SetSessionPollingINtervalMinutes(val: Integer);
+    function GetSessionPollingINtervalMinutes(): Integer;
+    property SessionPollingIntervalMinutes: Integer read GetSessionPollingINtervalMinutes write SetSessionPollingINtervalMinutes;
+    procedure SetSessionServerPollingIntervalMinutes(val: Integer);
+    function GetSessionServerPollingIntervalMinutes(): Integer;
     /// <semantics>Sempre minore della validità del token (anche di parecchio)</semantics>
-    property LicenseToken_RefreshIntervalMinutes: Integer read GetLicenseToken_RefreshIntervalMinutes write SetLicenseToken_RefreshIntervalMinutes;
+    property SessionServerPollingIntervalMinutes: Integer read GetSessionServerPollingIntervalMinutes write SetSessionServerPollingIntervalMinutes;
     procedure SetMaxSessionCount(val: Integer);
     function GetMaxSessionCount(): Integer;
     property MaxSessionCount: Integer read GetMaxSessionCount write SetMaxSessionCount;
@@ -50,17 +53,17 @@ type
     procedure SetExpirationDaysTolerance(val: Integer);
     function GetExpirationDaysTolerance(): Integer;
     property ExpirationDaysTolerance: Integer read GetExpirationDaysTolerance write SetExpirationDaysTolerance;
-    procedure SetLocalSessionServer(val: Boolean);
-    function GetLocalSessionServer(): Boolean;
+    procedure SetSessionServer(val: Boolean);
+    function GetSessionServer(): Boolean;
     /// <semantics>Se True significa che 'è un LocalSessionServer dal cliente finale altrimenti no</semantics>
-    property LocalSessionServer: Boolean read GetLocalSessionServer write SetLocalSessionServer;
-    procedure SetSessionToken_ExpirationMinutes(val: Integer);
-    function GetSessionToken_ExpirationMinutes(): Integer;
+    property SessionServer: Boolean read GetSessionServer write SetSessionServer;
+    procedure SetSessionExpirationMinutes(val: Integer);
+    function GetSessionExpirationMinutes(): Integer;
     /// <semantics>Minuti di validità del SessionToken espresso in minuti, deve sempre essere minore del "LicenseTokenExpirationMInutes"</semantics>
-    property SessionToken_ExpirationMinutes: Integer read GetSessionToken_ExpirationMinutes write SetSessionToken_ExpirationMinutes;
-    procedure SetLicenseToken_ExpirationMinutes(val: Integer);
-    function GetLicenseToken_ExpirationMinutes(): Integer;
-    property LicenseToken_ExpirationMinutes: Integer read GetLicenseToken_ExpirationMinutes write SetLicenseToken_ExpirationMinutes;
+    property SessionExpirationMinutes: Integer read GetSessionExpirationMinutes write SetSessionExpirationMinutes;
+    procedure SetSessionServerExpirationMinutes(val: Integer);
+    function GetSessionServerExpirationMinutes(): Integer;
+    property SessionServerExpirationMinutes: Integer read GetSessionServerExpirationMinutes write SetSessionServerExpirationMinutes;
     procedure SetPayload(val: String);
     function GetPayload(): String;
     /// <semantics>Contenitore a disposizioine della SWHouse dovre poter memorizzare, ad es., impostazioni, autorizzazioni o altro</semantics>
@@ -72,6 +75,9 @@ type
   end;
 
   ISWProduct = interface(IBaseNamedEntity)
+    procedure SetSWHouseID(val: Integer);
+    function GetSWHouseID(): Integer;
+    property SWHouseID: Integer read GetSWHouseID write SetSWHouseID;
     procedure SetLicenseModels(val: TList<ISWLicenseModel>);
     function GetLicenseModels(): TList<ISWLicenseModel>;
     property LicenseModels: TList<ISWLicenseModel> read GetLicenseModels write SetLicenseModels;

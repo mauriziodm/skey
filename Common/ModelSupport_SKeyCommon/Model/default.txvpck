@@ -15,6 +15,7 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseContactableEntity" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseCompany" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" />
     </reference>
     <reference referencedUin="design:view:::hvrd6y604b8h5ftl_v">
       <property name="$shortcutReference" value="true" />
@@ -26,16 +27,20 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSWLicenseState" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSWSessionState" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicenseUser" />
     </reference>
     <reference referencedUin="design:view:::qg9yhfycw4neev9wp_v">
       <property name="$shortcutReference" value="true" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouse" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.@unitclass" />
-      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWProduct" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseSession" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.THWLockType" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWProduct" />
     </reference>
   </view>
 </nodeSet>

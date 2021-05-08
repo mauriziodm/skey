@@ -6,10 +6,11 @@ uses
   Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections, iORM.Containers.Interfaces;
 
 type
+  TSWLicenseState = (lsSuspended, lsExpired, lsActive);
   TSWSessionState = (ssExpired, ssExpiredOverbooked, ssDisposed, ssOverbooked, ssActive);
+
   ISWLicense = interface;
   ISWSession = interface;
-  ISWSessionToken = interface;
 
   ICustomer = interface(IBaseCompany)
     function GetLicenses: TList<ISWLicense>;
@@ -23,6 +24,9 @@ type
   end;
   /// <stereotype>riceve la firma hardware (Sign) nel costruttore</stereotype>
   ISWSession = interface(IBaseEntity)
+    procedure SetPayLoadUser(val: String);
+    function GetPayLoadUser(): String;
+    property PayLoadUser: String read GetPayLoadUser write SetPayLoadUser;
     function GetPollingIntervalExpired(): Boolean;
     property PollingIntervalExpired: Boolean read GetPollingIntervalExpired;
     procedure SetPollingLast(val: TDateTime);
@@ -73,72 +77,17 @@ type
     property SignHW: String read GetSignHW;
   end;
 
-  TSKeyClientComponent = class
-  private
-    FLicenseID: Integer;
-    FActivationKey: String;
-    FUserName: String;
-    FPassword: String;
-    FSignIncludeAppUser: Boolean;
-    FSignIncludeHW: Boolean;
-    FSignIncludeOSUser: Boolean;
-    FSignIncludeGUID: Boolean;
-    FSession: ISWSessionToken;
-    procedure SetLicenseID(val: Integer);
-    procedure SetActivationKey(val: String);
-    procedure SetUserName(val: String);
-    procedure SetPassword(val: String);
-    procedure SetSignIncludeAppUser(val: Boolean);
-    procedure SetSignIncludeHW(val: Boolean);
-    procedure SetSignIncludeOSUser(val: Boolean);
-    procedure SetSignIncludeGUID(val: Boolean);
-  public
-    property LicenseID: Integer read FLicenseID write SetLicenseID;
-    property ActivationKey: String read FActivationKey write SetActivationKey;
-    property UserName: String read FUserName write SetUserName;
-    property Password: String read FPassword write SetPassword;
-    property SignIncludeAppUser: Boolean read FSignIncludeAppUser write SetSignIncludeAppUser;
-    property SignIncludeHW: Boolean read FSignIncludeHW write SetSignIncludeHW;
-    property SignIncludeOSUser: Boolean read FSignIncludeOSUser write SetSignIncludeOSUser;
-    property SignIncludeGUID: Boolean read FSignIncludeGUID write SetSignIncludeGUID;
-    property Session: ISWSessionToken read FSession;
-    function OpenSession: Boolean;
-    procedure CloseSession;
-  end;
-
-  TSWSessionTokenState = (stsUnauthorized, stsExpired, stsOverbooking, stsOK);
-
-  ISWSessionToken = interface(IBaseEntity)
-    procedure SetState(val: TSWSessionTokenState);
-    function GetState(): TSWSessionTokenState;
-    property State: TSWSessionTokenState read GetState write SetState;
-    procedure SetHash(val: String);
-    function GetHash(): String;
-    property Hash: String read GetHash write SetHash;
-    procedure SetRefreshIintervalMinutes(const val: Integer);
-    function GetRefreshIintervalMinutes(): Integer;
-    property RefreshIintervalMinutes: Integer read GetRefreshIintervalMinutes write SetRefreshIintervalMinutes;
-    procedure SetSign(const val: String);
-    function GetSign(): String;
-    property Sign: String read GetSign write SetSign;
-    procedure SetPayload(const val: String);
+  ISWLicenseUser = interface(IBaseUser)
+    procedure SetPayload(val: String);
     function GetPayload(): String;
     property Payload: String read GetPayload write SetPayload;
-    procedure SetLicenseID(const val: Integer);
-    function GetLicenseID(): Integer;
-    property LicenseID: Integer read GetLicenseID write SetLicenseID;
-    procedure SetExpiration(const val: TDateTime);
-    function GetExpiration(): TDateTime;
-    property Expiration: TDateTime read GetExpiration write SetExpiration;
-    procedure SetActiveSince(const val: TDateTime);
-    function GetActiveSince(): TDateTime;
-    property ActiveSince: TDateTime read GetActiveSince write SetActiveSince;
   end;
-
-  TSWLicenseState = (lsSuspended, lsExpired, lsActive);
 
   /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
   ISWLicense = interface(ISWLicenseModel)
+    procedure SetUsers(val: TList<ISWLicenseUser>);
+    function GetUsers(): TList<ISWLicenseUser>;
+    property Users: TList<ISWLicenseUser> read GetUsers write SetUsers;
     function GetCounterSessions(): Integer;
     property CounterSessions: Integer read GetCounterSessions;
     function GetCounterAppUsers(): Integer;
@@ -173,16 +122,30 @@ type
     property ActiveSince: TDate read GetActiveSince write SetActiveSince;
   end;
 
-  ISWLicenseUser = interface
+  TSKeyClientComponent = class
+  private
+    FLicenseID: Integer;
+    FUserName: String;
+    FPassword: String;
+    FSession: ISWSession;
+    FActivationKey: String;
+    procedure SetLicenseID(val: Integer);
+    procedure SetUserName(val: String);
+    procedure SetPassword(val: String);
+    procedure SetActivationKey(val: String);
+  public
+    property ActivationKey: String read FActivationKey write SetActivationKey;
+    property LicenseID: Integer read FLicenseID write SetLicenseID;
+    property UserName: String read FUserName write SetUserName;
+    property Password: String read FPassword write SetPassword;
+    property Session: ISWSession read FSession;
+    function OpenSession: Boolean;
+    procedure CloseSession;
   end;
 
 implementation
 
 procedure TSKeyClientComponent.SetLicenseID(val: Integer);
-begin
-end;
-
-procedure TSKeyClientComponent.SetActivationKey(val: String);
 begin
 end;
 
@@ -194,27 +157,15 @@ procedure TSKeyClientComponent.SetPassword(val: String);
 begin
 end;
 
-procedure TSKeyClientComponent.SetSignIncludeAppUser(val: Boolean);
-begin
-end;
-
-procedure TSKeyClientComponent.SetSignIncludeHW(val: Boolean);
-begin
-end;
-
-procedure TSKeyClientComponent.SetSignIncludeOSUser(val: Boolean);
-begin
-end;
-
-procedure TSKeyClientComponent.SetSignIncludeGUID(val: Boolean);
-begin
-end;
-
 function TSKeyClientComponent.OpenSession: Boolean;
 begin
 end;
 
 procedure TSKeyClientComponent.CloseSession;
+begin
+end;
+
+procedure TSKeyClientComponent.SetActivationKey(val: String);
 begin
 end;
 
