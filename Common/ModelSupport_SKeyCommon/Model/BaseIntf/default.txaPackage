@@ -37,7 +37,7 @@
     <link uin="5nwsoiv1552zso6wf_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
       <participant referencedUin="design:node:::assp8ol6i4nrpx95g_n" role="Supplier" />
     </link>
   </node>
@@ -78,7 +78,7 @@
     <link uin="80pkdd9bu7o_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
       <participant referencedUin="design:node:::7h24d0hnwll_n" role="Supplier" />
     </link>
   </node>
@@ -90,7 +90,7 @@
     <link uin="dvllws7i5qla8osxq_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" role="Client" />
       <participant referencedUin="design:node:::i03gdslatd8khv3el_n" role="Supplier" />
     </link>
   </node>

@@ -111,6 +111,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="iORM_Project.dcp"/>
         <DCCReference Include="Model.BaseIntf.pas"/>
         <DCCReference Include="Model.SWHouseIntf.pas"/>
         <DCCReference Include="Model.CustomerIntf.pas"/>

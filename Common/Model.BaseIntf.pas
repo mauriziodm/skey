@@ -4,7 +4,7 @@ interface
 
 type
   IBaseCompany = interface;
-  IBaseUser = interface;
+  IBaseUserWithPermissions = interface;
   /// Base interfaces for all entities
   IBaseEntity = interface
     function GetID(): Integer;
@@ -46,7 +46,7 @@ type
 
   TUserPermission = (upReadOnly, upReadWrite, upSuperUser);
 
-  IBaseUser = interface(IBaseContactableEntity)
+  IBaseUserWithPermissions = interface(IBaseContactableEntity)
     procedure SetLoginPassword(val: String);
     function GetLoginPassword(): String;
     property LoginPassword: String read GetLoginPassword write SetLoginPassword;
@@ -65,13 +65,13 @@ type
 
   TLoginState = (lsLoggedOut, lsLoginFailed, lsAuthenticating, lsLoggedOn);
 
-  IBaseSession<T_Company: IBaseCompany; T_User: IBaseUser> = interface
+  IBaseSession<T_Company: IBaseCompany; T_User: IBaseUserWithPermissions> = interface
     procedure SetProperty1(val: TLoginState);
     function GetState(): TLoginState;
     property State: TLoginState read GetState write SetProperty1;
-    procedure SetUser(val: IBaseUser);
-    function GetUser(): IBaseUser;
-    property User: IBaseUser read GetUser write SetUser;
+    procedure SetUser(val: IBaseUserWithPermissions);
+    function GetUser(): IBaseUserWithPermissions;
+    property User: IBaseUserWithPermissions read GetUser write SetUser;
     procedure SetToken(val: String);
     function GetToken(): String;
     property Token: String read GetToken write SetToken;

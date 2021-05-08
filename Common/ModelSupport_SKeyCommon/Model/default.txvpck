@@ -8,7 +8,7 @@
       <property name="$shortcutReference" value="true" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseEntity" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.@unitclass" />
-      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.TLoginState" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.TUserPermission" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseSession&lt;2&gt;" />

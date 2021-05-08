@@ -3,49 +3,63 @@
   <node uin="y5f4a8d9v3njn50ft_n">
     <property name="$metaclass" value="Note" />
     <property name="$name" value="Note1" />
-    <property name="$note_text" value="Persistito dal client&#xD;&#xA;component come file&#xD;&#xA;locale di testo&#xD;&#xA;" />
+    <property name="$note_text" value="" />
     <property name="text_only" value="True" />
-    <link uin="96fgf5n5dks00m1kt_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
-      <participant referencedUin="design:node:::y5f4a8d9v3njn50ft_n" role="Supplier" />
-    </link>
-    <link uin="l03imiugy7t_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link2" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
-      <participant referencedUin="design:node:::y5f4a8d9v3njn50ft_n" role="Supplier" />
-    </link>
-  </node>
-  <node uin="ubi1astfb0g_n">
-    <property name="$metaclass" value="Note" />
-    <property name="$name" value="Note2" />
-    <property name="$note_text" value="Manteniamo uno storico dei token rilasciati?&#xD;&#xA;Per tutti i token emessi in qualunque momento?&#xD;&#xA;Oppure solo da quanto è nata la sessione?&#xD;&#xA;Oppure quelli scaduti dopo un pò vengono eliminati?&#xD;&#xA;" />
-    <property name="text_only" value="True" />
-    <link uin="lbavnsmhv1m_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
-      <participant referencedUin="design:node:::ubi1astfb0g_n" role="Supplier" />
-    </link>
-    <link uin="1r3ksi4h9cm_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link2" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionToken" role="Client" />
-      <participant referencedUin="design:node:::ubi1astfb0g_n" role="Supplier" />
-    </link>
   </node>
   <node uin="ch6ttj08bd6t3bg0q_n">
     <property name="$metaclass" value="Note" />
     <property name="$name" value="Note3" />
     <property name="$note_text" value="Possibili event handlers:&#xD;&#xA;- onAfterSessionServerRequest&#xD;&#xA;- onBeforeSessionServerRequest&#xD;&#xA;- onBeforeOpen&#xD;&#xA;- onSessionStateChange&#xD;&#xA;- onSessionExpire&#xD;&#xA;- onLoginOK&#xD;&#xA;- onLoginKO" />
-    <property name="text_only" value="True" />
     <link uin="goawcb2u51bnxj2bi_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
       <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent" role="Client" />
       <participant referencedUin="design:node:::ch6ttj08bd6t3bg0q_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="9khx2kwntp9sgmsik_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note2" />
+    <property name="$note_text" value="Solo locale sul session server? (in caso di session server)&#xD;&#xA;oppure viene trasmessa anche al license server&#xD;&#xA;mantenendo quindi uno storico di tute le sessioni create&#xD;&#xA;in precedenza?&#xD;&#xA;Dopo un pò magari le eliminiamo?&#xD;&#xA;Oppure le manteniamo tutte?&#xD;&#xA;" />
+    <link uin="h1owkxitqonpl02pq_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
+      <participant referencedUin="design:node:::9khx2kwntp9sgmsik_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="cos5pn0o0rtfp3b8h_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note4" />
+    <property name="$note_text" value="Persistite sul SessionServer?&#xD;&#xA;Il SessionServer ha un DB (SQLite/FirebirdEmbedded)?&#xD;&#xA;Il ClientComponent persiste la sessione&#xD;&#xA;localmente su un file di testo (JSON)?&#xD;&#xA;Se si il nome del file dovrebbe comprendere&#xD;&#xA;l'HWSign+AppUserSign e anche ID della sessione" />
+    <link uin="2v3j8not0pq_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
+      <participant referencedUin="design:node:::cos5pn0o0rtfp3b8h_n" role="Supplier" />
+    </link>
+    <link uin="6ndkh02n5ej_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent" role="Client" />
+      <participant referencedUin="design:node:::cos5pn0o0rtfp3b8h_n" role="Supplier" />
+    </link>
+    <link uin="3cv6y45upgciq7yps_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link3" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager" role="Client" />
+      <participant referencedUin="design:node:::cos5pn0o0rtfp3b8h_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="aaqq27bxril5zgte_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note5" />
+    <property name="$note_text" value="Essendoci le proprietà ActiveSince&#xD;&#xA;e Expiration il programma è&#xD;&#xA;al sicuro anche se l'utente tenta di&#xD;&#xA;mandare indietro l'orologio del PC&#xD;&#xA;" />
+    <link uin="bai36javg97k9vu5s_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
+      <participant referencedUin="design:node:::aaqq27bxril5zgte_n" role="Supplier" />
     </link>
   </node>
 </nodeSet>

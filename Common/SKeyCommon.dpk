@@ -28,7 +28,8 @@ package SKeyCommon;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  iORM_Project;
 
 contains
   Model.BaseIntf in 'Model.BaseIntf.pas',

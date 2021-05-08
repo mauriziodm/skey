@@ -15,13 +15,22 @@ type
     property Products: TList<ISWProduct> read GetProducts;
   end;
 
-  ISWHouseOperator = interface(IBaseUser)
+  ISWHouseOperator = interface(IBaseUserWithPermissions)
   end;
 
   ISWHouseSession = interface(IBaseSession<ISWHouse, ISWHouseOperator>)
   end;
 
   ISWLicenseModel = interface(IBaseNamedEntity)
+    procedure SetProduct(val: ISWProduct);
+    function GetProduct(): ISWProduct;
+    property Product: ISWProduct read GetProduct write SetProduct;
+    procedure SetMaxAppUserCount(val: Integer);
+    function GetMaxAppUserCount(): Integer;
+    property MaxAppUserCount: Integer read GetMaxAppUserCount write SetMaxAppUserCount;
+    procedure SetMaxHWCount(val: Integer);
+    function GetMaxHWCount(): Integer;
+    property MaxHWCount: Integer read GetMaxHWCount write SetMaxHWCount;
     procedure SetSessionOverbooking_PermittedCycles(val: Integer);
     function GetSessionOverbooking_PermittedCycles(): Integer;
     property SessionOverbooking_PermittedCycles: Integer read GetSessionOverbooking_PermittedCycles write SetSessionOverbooking_PermittedCycles;
@@ -32,18 +41,15 @@ type
     function GetLicenseToken_RefreshIntervalMinutes(): Integer;
     /// <semantics>Sempre minore della validità del token (anche di parecchio)</semantics>
     property LicenseToken_RefreshIntervalMinutes: Integer read GetLicenseToken_RefreshIntervalMinutes write SetLicenseToken_RefreshIntervalMinutes;
-    procedure SetMaxNumberOfSessions(val: Integer);
-    function GetMaxNumberOfSessions(): Integer;
-    property MaxNumberOfSessions: Integer read GetMaxNumberOfSessions write SetMaxNumberOfSessions;
-    procedure SetMinNumberOfSessions(val: Integer);
-    function GetMinNumberOfSessions(): Integer;
-    property MinNumberOfSessions: Integer read GetMinNumberOfSessions write SetMinNumberOfSessions;
+    procedure SetMaxSessionCount(val: Integer);
+    function GetMaxSessionCount(): Integer;
+    property MaxSessionCount: Integer read GetMaxSessionCount write SetMaxSessionCount;
     procedure SetUserAuthentication(val: Boolean);
     function GetUserAuthentication(): Boolean;
     property UserAuthentication: Boolean read GetUserAuthentication write SetUserAuthentication;
-    procedure SetLicenseExpirationDaysTolerance(val: Integer);
-    function GetLicenseExpirationDaysTolerance(): Integer;
-    property LicenseExpirationDaysTolerance: Integer read GetLicenseExpirationDaysTolerance write SetLicenseExpirationDaysTolerance;
+    procedure SetExpirationDaysTolerance(val: Integer);
+    function GetExpirationDaysTolerance(): Integer;
+    property ExpirationDaysTolerance: Integer read GetExpirationDaysTolerance write SetExpirationDaysTolerance;
     procedure SetLocalSessionServer(val: Boolean);
     function GetLocalSessionServer(): Boolean;
     /// <semantics>Se True significa che 'è un LocalSessionServer dal cliente finale altrimenti no</semantics>
@@ -59,10 +65,10 @@ type
     function GetPayload(): String;
     /// <semantics>Contenitore a disposizioine della SWHouse dovre poter memorizzare, ad es., impostazioni, autorizzazioni o altro</semantics>
     property Payload: String read GetPayload write SetPayload;
-    procedure SetLicenseExpirationDays(val: Integer);
-    function GetLicenseExpirationDays(): Integer;
+    procedure SetExpirationDays(val: Integer);
+    function GetExpirationDays(): Integer;
     /// <semantics>Giorni di validità della licenza</semantics>
-    property LicenseExpirationDays: Integer read GetLicenseExpirationDays write SetLicenseExpirationDays;
+    property ExpirationDays: Integer read GetExpirationDays write SetExpirationDays;
   end;
 
   ISWProduct = interface(IBaseNamedEntity)

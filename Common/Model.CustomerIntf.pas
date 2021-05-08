@@ -3,31 +3,13 @@ unit Model.CustomerIntf;
 interface
 
 uses
-  Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections;
+  Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections, iORM.Containers.Interfaces;
 
 type
-  /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
-  ISWLicense = interface(ISWLicenseModel)
-    procedure SetSessionsPermitted(val: Integer);
-    function GetSessionsPermitted(): Integer;
-    /// <semantics>Numero di utenti/postazioni permessi</semantics>
-    property SessionsPermitted: Integer read GetSessionsPermitted write SetSessionsPermitted;
-    function GetLicenseModel(): ISWLicenseModel;
-    property LicenseModel: ISWLicenseModel read GetLicenseModel;
-    function GetProduct(): ISWProduct;
-    property Product: ISWProduct read GetProduct;
-    procedure RevertToModel;
-    procedure SetActive(val: Boolean);
-    function GetActive(): Boolean;
-    property Active: Boolean read GetActive write SetActive;
-    function GetExpirationDays(): Integer;
-    property ExpirationDays: Integer read GetExpirationDays;
-    function GetExpiration(): TDate;
-    property Expiration: TDate read GetExpiration;
-    procedure SetActiveSince(val: TDate);
-    function GetActiveSince(): TDate;
-    property ActiveSince: TDate read GetActiveSince write SetActiveSince;
-  end;
+  TSWSessionState = (ssExpired, ssExpiredOverbooked, ssDisposed, ssOverbooked, ssActive);
+  ISWLicense = interface;
+  ISWSession = interface;
+  ISWSessionToken = interface;
 
   ICustomer = interface(IBaseCompany)
     function GetLicenses: TList<ISWLicense>;
@@ -35,30 +17,34 @@ type
   end;
 
   ISWSessionManager = interface
-    function GetOverallSessionCount(): Integer;
-    property OverallSessionCount: Integer read GetOverallSessionCount;
-    function GetOverbookingSessionCount(): Integer;
-    property OverbookingSessionCount: Integer read GetOverbookingSessionCount;
-    function GetActiveSessionCount(): Integer;
-    property ActiveSessionCount: Integer read GetActiveSessionCount;
-    function GetSessionToken(const AlicenseID: Integer; const AActivationKey, ASign: String; const AUserName: String = '';
-      const APassword: String = ''): String;
+    function NewSession(const AlicenseID: Integer; const AActivationKey, AHWSign: String; const AUserName: String = ''; const APassword: String = ''): String;
+    function PollSession(const ASessionID, AlicenseID: Integer; const AActivationKey, AHWSign: String; const AUserName: String = ''; const APassword: String = ''): String;
+    procedure DisposeSession(const ASessionID, AlicenseID: Integer);
   end;
-
-  /// <stereotype>riceve ActiveFrom e ActiveTo oltre all'ID del padre come parametri del costruttore</stereotype>
-  ISWSessionHistory = interface(IBaseEntity)
-    function GetSWSession(): Integer;
-    property SWSession: Integer read GetSWSession;
-    function GetActiveUntil(): TDateTime;
-    property ActiveUntil: TDateTime read GetActiveUntil;
-    function GetActiveSince(): TDateTime;
-    property ActiveSince: TDateTime read GetActiveSince;
-  end;
-
-  ISWSessionToken = interface;
-  TSWSessionState = (ssInactive, ssOverbooking, ssActive);
   /// <stereotype>riceve la firma hardware (Sign) nel costruttore</stereotype>
   ISWSession = interface(IBaseEntity)
+    function GetPollingIntervalExpired(): Boolean;
+    property PollingIntervalExpired: Boolean read GetPollingIntervalExpired;
+    procedure SetPollingLast(val: TDateTime);
+    function GetPollingLast(): TDateTime;
+    property PollingLast: TDateTime read GetPollingLast write SetPollingLast;
+    procedure SetPollingIntervalMinutes(val: Integer);
+    function GetPollingIntervalMinutes(): Integer;
+    property PollingIntervalMinutes: Integer read GetPollingIntervalMinutes write SetPollingIntervalMinutes;
+    procedure SetOverbookedMax(val: Integer);
+    function GetOverbookedMax(): Integer;
+    property OverbookedMax: Integer read GetOverbookedMax write SetOverbookedMax;
+    function GetIsDisposed(): Boolean;
+    property IsDisposed: Boolean read GetIsDisposed;
+    function GetIsExpired(): Boolean;
+    property IsExpired: Boolean read GetIsExpired;
+    function GetIsOverbooked(): Boolean;
+    property IsOverbooked: Boolean read GetIsOverbooked;
+    procedure SetSignAppUser(val: String);
+    function GetSignAppUser(): String;
+    property SignAppUser: String read GetSignAppUser write SetSignAppUser;
+    function GetIsActive(): Boolean;
+    property IsActive: Boolean read GetIsActive;
     procedure SetPayload(val: String);
     function GetPayload(): String;
     property Payload: String read GetPayload write SetPayload;
@@ -71,19 +57,20 @@ type
     procedure SetState(val: TSWSessionState);
     function GetState(): TSWSessionState;
     property State: TSWSessionState read GetState write SetState;
-    procedure SetOverbookingCycles(val: Integer);
-    function GetOverbookingCycles(): Integer;
+    procedure SetOverbookedCount(val: Integer);
+    function GetOverbookedCount(): Integer;
     /// <preconditions>Normalmente rimane a zero ma se questo HW è stato creto in una situazione di overbooking allora assume valore 1 e il numero aumenta per ogni ciclo/richiesta di token permanendo in situazione di overbooking. Se la situazione di overbooking si risolve viene rimessa a zero, se invece il valore di questa proprietà supera la soglia massima consentita senza che sia risolto l'overbooking allora vienenegato il token e viene disattiva l'HW</preconditions>
-    property OverbookingCycles: Integer read GetOverbookingCycles write SetOverbookingCycles;
+    property OverbookedCount: Integer read GetOverbookedCount write SetOverbookedCount;
     function GetExpiration(): TDateTime;
     /// <semantics>Indica la data fino alla quale questo HW è autorizzato a essere attivo</semantics>
     property Expiration: TDateTime read GetExpiration;
     function GetActiveSince(): TDateTime;
     /// <semantics>Indica la data a partire dalla quale questo HW risulta attivato</semantics>
     property ActiveSince: TDateTime read GetActiveSince;
-    function GetSign(): String;
+    function GetSignHW(): String;
     /// <preconditions>Firma HW che identifica questo HW eventualmente integrata dello username del sistema operativo in caso di server RDP</preconditions>
-    property Sign: String read GetSign;
+    /// <semantics>HW sign + OSUser</semantics>
+    property SignHW: String read GetSignHW;
   end;
 
   TSKeyClientComponent = class
@@ -146,6 +133,47 @@ type
     procedure SetActiveSince(const val: TDateTime);
     function GetActiveSince(): TDateTime;
     property ActiveSince: TDateTime read GetActiveSince write SetActiveSince;
+  end;
+
+  TSWLicenseState = (lsSuspended, lsExpired, lsActive);
+
+  /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
+  ISWLicense = interface(ISWLicenseModel)
+    function GetCounterSessions(): Integer;
+    property CounterSessions: Integer read GetCounterSessions;
+    function GetCounterAppUsers(): Integer;
+    property CounterAppUsers: Integer read GetCounterAppUsers;
+    function GetCounterHW(): Integer;
+    property CounterHW: Integer read GetCounterHW;
+    function GetIsExpired(): Boolean;
+    property IsExpired: Boolean read GetIsExpired;
+    function GetIsSuspended(): Boolean;
+    property IsSuspended: Boolean read GetIsSuspended;
+    procedure SetHash(val: String);
+    function GetHash(): String;
+    property Hash: String read GetHash write SetHash;
+    procedure SetNote(val: String);
+    function GetNote(): String;
+    property Note: String read GetNote write SetNote;
+    procedure SetState(val: TSWLicenseState);
+    function GetState(): TSWLicenseState;
+    property State: TSWLicenseState read GetState write SetState;
+    function GetSessions(): IioList<ISWSession>;
+    /// <semantics>LazyLoad?</semantics>
+    property Sessions: IioList<ISWSession> read GetSessions;
+    function GetLicenseModel(): ISWLicenseModel;
+    property LicenseModel: ISWLicenseModel read GetLicenseModel;
+    procedure RevertToModel;
+    function GetIsActive(): Boolean;
+    property IsActive: Boolean read GetIsActive;
+    function GetExpiration(): TDate;
+    property Expiration: TDate read GetExpiration;
+    procedure SetActiveSince(val: TDate);
+    function GetActiveSince(): TDate;
+    property ActiveSince: TDate read GetActiveSince write SetActiveSince;
+  end;
+
+  ISWLicenseUser = interface
   end;
 
 implementation
