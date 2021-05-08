@@ -293,6 +293,15 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.DisposeSession()">
         <property name="bounds" value="135,-2,0,0" />
       </reference>
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SessionPersist" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSessionPersist" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSessionPersist(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SessionPersistPath" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FSessionPersistPath" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetSessionPersistPath(System.string)" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.LocalSessionServerIP" />
+      <reference referencedUin="delphi:e_field:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.FLocalSessionServerIP" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent.SetLocalSessionServerIP(System.string)" />
     </reference>
     <reference referencedUin="design:node:::ch6ttj08bd6t3bg0q_n">
       <property name="$shortcutReference" value="true" />

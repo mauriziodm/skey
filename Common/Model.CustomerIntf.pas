@@ -130,11 +130,17 @@ type
     FSession: ISWSession;
     FActivationKey: String;
     FDisposeSessionOnClose: Boolean;
+    FSessionPersist: Boolean;
+    FSessionPersistPath: String;
+    FLocalSessionServerIP: String;
     procedure SetLicenseID(val: Integer);
     procedure SetUserName(val: String);
     procedure SetPassword(val: String);
     procedure SetActivationKey(val: String);
     procedure SetDisposeSessionOnClose(val: Boolean);
+    procedure SetSessionPersist(val: Boolean);
+    procedure SetSessionPersistPath(val: String);
+    procedure SetLocalSessionServerIP(val: String);
   public
     property ActivationKey: String read FActivationKey write SetActivationKey;
     property LicenseID: Integer read FLicenseID write SetLicenseID;
@@ -145,6 +151,9 @@ type
     procedure CloseSession;
     property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
     procedure DisposeSession;
+    property SessionPersist: Boolean read FSessionPersist write SetSessionPersist;
+    property SessionPersistPath: String read FSessionPersistPath write SetSessionPersistPath;
+    property LocalSessionServerIP: String read FLocalSessionServerIP write SetLocalSessionServerIP;
   end;
 
 implementation
@@ -178,6 +187,18 @@ begin
 end;
 
 procedure TSKeyClientComponent.DisposeSession;
+begin
+end;
+
+procedure TSKeyClientComponent.SetSessionPersist(val: Boolean);
+begin
+end;
+
+procedure TSKeyClientComponent.SetSessionPersistPath(val: String);
+begin
+end;
+
+procedure TSKeyClientComponent.SetLocalSessionServerIP(val: String);
 begin
 end;
 
