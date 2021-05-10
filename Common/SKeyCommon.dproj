@@ -115,6 +115,7 @@
         <DCCReference Include="Model.BaseIntf.pas"/>
         <DCCReference Include="Model.SWHouseIntf.pas"/>
         <DCCReference Include="Model.CustomerIntf.pas"/>
+        <DCCReference Include="Model.SessionServer.pas"/>
         <None Include="ModelSupport_SKeyCommon\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\default.txaPackage"/>
@@ -127,6 +128,8 @@
         <None Include="ModelSupport_SKeyCommon\Model\MasterIntf\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\SWHouseIntf\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\Model\SWHouseIntf\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\SessionServer\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\SessionServer\default.txvpck"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -42,5 +42,11 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWProduct" />
     </reference>
+    <reference referencedUin="design:view:::6qp34qwnoop_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionManager" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionServer" />
+    </reference>
   </view>
 </nodeSet>

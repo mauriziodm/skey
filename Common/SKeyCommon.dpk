@@ -34,6 +34,7 @@ requires
 contains
   Model.BaseIntf in 'Model.BaseIntf.pas',
   Model.SWHouseIntf in 'Model.SWHouseIntf.pas',
-  Model.CustomerIntf in 'Model.CustomerIntf.pas';
+  Model.CustomerIntf in 'Model.CustomerIntf.pas',
+  Model.SessionServer in 'Model.SessionServer.pas';
 
 end.
