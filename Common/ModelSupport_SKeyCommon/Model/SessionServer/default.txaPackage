@@ -1,2 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodeSet version="1.0" />
+<nodeSet version="1.0">
+  <node uin="u5i0lvodr8m603gll_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="Il session server ovviamente&#xD;&#xA;mantiene l'elenco delle sessioni&#xD;&#xA;attive in un campo privato&#xD;&#xA;e ls protegge con un ILocker" />
+    <link uin="j9osw0cs9wqbh4yym_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" role="Client" />
+      <participant referencedUin="design:node:::u5i0lvodr8m603gll_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="goqjo2ys9kl_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note2" />
+    <property name="$note_text" value="Il SessionServer non memorizza e quindi non sa&#xD;&#xA;su quali licenze dovrà lavorare, lo saprà nel momento in cui verrà interrogato&#xD;&#xA;da qualche applicazione che usa l'apposito componente client del SKey.&#xD;&#xA;All'avvio carica tute le eventuali sessioni presenti nel suo DB (di qualunque tipo sia)&#xD;&#xA;in modo da averle in memoria per il suo funzionamento.&#xD;&#xA;Le licenze saranno persistite dopo essere state rinfrescate con una chiamata al&#xD;&#xA;Licence Server.&#xD;&#xA;Le Sessioni saranno persistite dopo ogni polling da parte di un client con un&#xD;&#xA;io.Persist passando la lista delle sessioni presente nella licenza e verranno&#xD;&#xA;persistite solo le sessioni che sono cambiate (ObjStatus property)." />
+    <link uin="ovla00wanlo_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" role="Client" />
+      <participant referencedUin="design:node:::goqjo2ys9kl_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="j18ar3cihfj_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note4" />
+    <property name="$note_text" value="SINGLETON&#xD;&#xA;SINGLETON&#xD;&#xA;" />
+    <link uin="6m4hdec1wlt_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" role="Client" />
+      <participant referencedUin="design:node:::j18ar3cihfj_n" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>

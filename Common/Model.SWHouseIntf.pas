@@ -60,13 +60,13 @@ type
     function GetSessionServer(): Boolean;
     /// <semantics>Se True significa che 'è un LocalSessionServer dal cliente finale altrimenti no</semantics>
     property SessionServer: Boolean read GetSessionServer write SetSessionServer;
-    procedure SetSessionExpirationMinutes(val: Integer);
-    function GetSessionExpirationMinutes(): Integer;
+    procedure SetSessionPollingExpirationMinutes(val: Integer);
+    function GetSessionPollingExpirationMinutes(): Integer;
     /// <semantics>Minuti di validità del SessionToken espresso in minuti, deve sempre essere minore del "LicenseTokenExpirationMInutes"</semantics>
-    property SessionExpirationMinutes: Integer read GetSessionExpirationMinutes write SetSessionExpirationMinutes;
-    procedure SetSessionServerExpirationMinutes(val: Integer);
-    function GetSessionServerExpirationMinutes(): Integer;
-    property SessionServerExpirationMinutes: Integer read GetSessionServerExpirationMinutes write SetSessionServerExpirationMinutes;
+    property SessionPollingExpirationMinutes: Integer read GetSessionPollingExpirationMinutes write SetSessionPollingExpirationMinutes;
+    procedure SetSessionServerPollingExpirationMinutes(val: Integer);
+    function GetSessionServerPollingExpirationMinutes(): Integer;
+    property SessionServerPollingExpirationMinutes: Integer read GetSessionServerPollingExpirationMinutes write SetSessionServerPollingExpirationMinutes;
     procedure SetPayload(val: String);
     function GetPayload(): String;
     /// <semantics>Contenitore a disposizioine della SWHouse dovre poter memorizzare, ad es., impostazioni, autorizzazioni o altro</semantics>

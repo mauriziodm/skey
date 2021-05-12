@@ -4,83 +4,53 @@
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionManager">
-      <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="600,100,240,180" />
-      <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionManager.SessionDispose(System.Integer)">
-        <property name="bounds" value="66,-3,0,0" />
-      </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionManager.SessionPoll(System.Integer,System.string,System.string,System.string,System.string)">
-        <property name="bounds" value="66,27,0,0" />
-      </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionManager.SessionNew(System.string,System.string,System.string,System.string)">
-        <property name="bounds" value="66,12,0,0" />
-      </reference>
-    </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.@unitclass">
       <property name="$shortcutReference" value="true" />
     </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionServer">
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="120,100,206,143" />
+      <property name="bounds" value="380,40,760,111" />
       <property name="location_set_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionServer.SessionDispose(System.Integer,System.Integer)">
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISessionServer.SessionDispose(System.Integer,System.Integer)">
         <property name="bounds" value="179,27,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionServer.SessionPoll(System.Integer,System.Integer,System.string,System.string,System.string,System.string)">
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISessionServer.SessionPoll(System.Integer,System.Integer,System.string,System.string,System.string,System.string)">
         <property name="bounds" value="179,57,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionServer.SessionNew(System.Integer,System.string,System.string,System.string,System.string)">
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISessionServer.SessionNew(System.Integer,System.string,System.string,System.string,System.string)">
         <property name="bounds" value="179,42,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SessionServer.ISWSessionServer.Licenses" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISWSessionServer.GetLicenses()" />
     </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense">
+    <reference referencedUin="design:node:::u5i0lvodr8m603gll_n">
       <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="224, 224, 224" />
-      <property name="bounds" value="420,400,354,640" />
-      <property name="foreground_color" value="128, 128, 128" />
+      <property name="bounds" value="80,80,188,62" />
       <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetUsers(System.Generics.Collections.TList&lt;Model.CustomerIntf.ISWLicenseUser&gt;)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetUsers()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Users" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetCounterSessions()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.CounterSessions" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetCounterAppUsers()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.CounterAppUsers" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetCounterHW()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.CounterHW" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetIsExpired()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.IsExpired" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetIsSuspended()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.IsSuspended" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetHash(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetHash()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Hash" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetNote(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetNote()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Note" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetState(Model.CustomerIntf.TSWLicenseState)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetState()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.State" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetSessions()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Sessions" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetLicenseModel()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.LicenseModel" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.RevertToModel()" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetIsActive()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.IsActive" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetExpiration()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.Expiration" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetActiveSince(System.TDate)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetActiveSince()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.ActiveSince" />
+      <reference referencedUin="design:link:::j9osw0cs9wqbh4yym_l:u5i0lvodr8m603gll_n">
+        <property name="sourceAnchor" value="380,104" />
+        <property name="targetAnchor" value="268,104" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::goqjo2ys9kl_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="120,280,469,144" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::ovla00wanlo_l:goqjo2ys9kl_n">
+        <property name="sourceAnchor" value="466,151" />
+        <property name="targetAnchor" value="466,280" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::j18ar3cihfj_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1240,80,86,35" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::6m4hdec1wlt_l:j18ar3cihfj_n">
+        <property name="sourceAnchor" value="1140,96" />
+        <property name="targetAnchor" value="1240,96" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
   </view>
 </nodeSet>

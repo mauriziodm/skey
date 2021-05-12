@@ -91,6 +91,12 @@ type
     property Permission: TUserPermission read GetPermission write SetPermission;
   end;
 
+  ILocker = interface
+    function Func: Integer;
+    procedure Unlock;
+    procedure Lock;
+  end;
+
 implementation
 
 end.

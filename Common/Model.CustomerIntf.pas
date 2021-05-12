@@ -6,7 +6,7 @@ uses
   Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections, iORM.Containers.Interfaces;
 
 type
-  TSWLicenseState = (lsSuspended, lsExpired, lsActive);
+  TSWLicenseState = (lsInactive, lsExpired, lsActive);
   TSWSessionState = (ssExpired, ssExpiredOverbooked, ssDisposed, ssOverbooked, ssActive);
 
   ISWLicense = interface;
@@ -24,17 +24,12 @@ type
   end;
   /// <stereotype>riceve la firma hardware (Sign) nel costruttore</stereotype>
   ISWSession = interface(IBaseEntity)
+    procedure SetProperty1(val: TioObjectStatus);
+    function GetObjStatus(): TioObjectStatus;
+    property ObjStatus: TioObjectStatus read GetObjStatus write SetProperty1;
     procedure SetPayLoadUser(val: String);
     function GetPayLoadUser(): String;
     property PayLoadUser: String read GetPayLoadUser write SetPayLoadUser;
-    function GetPollingIntervalExpired(): Boolean;
-    property PollingIntervalExpired: Boolean read GetPollingIntervalExpired;
-    procedure SetPollingLast(val: TDateTime);
-    function GetPollingLast(): TDateTime;
-    property PollingLast: TDateTime read GetPollingLast write SetPollingLast;
-    procedure SetPollingIntervalMinutes(val: Integer);
-    function GetPollingIntervalMinutes(): Integer;
-    property PollingIntervalMinutes: Integer read GetPollingIntervalMinutes write SetPollingIntervalMinutes;
     procedure SetOverbookedMax(val: Integer);
     function GetOverbookedMax(): Integer;
     property OverbookedMax: Integer read GetOverbookedMax write SetOverbookedMax;
@@ -85,36 +80,52 @@ type
 
   /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
   ISWLicense = interface(ISWLicenseModel)
+    function GetObjStatus(): TioObjectStatus;
+    property ObjStatus: TioObjectStatus read GetObjStatus write SetProperty1;
+    function GetSessionServerPollingIsExpired(): Boolean;
+    /// <semantics>[ioSkip]</semantics>
+    property SessionServerPollingIsExpired: Boolean read GetSessionServerPollingIsExpired;
+    procedure SetSessionServerPollingExpiration(val: TDateTime);
+    function GetSessionServerPollingExpiration(): TDateTime;
+    property SessionServerPollingExpiration: TDateTime read GetSessionServerPollingExpiration write SetSessionServerPollingExpiration;
+    procedure SetSessionServerPollingLast(val: TDateTime);
+    function GetSessionServerPollingLast(): TDateTime;
+    property SessionServerPollingLast: TDateTime read GetSessionServerPollingLast write SetSessionServerPollingLast;
     procedure SetUsers(val: TList<ISWLicenseUser>);
     function GetUsers(): TList<ISWLicenseUser>;
+    /// <semantics>[ioHasMany]</semantics>
     property Users: TList<ISWLicenseUser> read GetUsers write SetUsers;
     function GetCounterSessions(): Integer;
+    /// <semantics>[ioSkip]</semantics>
     property CounterSessions: Integer read GetCounterSessions;
     function GetCounterAppUsers(): Integer;
+    /// <semantics>[ioSkip]</semantics>
     property CounterAppUsers: Integer read GetCounterAppUsers;
     function GetCounterHW(): Integer;
+    /// <semantics>[ioSkip]</semantics>
     property CounterHW: Integer read GetCounterHW;
     function GetIsExpired(): Boolean;
+    /// <semantics>[ioSkip]</semantics>
     property IsExpired: Boolean read GetIsExpired;
-    function GetIsSuspended(): Boolean;
-    property IsSuspended: Boolean read GetIsSuspended;
     procedure SetHash(val: String);
     function GetHash(): String;
     property Hash: String read GetHash write SetHash;
     procedure SetNote(val: String);
     function GetNote(): String;
     property Note: String read GetNote write SetNote;
-    procedure SetState(val: TSWLicenseState);
     function GetState(): TSWLicenseState;
-    property State: TSWLicenseState read GetState write SetState;
+    /// <semantics>[ioSkip]</semantics>
+    property State: TSWLicenseState read GetState;
     function GetSessions(): IioList<ISWSession>;
-    /// <semantics>LazyLoad?</semantics>
+    /// <semantics>[ioLoadOnly][ioHasMany] LazyLoad?</semantics>
     property Sessions: IioList<ISWSession> read GetSessions;
     function GetLicenseModel(): ISWLicenseModel;
+    /// <semantics>[ioBelongsTo]</semantics>
     property LicenseModel: ISWLicenseModel read GetLicenseModel;
     procedure RevertToModel;
-    function GetIsActive(): Boolean;
-    property IsActive: Boolean read GetIsActive;
+    procedure SetActive(val: boolean);
+    function GetActive(): Boolean;
+    property Active: Boolean read GetActive write SetActive;
     function GetExpiration(): TDate;
     property Expiration: TDate read GetExpiration;
     procedure SetActiveSince(val: TDate);
@@ -133,6 +144,8 @@ type
     FSessionPersist: Boolean;
     FSessionPersistPath: String;
     FLocalSessionServerIP: String;
+    FSessionLastPoll: TDateTime;
+    FSessionPersistWithAppUser: Boolean;
     procedure SetLicenseID(val: Integer);
     procedure SetUserName(val: String);
     procedure SetPassword(val: String);
@@ -141,19 +154,24 @@ type
     procedure SetSessionPersist(val: Boolean);
     procedure SetSessionPersistPath(val: String);
     procedure SetLocalSessionServerIP(val: String);
+    procedure SetSessionLastPoll(val: TDateTime);
+    procedure SetSessionPersistWithAppUser(val: Boolean);
   public
-    property ActivationKey: String read FActivationKey write SetActivationKey;
-    property LicenseID: Integer read FLicenseID write SetLicenseID;
-    property UserName: String read FUserName write SetUserName;
-    property Password: String read FPassword write SetPassword;
     property Session: ISWSession read FSession;
     function OpenSession: Boolean;
     procedure CloseSession;
-    property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
     procedure DisposeSession;
+    property SessionLastPoll: TDateTime read FSessionLastPoll write SetSessionLastPoll;
+  published
+    property ActivationKey: String read FActivationKey write SetActivationKey;
+    property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
+    property LicenseID: Integer read FLicenseID write SetLicenseID;
+    property LocalSessionServerIP: String read FLocalSessionServerIP write SetLocalSessionServerIP;
+    property Password: String read FPassword write SetPassword;
     property SessionPersist: Boolean read FSessionPersist write SetSessionPersist;
     property SessionPersistPath: String read FSessionPersistPath write SetSessionPersistPath;
-    property LocalSessionServerIP: String read FLocalSessionServerIP write SetLocalSessionServerIP;
+    property UserName: String read FUserName write SetUserName;
+    property SessionPersistWithAppUser: Boolean read FSessionPersistWithAppUser write SetSessionPersistWithAppUser;
   end;
 
 implementation
@@ -199,6 +217,14 @@ begin
 end;
 
 procedure TSKeyClientComponent.SetLocalSessionServerIP(val: String);
+begin
+end;
+
+procedure TSKeyClientComponent.SetSessionLastPoll(val: TDateTime);
+begin
+end;
+
+procedure TSKeyClientComponent.SetSessionPersistWithAppUser(val: Boolean);
 begin
 end;
 

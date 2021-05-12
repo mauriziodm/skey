@@ -62,4 +62,32 @@
       <participant referencedUin="design:node:::aaqq27bxril5zgte_n" role="Supplier" />
     </link>
   </node>
+  <node uin="f7j0mtt505p_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note6" />
+    <property name="$note_text" value="All'avvio il componente cerca un file con l'ultima sessione salvata,&#xD;&#xA;se lo trova lo carica come sessione corrente (sempre che non sia scaduta).&#xD;&#xA;In ogni caso cerca di contattare il session server per ottenrer un rifresco della sessione&#xD;&#xA;oppure una nuova sessione (se quella precedente non è stata trovat oppure è scaduta).&#xD;&#xA;Se il session server gli da una nuova sessione o gli rinfresca l'attuale allor salva su file locale la sessione stessa.&#xD;&#xA;Altrimenti se tutto questo fallisce non autorizza il programma a girare.&#xD;&#xA;Il nome del file dove salva la sessione localmente sarà composto dal SignHW (firma HW + OSUser) &#xD;&#xA;eventualmente con anche il AppUserName (se anche la password è specificata) in modo che possa&#xD;&#xA;ritrovare l'ultima sessione salvata in precedenza relativa allo stesso HW, stesso OS user e, se presente,&#xD;&#xA;stesso AppUser.&#xD;&#xA;NB: Per proteggere dall'accesso concorrente il file meglio proteggerlo con un mutex?&#xD;&#xA;&#xD;&#xA;" />
+    <link uin="p3z480901c5qer2uq_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.TSKeyClientComponent" role="Client" />
+      <participant referencedUin="design:node:::f7j0mtt505p_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="p03jbs5g5mlxz0hps_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note7" />
+    <property name="$note_text" value="Quando si persiste una licenza&#xD;&#xA;non vengono automaticamente&#xD;&#xA;persistite anche le sessioni&#xD;&#xA;perchè [ioLoadOnly] quindi per&#xD;&#xA;persistere le sessioni andrà chiamato&#xD;&#xA;il persist per la proprietà &quot;Sessions&quot;&#xD;&#xA;esplicitamente" />
+    <link uin="rhyj6hz5qmn_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense" role="Client" />
+      <participant referencedUin="design:node:::p03jbs5g5mlxz0hps_n" role="Supplier" />
+    </link>
+    <link uin="e0efkrkrp7k_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSession" role="Client" />
+      <participant referencedUin="design:node:::p03jbs5g5mlxz0hps_n" role="Supplier" />
+    </link>
+  </node>
 </nodeSet>

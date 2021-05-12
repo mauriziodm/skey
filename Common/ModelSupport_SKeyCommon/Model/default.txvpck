@@ -46,7 +46,7 @@
       <property name="$shortcutReference" value="true" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionManager" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.@unitclass" />
-      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionServer" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" />
     </reference>
   </view>
 </nodeSet>

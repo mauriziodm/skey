@@ -244,5 +244,19 @@
         <property name="bendpoints" value="" />
       </reference>
     </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.ILocker">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="40,280,96,111" />
+      <property name="hideOperation" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Lock()">
+        <property name="bounds" value="35,-9,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Unlock()">
+        <property name="bounds" value="35,-9,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Func()" />
+    </reference>
   </view>
 </nodeSet>
