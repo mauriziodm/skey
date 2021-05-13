@@ -3,7 +3,7 @@ unit Model.CustomerIntf;
 interface
 
 uses
-  Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections, iORM.Containers.Interfaces;
+  Model.BaseIntf, Model.SWHouseIntf, System.Generics.Collections, iORM.Containers.Interfaces, iORM.CommonTypes;
 
 type
   TSWLicenseState = (lsInactive, lsExpired, lsActive);
@@ -80,8 +80,9 @@ type
 
   /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
   ISWLicense = interface(ISWLicenseModel)
+    procedure SetObjStatus(val: TioObjectStatus);
     function GetObjStatus(): TioObjectStatus;
-    property ObjStatus: TioObjectStatus read GetObjStatus write SetProperty1;
+    property ObjStatus: TioObjectStatus read GetObjStatus write SetObjStatus;
     function GetSessionServerPollingIsExpired(): Boolean;
     /// <semantics>[ioSkip]</semantics>
     property SessionServerPollingIsExpired: Boolean read GetSessionServerPollingIsExpired;

@@ -106,6 +106,7 @@
         <property name="bounds" value="188,-401,0,0" />
       </reference>
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetObjStatus()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.SetObjStatus(iORM.CommonTypes.TioObjectStatus)" />
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer">
       <property name="$shortcutReference" value="true" />
@@ -178,6 +179,7 @@
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWSession.ObjStatus" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.SetProperty1(Model.CustomerIntf.TioObjectStatus)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.GetObjStatus()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSession.SetProperty1(iORM.CommonTypes.TioObjectStatus)" />
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager">
       <property name="$shortcutReference" value="true" />

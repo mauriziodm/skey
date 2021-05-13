@@ -10,7 +10,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="380,40,760,111" />
+      <property name="bounds" value="380,160,760,111" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SessionServer.ISessionServer.SessionDispose(System.Integer,System.Integer)">
         <property name="bounds" value="179,27,0,0" />
@@ -24,33 +24,37 @@
     </reference>
     <reference referencedUin="design:node:::u5i0lvodr8m603gll_n">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="80,80,188,62" />
+      <property name="bounds" value="80,200,188,62" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::j9osw0cs9wqbh4yym_l:u5i0lvodr8m603gll_n">
-        <property name="sourceAnchor" value="380,104" />
-        <property name="targetAnchor" value="268,104" />
+        <property name="sourceAnchor" value="380,231" />
+        <property name="targetAnchor" value="268,231" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
     <reference referencedUin="design:node:::goqjo2ys9kl_n">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="120,280,469,144" />
+      <property name="bounds" value="120,400,469,144" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::ovla00wanlo_l:goqjo2ys9kl_n">
-        <property name="sourceAnchor" value="466,151" />
-        <property name="targetAnchor" value="466,280" />
+        <property name="sourceAnchor" value="484,271" />
+        <property name="targetAnchor" value="484,400" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
     <reference referencedUin="design:node:::j18ar3cihfj_n">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1240,80,86,35" />
+      <property name="bounds" value="1240,200,86,35" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::6m4hdec1wlt_l:j18ar3cihfj_n">
-        <property name="sourceAnchor" value="1140,96" />
-        <property name="targetAnchor" value="1240,96" />
+        <property name="sourceAnchor" value="1140,216" />
+        <property name="targetAnchor" value="1240,216" />
         <property name="bendpoints" value="" />
       </reference>
+    </reference>
+    <reference referencedUin="design:view:::41664h60hmr_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,211,42" />
     </reference>
   </view>
 </nodeSet>
