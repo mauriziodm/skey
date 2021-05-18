@@ -3,7 +3,7 @@
   <node uin="u5i0lvodr8m603gll_n">
     <property name="$metaclass" value="Note" />
     <property name="$name" value="Note1" />
-    <property name="$note_text" value="Il session server ovviamente&#xD;&#xA;mantiene l'elenco delle sessioni&#xD;&#xA;attive in un campo privato&#xD;&#xA;e ls protegge con un ILocker" />
+    <property name="$note_text" value="Il SessionServer mantiene una collezione delle licenze gestite in un campo privato protetto&#xD;&#xA; di tipo ICollectionLocker&lt;TList&lt;ISWLicense&gt;&gt; per il multithreading.&#xD;&#xA;Poi anche ogni licenza ha i suoi Lock/Unlock per bloccarla quanco un thread ci deve lavorare&#xD;&#xA;(es: per refresh sessione, persistenza, sincronizzazione) in modo da avere un doppio&#xD;&#xA;livello di bloccaggio e mantenere bloccato l'intero SessionServer&#xD;&#xA;(quindi tutte le licenze) solo per lo stretto necessario.&#xD;&#xA;" />
     <link uin="j9osw0cs9wqbh4yym_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
@@ -14,7 +14,7 @@
   <node uin="goqjo2ys9kl_n">
     <property name="$metaclass" value="Note" />
     <property name="$name" value="Note2" />
-    <property name="$note_text" value="Il SessionServer non memorizza e quindi non sa&#xD;&#xA;su quali licenze dovrà lavorare, lo saprà nel momento in cui verrà interrogato&#xD;&#xA;da qualche applicazione che usa l'apposito componente client del SKey.&#xD;&#xA;All'avvio carica tute le eventuali sessioni presenti nel suo DB (di qualunque tipo sia)&#xD;&#xA;in modo da averle in memoria per il suo funzionamento.&#xD;&#xA;Le licenze saranno persistite dopo essere state rinfrescate con una chiamata al&#xD;&#xA;Licence Server.&#xD;&#xA;Le Sessioni saranno persistite dopo ogni polling da parte di un client con un&#xD;&#xA;io.Persist passando la lista delle sessioni presente nella licenza e verranno&#xD;&#xA;persistite solo le sessioni che sono cambiate (ObjStatus property)." />
+    <property name="$note_text" value="Il SessionServer non memorizza e quindi non sa&#xD;&#xA;su quali licenze dovrà lavorare al suo avvio, lo saprà nel momento in cui verrà interrogato&#xD;&#xA;da qualche applicazione che usa l'apposito componente client del SKey.&#xD;&#xA;All'avvio carica tutte le eventuali sessioni presenti nel suo DB (di qualunque tipo sia)&#xD;&#xA;in modo da averle in memoria per il suo funzionamento.&#xD;&#xA;Le licenze saranno persistite dopo essere state rinfrescate/sincronizzate con&#xD;&#xA;una chiamata al Licence Server.&#xD;&#xA;Le Sessioni saranno persistite dopo ogni polling (da parte di un client) con un&#xD;&#xA;io.Persist passando la lista delle sessioni presente nella licenza e verranno&#xD;&#xA;persistite solo le sessioni che sono cambiate (ObjStatus property)." />
     <link uin="ovla00wanlo_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
@@ -26,7 +26,7 @@
     <property name="$metaclass" value="Note" />
     <property name="$name" value="Note4" />
     <property name="$note_text" value="SINGLETON&#xD;&#xA;SINGLETON&#xD;&#xA;" />
-    <link uin="6m4hdec1wlt_l">
+    <link uin="t60en1fqp2pdlu3jj_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
       <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" role="Client" />
@@ -93,159 +93,233 @@
         <property name="$name" value="Activation1" />
         <property name="@OrderNumber" value="1" />
         <property name="@PredecessorUin" value="design:link:::3xzp2df4oei_l" />
-        <node uin="89lf64r2e058fi6vt_n">
-          <property name="$metaclass" value="Activation" />
-          <property name="$name" value="Activation2" />
-          <property name="@OrderNumber" value="2" />
-          <property name="@PredecessorUin" value="design:link:::m6p9k4r2e05hbg8pm_l" />
-          <node uin="3j0g974mfbm_n">
-            <property name="$metaclass" value="Conditional Block" />
-            <property name="$name" value="Statement Block2" />
-            <property name="@OrderNumber" value="3" />
-            <property name="@StatementExpression" value="local licenses exists and license server is reachable" />
-            <property name="@StatementType" value="if" />
-            <property name="@StmtOrderNumber" value="1" />
-            <node uin="xi37c5g3gc6gw5ecr_n">
-              <property name="$metaclass" value="Conditional Block" />
-              <property name="$name" value="Statement Block1" />
-              <property name="@OrderNumber" value="3" />
-              <property name="@StatementExpression" value="license" />
-              <property name="@StatementType" value="foreach" />
-              <property name="@StmtOrderNumber" value="1" />
-              <link uin="2rjw3kp1xie_l">
-                <property name="$metaclass" value="Message Link" />
-                <property name="$name" value="Message Link1" />
-                <property name="@Operation" value="'upload existing local expired sessions (of the current session)'" />
-                <property name="@OrderNumber" value="4" />
-                <property name="@Synchronization" value="call" />
-                <participant referencedUin="design:node:::xi37c5g3gc6gw5ecr_n:3j0g974mfbm_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-                <participant referencedUin="design:node:::s4xyqacya2l_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Supplier" />
-              </link>
-              <link uin="s68lmwkak2i3v5mis_l">
-                <property name="$metaclass" value="Message Link" />
-                <property name="$name" value="Message Link2" />
-                <property name="@Operation" value="'refresh current license'" />
-                <property name="@OrderNumber" value="5" />
-                <property name="@ReturnArrow" value="True" />
-                <property name="@Synchronization" value="call" />
-                <participant referencedUin="design:node:::xi37c5g3gc6gw5ecr_n:3j0g974mfbm_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-                <participant referencedUin="design:node:::qvs2owkak2iylju6o_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Supplier" />
-              </link>
-              <node uin="9sn5cu0y2uk_n">
-                <property name="$metaclass" value="Activation" />
-                <property name="$name" value="Activation1" />
-                <property name="@OrderNumber" value="1" />
-                <property name="@PredecessorUin" value="design:link:::dnkj2sfgu9n_l" />
-              </node>
-              <link uin="dnkj2sfgu9n_l">
-                <property name="$metaclass" value="Message Link" />
-                <property name="$name" value="Message Link3" />
-                <property name="@Operation" value="'Persist refreshed licenses'" />
-                <property name="@OrderNumber" value="6" />
-                <property name="@Synchronization" value="call" />
-                <participant referencedUin="design:node:::xi37c5g3gc6gw5ecr_n:3j0g974mfbm_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-                <participant referencedUin="design:node:::9sn5cu0y2uk_n:xi37c5g3gc6gw5ecr_n:3j0g974mfbm_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
-              </link>
-            </node>
-          </node>
-          <node uin="qgl147ptpgiggh3wj_n">
-            <property name="$metaclass" value="Activation" />
-            <property name="$name" value="Activation2" />
-            <property name="@OrderNumber" value="1" />
-            <property name="@PredecessorUin" value="design:link:::8i4ku7ptpgigbld7k_l" />
-          </node>
-          <link uin="8i4ku7ptpgigbld7k_l">
-            <property name="$metaclass" value="Message Link" />
-            <property name="$name" value="Message Link4" />
-            <property name="@Operation" value="'Lock session server'" />
-            <property name="@OrderNumber" value="1" />
-            <property name="@Synchronization" value="call" />
-            <participant referencedUin="design:node:::89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-            <participant referencedUin="design:node:::qgl147ptpgiggh3wj_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
-          </link>
-        </node>
-        <link uin="m6p9k4r2e05hbg8pm_l">
-          <property name="$metaclass" value="Message Link" />
-          <property name="$name" value="Message Link3" />
-          <property name="@Operation" value="'SynchronizeAllLicenses'" />
-          <property name="@OrderNumber" value="3" />
-          <property name="@Synchronization" value="call" />
-          <participant referencedUin="design:node:::huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-          <participant referencedUin="design:node:::89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
-        </link>
         <node uin="8wx35qf4l4j_n">
           <property name="$metaclass" value="Activation" />
           <property name="$name" value="Activation3" />
-          <property name="@OrderNumber" value="1" />
+          <property name="@OrderNumber" value="0" />
           <property name="@PredecessorUin" value="design:link:::lan0n4lyb0h_l" />
-          <node uin="j29r0l0cp3s_n">
+          <node uin="q0uegzstsxpi062hq_n">
+            <property name="$metaclass" value="Activation" />
+            <property name="$name" value="Activation4" />
+            <property name="@OrderNumber" value="1" />
+            <property name="@PredecessorUin" value="design:link:::3vkfbzstsxpskj1gf_l" />
+          </node>
+          <link uin="3vkfbzstsxpskj1gf_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link4" />
+            <property name="@label" value="Load licenses from local DB into a TList&lt;ISWLicense&gt;" />
+            <property name="@Operation" value="'io.Load&lt;ISWLicense&gt;.ToList;'" />
+            <property name="@OrderNumber" value="1" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+            <participant referencedUin="design:node:::q0uegzstsxpi062hq_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+          </link>
+          <node uin="gbs0rrcamb3udtpxg_n">
+            <property name="$metaclass" value="Activation" />
+            <property name="$name" value="Activation5" />
+            <property name="@OrderNumber" value="2" />
+            <property name="@PredecessorUin" value="design:link:::m8wacrcamb38hcndk_l" />
+          </node>
+          <link uin="m8wacrcamb38hcndk_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link5" />
+            <property name="@Operation" value="'Licenses := io.Create&lt;TList&lt;ISWLicense&gt;&gt;.Create([LicenseList])'" />
+            <property name="@OrderNumber" value="2" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+            <participant referencedUin="design:node:::gbs0rrcamb3udtpxg_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+          </link>
+        </node>
+        <link uin="lan0n4lyb0h_l">
+          <property name="$condition" value="" />
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link4" />
+          <property name="@Arguments" value="" />
+          <property name="@Iteration" value="" />
+          <property name="@label" value="" />
+          <property name="@mod__extends" value="" />
+          <property name="@mod__implements" value="" />
+          <property name="@Operation" value="'InternalLoadLicenses'" />
+          <property name="@OrderNumber" value="2" />
+          <property name="@Return" value="" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+          <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+        </link>
+        <node uin="8394i140c7pg4brjl_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation6" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::7r60d140c7pp1r5ul_l" />
+          <node uin="jrg9m140c7p4qug7o_n">
+            <property name="$metaclass" value="Activation" />
+            <property name="$name" value="Activation1" />
+            <property name="@OrderNumber" value="1" />
+            <property name="@PredecessorUin" value="design:link:::19eo8140c7p0g3ihj_l" />
+          </node>
+          <link uin="19eo8140c7p0g3ihj_l">
+            <property name="$condition" value="" />
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link4" />
+            <property name="@Arguments" value="" />
+            <property name="@Iteration" value="" />
+            <property name="@label" value="" />
+            <property name="@mod__extends" value="" />
+            <property name="@mod__implements" value="" />
+            <property name="@Operation" value="'Licenses.Lock'" />
+            <property name="@OrderNumber" value="1" />
+            <property name="@Return" value="" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+            <participant referencedUin="design:node:::jrg9m140c7p4qug7o_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+          </link>
+          <node uin="fv1kn140c7pvghuvj_n">
             <property name="$metaclass" value="Conditional Block" />
             <property name="$name" value="Statement Block1" />
             <property name="@mod__extends" value="" />
             <property name="@mod__implements" value="" />
-            <property name="@OrderNumber" value="1" />
-            <property name="@StatementExpression" value="previuos session collection exists on local DB" />
+            <property name="@OrderNumber" value="2" />
+            <property name="@StatementExpression" value="LicenseContainer is not empty and LicenseServer is reachable" />
             <property name="@StatementType" value="if" />
             <property name="@StmtOrderNumber" value="1" />
-            <node uin="95ua6nn5lcf_n">
-              <property name="$metaclass" value="Activation" />
-              <property name="$name" value="Activation1" />
-              <property name="@OrderNumber" value="1" />
-              <property name="@PredecessorUin" value="design:link:::rvlte9241r_l" />
-            </node>
-            <link uin="rvlte9241r_l">
-              <property name="$metaclass" value="Message Link" />
-              <property name="$name" value="Message Link1" />
-              <property name="@label" value="Load sessions from local persistence" />
+            <node uin="4i3mq140c7pmgjrsh_n">
+              <property name="$metaclass" value="Conditional Block" />
+              <property name="$name" value="Statement Block1" />
               <property name="@mod__extends" value="" />
               <property name="@mod__implements" value="" />
               <property name="@OrderNumber" value="2" />
-              <property name="@Synchronization" value="call" />
-              <participant referencedUin="design:node:::j29r0l0cp3s_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-              <participant referencedUin="design:node:::95ua6nn5lcf_n:j29r0l0cp3s_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
-            </link>
+              <property name="@StatementExpression" value="license" />
+              <property name="@StatementType" value="foreach" />
+              <property name="@StmtOrderNumber" value="1" />
+              <node uin="kw6zj140c7pk7l9po_n">
+                <property name="$metaclass" value="Activation" />
+                <property name="$name" value="Activation1" />
+                <property name="@OrderNumber" value="-1" />
+                <property name="@PredecessorUin" value="design:link:::lmgvr140c7p0rp0er_l" />
+                <node uin="0c2v9s4af7pnogtzo_n">
+                  <property name="$metaclass" value="Activation" />
+                  <property name="$name" value="Activation1" />
+                  <property name="@OrderNumber" value="1" />
+                  <property name="@PredecessorUin" value="design:link:::lf6ots4af7p3t1w8j_l" />
+                </node>
+                <link uin="lf6ots4af7p3t1w8j_l">
+                  <property name="$condition" value="" />
+                  <property name="$metaclass" value="Message Link" />
+                  <property name="$name" value="Message Link1" />
+                  <property name="@Arguments" value="" />
+                  <property name="@Iteration" value="" />
+                  <property name="@label" value="" />
+                  <property name="@mod__extends" value="" />
+                  <property name="@mod__implements" value="" />
+                  <property name="@Operation" value="'License.Locker.Lock'" />
+                  <property name="@OrderNumber" value="1" />
+                  <property name="@Return" value="" />
+                  <property name="@Synchronization" value="call" />
+                  <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+                  <participant referencedUin="design:node:::0c2v9s4af7pnogtzo_n:kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+                </link>
+                <link uin="nubxs4af7pxfp0yi_l">
+                  <property name="$metaclass" value="Message Link" />
+                  <property name="$name" value="Message Link2" />
+                  <property name="@mod__extends" value="" />
+                  <property name="@mod__implements" value="" />
+                  <property name="@Operation" value="'upload existing local expired or disposed sessions'" />
+                  <property name="@OrderNumber" value="2" />
+                  <property name="@Synchronization" value="call" />
+                  <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+                  <participant referencedUin="design:node:::begijs4af7pykdpme_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Supplier" />
+                </link>
+                <link uin="mxuuvs4af7pdcyizi_l">
+                  <property name="$metaclass" value="Message Link" />
+                  <property name="$name" value="Message Link3" />
+                  <property name="@mod__extends" value="" />
+                  <property name="@mod__implements" value="" />
+                  <property name="@Operation" value="'Renew license'" />
+                  <property name="@OrderNumber" value="3" />
+                  <property name="@ReturnArrow" value="True" />
+                  <property name="@Synchronization" value="call" />
+                  <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+                  <participant referencedUin="design:node:::g8zc3s4af7pdz1j8i_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Supplier" />
+                </link>
+                <node uin="p38fis4af7pz8dtbg_n">
+                  <property name="$metaclass" value="Activation" />
+                  <property name="$name" value="Activation2" />
+                  <property name="@OrderNumber" value="2" />
+                  <property name="@PredecessorUin" value="design:link:::h2msns4af7ppxyqxt_l" />
+                </node>
+                <link uin="h2msns4af7ppxyqxt_l">
+                  <property name="$condition" value="" />
+                  <property name="$metaclass" value="Message Link" />
+                  <property name="$name" value="Message Link4" />
+                  <property name="@Arguments" value="" />
+                  <property name="@Iteration" value="" />
+                  <property name="@label" value="" />
+                  <property name="@mod__extends" value="" />
+                  <property name="@mod__implements" value="" />
+                  <property name="@Operation" value="'License.Locker.Unlock'" />
+                  <property name="@OrderNumber" value="4" />
+                  <property name="@Return" value="" />
+                  <property name="@Synchronization" value="call" />
+                  <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+                  <participant referencedUin="design:node:::p38fis4af7pz8dtbg_n:kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+                </link>
+              </node>
+              <link uin="lmgvr140c7p0rp0er_l">
+                <property name="$condition" value="" />
+                <property name="$metaclass" value="Message Link" />
+                <property name="$name" value="Message Link4" />
+                <property name="@Arguments" value="" />
+                <property name="@Iteration" value="" />
+                <property name="@label" value="" />
+                <property name="@mod__extends" value="" />
+                <property name="@mod__implements" value="" />
+                <property name="@Operation" value="'InternalSynchronizeLicense'" />
+                <property name="@OrderNumber" value="2" />
+                <property name="@Return" value="" />
+                <property name="@Synchronization" value="call" />
+                <participant referencedUin="design:node:::4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+                <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+              </link>
+            </node>
           </node>
-          <node uin="lp65f6a2upg_n">
-            <property name="$metaclass" value="Activation" />
-            <property name="$name" value="Activation2" />
-            <property name="@OrderNumber" value="1" />
-            <property name="@PredecessorUin" value="design:link:::0kr0bettres_l" />
-          </node>
-          <link uin="0kr0bettres_l">
-            <property name="$metaclass" value="Message Link" />
-            <property name="$name" value="Message Link2" />
-            <property name="@Operation" value="'Lock session server'" />
-            <property name="@OrderNumber" value="1" />
-            <property name="@Synchronization" value="call" />
-            <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-            <participant referencedUin="design:node:::lp65f6a2upg_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
-          </link>
-          <node uin="7fpvg373qop_n">
+          <node uin="yy228s4af7pwweddp_n">
             <property name="$metaclass" value="Activation" />
             <property name="$name" value="Activation3" />
             <property name="@OrderNumber" value="2" />
-            <property name="@PredecessorUin" value="design:link:::cohzvvev2yi_l" />
+            <property name="@PredecessorUin" value="design:link:::zwa55s4af7pozpe0s_l" />
           </node>
-          <link uin="cohzvvev2yi_l">
+          <link uin="zwa55s4af7pozpe0s_l">
+            <property name="$condition" value="" />
             <property name="$metaclass" value="Message Link" />
-            <property name="$name" value="Message Link3" />
-            <property name="@Operation" value="'Unlock session server'" />
-            <property name="@OrderNumber" value="3" />
+            <property name="$name" value="Message Link5" />
+            <property name="@Arguments" value="" />
+            <property name="@Iteration" value="" />
+            <property name="@label" value="" />
+            <property name="@mod__extends" value="" />
+            <property name="@mod__implements" value="" />
+            <property name="@Operation" value="'Licenses.Unlock'" />
+            <property name="@OrderNumber" value="5" />
+            <property name="@Return" value="" />
             <property name="@Synchronization" value="call" />
-            <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-            <participant referencedUin="design:node:::7fpvg373qop_n:8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+            <participant referencedUin="design:node:::8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+            <participant referencedUin="design:node:::yy228s4af7pwweddp_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
           </link>
         </node>
-        <link uin="lan0n4lyb0h_l">
+        <link uin="7r60d140c7pp1r5ul_l">
+          <property name="$condition" value="" />
           <property name="$metaclass" value="Message Link" />
-          <property name="$name" value="Message Link4" />
+          <property name="$name" value="Message Link3" />
+          <property name="@Arguments" value="" />
+          <property name="@Iteration" value="" />
+          <property name="@label" value="" />
           <property name="@mod__extends" value="" />
           <property name="@mod__implements" value="" />
-          <property name="@Operation" value="'LoadLocalSessions'" />
-          <property name="@OrderNumber" value="2" />
+          <property name="@Operation" value="'SynchronizeLicenses'" />
+          <property name="@OrderNumber" value="3" />
+          <property name="@Return" value="" />
           <property name="@Synchronization" value="call" />
           <participant referencedUin="design:node:::huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
-          <participant referencedUin="design:node:::8wx35qf4l4j_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+          <participant referencedUin="design:node:::8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
         </link>
       </node>
       <link uin="dhlzvx7ryo04zgpke_l">
@@ -263,7 +337,7 @@
       <node uin="ls0b04w04jnbmfmto_n">
         <property name="$metaclass" value="Activation" />
         <property name="$name" value="Activation3" />
-        <property name="@OrderNumber" value="1" />
+        <property name="@OrderNumber" value="0" />
         <property name="@PredecessorUin" value="design:link:::kou764w04jnf7q73l_l" />
       </node>
     </node>
@@ -271,22 +345,22 @@
       <property name="$description" value="" />
       <property name="$metaclass" value="Object" />
       <property name="$name" value="License Server (remote)" />
-      <node uin="s4xyqacya2l_n">
+      <node uin="begijs4af7pykdpme_n">
         <property name="$metaclass" value="Activation" />
-        <property name="$name" value="Activation3" />
-        <property name="@OrderNumber" value="-1" />
-        <property name="@PredecessorUin" value="design:link:::2rjw3kp1xie_l" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="-2" />
+        <property name="@PredecessorUin" value="design:link:::nubxs4af7pxfp0yi_l" />
       </node>
-      <node uin="qvs2owkak2iylju6o_n">
+      <node uin="g8zc3s4af7pdz1j8i_n">
         <property name="$metaclass" value="Activation" />
-        <property name="$name" value="Activation1" />
-        <property name="@OrderNumber" value="1" />
-        <property name="@PredecessorUin" value="design:link:::s68lmwkak2i3v5mis_l" />
-        <link uin="aspf8gorwzr5yraxs_l">
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="-2" />
+        <property name="@PredecessorUin" value="design:link:::mxuuvs4af7pdcyizi_l" />
+        <link uin="814n5s4af7pdpxrxr_l">
           <property name="$metaclass" value="Return Link" />
           <property name="$name" value="Return Link1" />
-          <participant referencedUin="design:node:::qvs2owkak2iylju6o_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Client" />
-          <participant referencedUin="design:node:::xi37c5g3gc6gw5ecr_n:3j0g974mfbm_n:89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
+          <participant referencedUin="design:node:::g8zc3s4af7pdz1j8i_n:xtzr59f16qe1qh90n_n:rlw8vtqy0pt_n" role="Client" />
+          <participant referencedUin="design:node:::kw6zj140c7pk7l9po_n:4i3mq140c7pmgjrsh_n:fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
         </link>
       </node>
     </node>
@@ -300,10 +374,15 @@
         <property name="@OrderNumber" value="1" />
         <property name="@PredecessorUin" value="design:link:::sxvdefsgoe6m060io_l" />
         <link uin="kou764w04jnf7q73l_l">
+          <property name="$condition" value="" />
           <property name="$metaclass" value="Message Link" />
           <property name="$name" value="Message Link1" />
-          <property name="@Operation" value="'SynchronizeAllLicenses'" />
+          <property name="@Arguments" value="" />
+          <property name="@Iteration" value="" />
+          <property name="@label" value="" />
+          <property name="@Operation" value="'SynchronizeLicenses'" />
           <property name="@OrderNumber" value="1" />
+          <property name="@Return" value="" />
           <property name="@Synchronization" value="call" />
           <participant referencedUin="design:node:::9hd94fsgoe6gx380r_n:y80tpmsq1tk_n:rlw8vtqy0pt_n" role="Client" />
           <participant referencedUin="design:node:::ls0b04w04jnbmfmto_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Supplier" />
@@ -352,16 +431,9 @@
       <property name="$name" value="Note Link2" />
       <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
     </link>
-    <link uin="whwduej39rrvhdis_l">
-      <property name="$metaclass" value="Note Link" />
-      <property name="$name" value="Note Link3" />
-      <participant referencedUin="design:link:::kou764w04jnf7q73l_l:9hd94fsgoe6gx380r_n:y80tpmsq1tk_n:rlw8vtqy0pt_n" role="Client" />
-      <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
-    </link>
     <link uin="lkswkjjybko_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="design:node:::89lf64r2e058fi6vt_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
       <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
     </link>
     <link uin="sjfvemj647cc30cjf_l">
@@ -370,5 +442,37 @@
       <participant referencedUin="design:node:::ls0b04w04jnbmfmto_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
       <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
     </link>
+    <link uin="5fhqtr3krt2ftbhfi_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link3" />
+      <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
+    </link>
+    <link uin="wzx5k5p87qh_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link5" />
+      <participant referencedUin="design:node:::8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+      <participant referencedUin="design:node:::o05b9eta4gxz8krr_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="egfhecs3zqh_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note11" />
+    <property name="$note_text" value="Per evitare collegamenti&#xD;&#xA;inutili al LicenseServer" />
+    <link uin="mts92366wxj_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="design:node:::egfhecs3zqh_n" role="Supplier" />
+    </link>
+    <link uin="2rd80oom1qg_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link2" />
+      <participant referencedUin="design:node:::fv1kn140c7pvghuvj_n:8394i140c7pg4brjl_n:huhgv5t2fcq_n:08ktnocwidcv8vbah_n:rlw8vtqy0pt_n" role="Client" />
+      <participant referencedUin="design:node:::egfhecs3zqh_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="g8m8yd82f7f_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note7" />
+    <property name="$note_text" value="Avrà un thread che ciclerà ogni secondo (da decidere) in modo da mantenere una certa reattività&#xD;&#xA;quando si chiederà la chiusura del thread stesso ma che servirà per effettuare la sincronizzazione&#xD;&#xA;delle licenze che hanno la proprietà &quot;SessionServerPollingIsExpired&quot; = True con il LicenseServer.&#xD;&#xA;Se non ci sono licenze da sincronizzare allora vede se ce ne sono da persistere ed  eventualmente&#xD;&#xA;provvede a farlo.&#xD;&#xA;In realtà questo thread avrà un ciclo attivo all'incirca ogni minuto intervallato da 59 cicli non attivi&#xD;&#xA;" />
   </node>
 </nodeSet>

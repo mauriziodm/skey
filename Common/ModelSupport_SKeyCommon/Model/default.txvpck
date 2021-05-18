@@ -16,6 +16,7 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseNamedEntity" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseCompany" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.IBaseUser" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.ICollectionLocker&lt;1&gt;" />
     </reference>
     <reference referencedUin="design:view:::hvrd6y604b8h5ftl_v">
       <property name="$shortcutReference" value="true" />
@@ -47,6 +48,9 @@
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISWSessionManager" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.@unitclass" />
       <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ISessionServer" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ILicensePersister" />
+      <reference referencedUin="design:view:::41664h60hmr_v" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SessionServer.ILicenseContainer" />
     </reference>
   </view>
 </nodeSet>

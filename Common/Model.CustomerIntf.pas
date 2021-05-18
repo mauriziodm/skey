@@ -24,7 +24,6 @@ type
   end;
   /// <stereotype>riceve la firma hardware (Sign) nel costruttore</stereotype>
   ISWSession = interface(IBaseEntity)
-    procedure SetProperty1(val: TioObjectStatus);
     function GetObjStatus(): TioObjectStatus;
     property ObjStatus: TioObjectStatus read GetObjStatus write SetProperty1;
     procedure SetPayLoadUser(val: String);
@@ -80,6 +79,8 @@ type
 
   /// <stereotype>riceve nel costruttore un riferimento alla LicenseModel e al SWProduct</stereotype>
   ISWLicense = interface(ISWLicenseModel)
+    procedure Unlock;
+    procedure Lock;
     procedure SetObjStatus(val: TioObjectStatus);
     function GetObjStatus(): TioObjectStatus;
     property ObjStatus: TioObjectStatus read GetObjStatus write SetObjStatus;
@@ -144,7 +145,7 @@ type
     FDisposeSessionOnClose: Boolean;
     FSessionPersist: Boolean;
     FSessionPersistPath: String;
-    FLocalSessionServerIP: String;
+    FLocalSessionServerHost: String;
     FSessionLastPoll: TDateTime;
     FSessionPersistWithAppUser: Boolean;
     procedure SetLicenseID(val: Integer);
@@ -154,7 +155,7 @@ type
     procedure SetDisposeSessionOnClose(val: Boolean);
     procedure SetSessionPersist(val: Boolean);
     procedure SetSessionPersistPath(val: String);
-    procedure SetLocalSessionServerIP(val: String);
+    procedure SetLocalSessionServerHost(val: String);
     procedure SetSessionLastPoll(val: TDateTime);
     procedure SetSessionPersistWithAppUser(val: Boolean);
   public
@@ -167,7 +168,7 @@ type
     property ActivationKey: String read FActivationKey write SetActivationKey;
     property DisposeSessionOnClose: Boolean read FDisposeSessionOnClose write SetDisposeSessionOnClose;
     property LicenseID: Integer read FLicenseID write SetLicenseID;
-    property LocalSessionServerIP: String read FLocalSessionServerIP write SetLocalSessionServerIP;
+    property LocalSessionServerHost: String read FLocalSessionServerHost write SetLocalSessionServerHost;
     property Password: String read FPassword write SetPassword;
     property SessionPersist: Boolean read FSessionPersist write SetSessionPersist;
     property SessionPersistPath: String read FSessionPersistPath write SetSessionPersistPath;
@@ -217,7 +218,7 @@ procedure TSKeyClientComponent.SetSessionPersistPath(val: String);
 begin
 end;
 
-procedure TSKeyClientComponent.SetLocalSessionServerIP(val: String);
+procedure TSKeyClientComponent.SetLocalSessionServerHost(val: String);
 begin
 end;
 

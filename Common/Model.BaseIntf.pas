@@ -11,8 +11,9 @@ type
 
   /// Base interfaces for all entities
   IBaseEntity = interface
+    procedure SetID(val: Integer);
     function GetID(): Integer;
-    property ID: Integer read GetID;
+    property ID: Integer read GetID write SetID;
   end;
 
   IBaseNamedEntity = interface(IBaseEntity)
@@ -91,9 +92,9 @@ type
     property Permission: TUserPermission read GetPermission write SetPermission;
   end;
 
-  ILocker = interface
-    function Func: Integer;
+  ICollectionLocker<T> = interface
     procedure Unlock;
+    function Collection: T;
     procedure Lock;
   end;
 

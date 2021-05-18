@@ -2,6 +2,8 @@ unit Model.SessionServer;
 
 interface
 
+uses Model.baseintf;
+
 type
   ISessionServer = interface
     procedure SessionDispose(const AlicenseID, ASessionID: Integer);

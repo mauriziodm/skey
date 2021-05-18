@@ -15,6 +15,7 @@
       <property name="hideProperty" value="False" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.BaseIntf.IBaseEntity.ID" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseEntity.GetID()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.IBaseEntity.SetID(System.Integer)" />
     </reference>
     <reference referencedUin="design:node:::ge4lqmkpn0o_n">
       <property name="$shortcutReference" value="true" />
@@ -54,8 +55,8 @@
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_gnt:src:SKeyCommon:Model.BaseIntf.IBaseUserWithPermissions:Model.BaseIntf.IBaseUser">
-        <property name="sourceAnchor" value="840,196" />
-        <property name="targetAnchor" value="764,196" />
+        <property name="sourceAnchor" value="840,181" />
+        <property name="targetAnchor" value="764,181" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -68,8 +69,8 @@
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
       <reference referencedUin="design:link:::10z0nix79ifsvuamo_l:assp8ol6i4nrpx95g_n">
-        <property name="sourceAnchor" value="529,170" />
-        <property name="targetAnchor" value="638,100" />
+        <property name="sourceAnchor" value="529,149" />
+        <property name="targetAnchor" value="623,100" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -244,19 +245,40 @@
         <property name="bendpoints" value="" />
       </reference>
     </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.ILocker">
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.BaseIntf.ICollectionLocker&lt;1&gt;">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="40,280,96,111" />
-      <property name="hideOperation" value="False" />
+      <property name="bounds" value="40,320,114,117" />
       <property name="location_set_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Lock()">
-        <property name="bounds" value="35,-9,0,0" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ICollectionLocker&lt;1&gt;.Lock()">
+        <property name="bounds" value="55,-9,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Unlock()">
-        <property name="bounds" value="35,-9,0,0" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ICollectionLocker&lt;1&gt;.Collection()">
+        <property name="bounds" value="55,11,0,0" />
       </reference>
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ILocker.Func()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.BaseIntf.ICollectionLocker&lt;1&gt;.Unlock()">
+        <property name="bounds" value="55,-9,0,0" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::ifia60d99ubf0mz2g_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,500,223,35" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::8edjj7xz7pju7uupt_l:ifia60d99ubf0mz2g_n">
+        <property name="sourceAnchor" value="97,437" />
+        <property name="targetAnchor" value="97,500" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::44t4p9fot0l_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="200,360,119,35" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::83e0r37329r_l:44t4p9fot0l_n">
+        <property name="sourceAnchor" value="154,377" />
+        <property name="targetAnchor" value="200,377" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
   </view>
 </nodeSet>
