@@ -4,82 +4,8 @@
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouse">
-      <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="560,60,260,320" />
-      <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWHouse.Products" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWHouse.GetProducts()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWHouse.Users" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWHouse.GetUsers()" />
-      <reference referencedUin="design:link:::dhpp75lr59n_l">
-        <property name="sourceAnchor" value="820,220" />
-        <property name="targetAnchor" value="940,220" />
-        <property name="bendpoints" value="" />
-        <reference referencedUin="label:@clientRole:design:link:::dhpp75lr59n_l">
-          <property name="bounds" value="780,220,20,20" />
-          <property name="location_set_by_user" value="True" />
-          <property name="bounds_setted_by_user" value="True" />
-        </reference>
-        <reference referencedUin="label:@supplierRole:design:link:::dhpp75lr59n_l">
-          <property name="bounds" value="907,223,23,16" />
-        </reference>
-      </reference>
-      <reference referencedUin="design:link:::j3dvkmlyycn_l">
-        <property name="sourceAnchor" value="560,260" />
-        <property name="targetAnchor" value="440,260" />
-        <property name="bendpoints" value="" />
-        <reference referencedUin="label:@supplierRole:design:link:::j3dvkmlyycn_l">
-          <property name="bounds" value="450,263,23,16" />
-        </reference>
-        <reference referencedUin="label:@clientRole:design:link:::j3dvkmlyycn_l">
-          <property name="bounds" value="539,263,11,16" />
-        </reference>
-      </reference>
-    </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.@unitclass">
       <property name="$shortcutReference" value="true" />
-    </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator">
-      <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="940,80,220,280" />
-      <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator.SWHouseID" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator.SetSWHouseID(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator.GetSWHouseID()" />
-    </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseSession">
-      <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="600,560,520,140" />
-      <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="design:link:::vzs43aesiksid3w9l_l">
-        <property name="sourceAnchor" value="710,560" />
-        <property name="targetAnchor" value="710,380" />
-        <property name="bendpoints" value="" />
-        <reference referencedUin="label:@clientRole:design:link:::vzs43aesiksid3w9l_l">
-          <property name="bounds" value="696,534,11,16" />
-        </reference>
-        <reference referencedUin="label:@supplierRole:design:link:::vzs43aesiksid3w9l_l">
-          <property name="bounds" value="696,384,11,16" />
-        </reference>
-      </reference>
-      <reference referencedUin="design:link:::ayolumofpet4ldocq_l">
-        <property name="sourceAnchor" value="1030,560" />
-        <property name="targetAnchor" value="1030,360" />
-        <property name="bendpoints" value="" />
-        <reference referencedUin="label:@clientRole:design:link:::ayolumofpet4ldocq_l">
-          <property name="bounds" value="1016,534,11,16" />
-        </reference>
-        <reference referencedUin="label:@supplierRole:design:link:::ayolumofpet4ldocq_l">
-          <property name="bounds" value="1016,364,11,16" />
-        </reference>
-      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel">
       <property name="$shortcutReference" value="true" />
@@ -158,38 +84,6 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWProduct.GetSWHouseID()" />
     </reference>
   </view>
-  <link uin="dhpp75lr59n_l">
-    <property name="$metaclass" value="Dependency Link" />
-    <property name="$name" value="Dependency Link1" />
-    <property name="@clientRole" value="1" />
-    <property name="@supplierRole" value="1..*" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouse" role="Client" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator" role="Supplier" />
-  </link>
-  <link uin="vzs43aesiksid3w9l_l">
-    <property name="$metaclass" value="Dependency Link" />
-    <property name="$name" value="Dependency Link3" />
-    <property name="@clientRole" value="1" />
-    <property name="@supplierRole" value="1" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseSession" role="Client" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouse" role="Supplier" />
-  </link>
-  <link uin="ayolumofpet4ldocq_l">
-    <property name="$metaclass" value="Dependency Link" />
-    <property name="$name" value="Dependency Link4" />
-    <property name="@clientRole" value="1" />
-    <property name="@supplierRole" value="1" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseSession" role="Client" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouseOperator" role="Supplier" />
-  </link>
-  <link uin="j3dvkmlyycn_l">
-    <property name="$metaclass" value="Dependency Link" />
-    <property name="$name" value="Dependency Link2" />
-    <property name="@clientRole" value="1" />
-    <property name="@supplierRole" value="0..*" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWHouse" role="Client" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWProduct" role="Supplier" />
-  </link>
   <link uin="pb2cibu2spf_l">
     <property name="$metaclass" value="Dependency Link" />
     <property name="$name" value="Dependency Link5" />

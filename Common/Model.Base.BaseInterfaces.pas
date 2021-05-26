@@ -1,13 +1,10 @@
-unit Model.BaseIntf;
+unit Model.Base.BaseInterfaces;
 
 interface
 
 type
   TUserPermission = (upReadOnly, upReadWrite, upSuperUser);
   TLoginState = (lsLoggedOut, lsLoginFailed, lsAuthenticating, lsLoggedOn);
-
-  IBaseCompany = interface;
-  IBaseUserWithPermissions = interface;
 
   /// Base interfaces for all entities
   IBaseEntity = interface
@@ -49,32 +46,9 @@ type
     property Address: String read GetAddress write SetAddress;
   end;
 
-  IBaseSession<T_Company: IBaseCompany; T_User: IBaseUserWithPermissions> = interface
-    procedure SetState(val: TLoginState);
-    function GetState(): TLoginState;
-    property State: TLoginState read GetState write SetState;
-    procedure SetUser(val: T_User);
-    function GetUser(): T_User;
-    property User: T_User read GetUser write SetUser;
-    procedure SetToken(val: String);
-    function GetToken(): String;
-    property Token: String read GetToken write SetToken;
-    procedure SetCompany(val: T_Company);
-    function GetCompany(): T_Company;
-    property Company: T_Company read GetCompany write SetCompany;
-    function Login: Boolean;
-    procedure SetLoginPassword(const val: string);
-    function GetLoginPassword(): string;
-    property LoginPassword: string read GetLoginPassword write SetLoginPassword;
-    procedure SetLoginUserName(const val: string);
-    function GetLoginUserName(): string;
-    property LoginUserName: string read GetLoginUserName write SetLoginUserName;
-    procedure Logout;
-  end;
-
   IBaseUser = interface(IBaseContactableEntity)
     function ResetPassword: string;
-    function CheckPassword(const APassword: string): Boolean;
+    function CheckPassword(const APassword: string): boolean;
     procedure SetLoginUserName(const val: string);
     function GetLoginUserName(): string;
     property LoginUserName: string read GetLoginUserName write SetLoginUserName;
@@ -92,10 +66,27 @@ type
     property Permission: TUserPermission read GetPermission write SetPermission;
   end;
 
-  ICollectionLocker<T> = interface
-    procedure Unlock;
-    function Collection: T;
-    procedure Lock;
+  IBaseSession<T_Company: IBaseCompany; T_User: IBaseUserWithPermissions> = interface
+    procedure SetState(val: TLoginState);
+    function GetState(): TLoginState;
+    property State: TLoginState read GetState write SetState;
+    procedure SetUser(val: T_User);
+    function GetUser(): T_User;
+    property User: T_User read GetUser write SetUser;
+    procedure SetToken(val: string);
+    function GetToken(): string;
+    property Token: string read GetToken write SetToken;
+    procedure SetCompany(val: T_Company);
+    function GetCompany(): T_Company;
+    property Company: T_Company read GetCompany write SetCompany;
+    function Login: boolean;
+    procedure SetLoginPassword(const val: string);
+    function GetLoginPassword(): string;
+    property LoginPassword: string read GetLoginPassword write SetLoginPassword;
+    procedure SetLoginUserName(const val: string);
+    function GetLoginUserName(): string;
+    property LoginUserName: string read GetLoginUserName write SetLoginUserName;
+    procedure Logout;
   end;
 
 implementation

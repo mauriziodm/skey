@@ -2,27 +2,10 @@ unit Model.SWHouseIntf;
 
 interface
 
-uses Model.baseintf, System.Generics.Collections;
+uses Model.base.baseinterfaces, Model.baseintf, System.Generics.Collections;
 
 type
-  ISWHouseOperator = interface;
   ISWProduct = interface;
-
-  ISWHouse = interface(IBaseCompany)
-    function GetUsers(): TList<ISWHouseOperator>;
-    property Users: TList<ISWHouseOperator> read GetUsers;
-    function GetProducts: TList<ISWProduct>;
-    property Products: TList<ISWProduct> read GetProducts;
-  end;
-
-  ISWHouseOperator = interface(IBaseUserWithPermissions)
-    procedure SetSWHouseID(val: Integer);
-    function GetSWHouseID(): Integer;
-    property SWHouseID: Integer read GetSWHouseID write SetSWHouseID;
-  end;
-
-  ISWHouseSession = interface(IBaseSession<ISWHouse, ISWHouseOperator>)
-  end;
 
   ISWLicenseModel = interface(IBaseNamedEntity)
     procedure SetExpirationDaysWarning(val: Integer);

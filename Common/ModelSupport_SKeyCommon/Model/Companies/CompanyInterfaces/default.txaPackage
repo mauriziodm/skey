@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="f1c0r3rbmwh_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="Nel caso del cliente finale non ci sono operatorie non hanno alcun&#xD;&#xA;accesso al frontend che infatti non ha servizi per loro.&#xD;&#xA;Per il cliente finale infatti si avranno gli &quot;Utenti&quot; della licenza e saranno utenti&#xD;&#xA;separati per ogni licenza/prodotto." />
+    <property name="text_only" value="True" />
+    <link uin="n96lulxnfut_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IEndCustomerCompany" role="Client" />
+      <participant referencedUin="design:node:::f1c0r3rbmwh_n" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>

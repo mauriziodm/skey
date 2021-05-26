@@ -32,9 +32,10 @@ requires
   iORM_Project;
 
 contains
-  Model.BaseIntf in 'Model.BaseIntf.pas',
   Model.SWHouseIntf in 'Model.SWHouseIntf.pas',
   Model.CustomerIntf in 'Model.CustomerIntf.pas',
-  Model.SessionServer in 'Model.SessionServer.pas';
+  Model.SessionServer in 'Model.SessionServer.pas',
+  Model.Base.BaseInterfaces in 'Model.Base.BaseInterfaces.pas',
+  Model.Companies.CompanyInterfaces in 'Model.Companies.CompanyInterfaces.pas';
 
 end.

@@ -117,16 +117,16 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ICustomer">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="60,20,183,97" />
+      <property name="bounds" value="60,20,206,112" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ICustomer.GetLicenses()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ICustomer.Licenses" />
       <reference referencedUin="design:link:::00sey00cs908cw0wr_l">
-        <property name="sourceAnchor" value="151,117" />
+        <property name="sourceAnchor" value="151,132" />
         <property name="targetAnchor" value="151,200" />
         <property name="bendpoints" value="" />
         <reference referencedUin="label:@clientRole:design:link:::00sey00cs908cw0wr_l">
-          <property name="bounds" value="137,121,11,16" />
+          <property name="bounds" value="137,136,11,16" />
         </reference>
         <reference referencedUin="label:@supplierRole:design:link:::00sey00cs908cw0wr_l">
           <property name="bounds" value="125,174,23,16" />
@@ -392,7 +392,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicenseUser">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="500,260,129,97" />
+      <property name="bounds" value="500,260,127,127" />
       <property name="grd_color_one" value="255, 255, 255" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicenseUser.Payload" />

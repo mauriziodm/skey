@@ -112,16 +112,15 @@
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="iORM_Project.dcp"/>
-        <DCCReference Include="Model.BaseIntf.pas"/>
         <DCCReference Include="Model.SWHouseIntf.pas"/>
         <DCCReference Include="Model.CustomerIntf.pas"/>
         <DCCReference Include="Model.SessionServer.pas"/>
+        <DCCReference Include="Model.Base.BaseInterfaces.pas"/>
+        <DCCReference Include="Model.Companies.CompanyInterfaces.pas"/>
         <None Include="ModelSupport_SKeyCommon\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\Model\default.txvpck"/>
-        <None Include="ModelSupport_SKeyCommon\Model\BaseIntf\default.txaPackage"/>
-        <None Include="ModelSupport_SKeyCommon\Model\BaseIntf\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\CustomerIntf\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\Model\CustomerIntf\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\MasterIntf\default.txaPackage"/>
@@ -131,6 +130,14 @@
         <None Include="ModelSupport_SKeyCommon\Model\SessionServer\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\Model\SessionServer\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\SessionServer\Sequence - Session server startup.txvint"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Base\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Base\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Base\BaseInterfaces\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Base\BaseInterfaces\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Companies\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Companies\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Companies\CompanyInterfaces\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Companies\CompanyInterfaces\default.txvpck"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

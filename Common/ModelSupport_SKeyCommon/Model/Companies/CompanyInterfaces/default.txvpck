@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="tqeoxi3aftb8hwhhq_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseCompany">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="108,514,209,78" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseOperator">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="402,514,263,127" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseOperator.SetSWHouseID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseOperator.GetSWHouseID()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseOperator.SWHouseID" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseFrontEndSession">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="80,697,756,78" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::lkwe38we9aq_l">
+        <property name="sourceAnchor" value="212,697" />
+        <property name="targetAnchor" value="212,592" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::me818ukw1qt_l">
+        <property name="sourceAnchor" value="533,697" />
+        <property name="targetAnchor" value="533,641" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompany">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="85,36,209,78" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyOperator">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="391,37,263,127" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyOperator.SetMasterCompanyID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyOperator.GetMasterCompanyID()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyOperator.MasterCompanyID" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyFrontEndSession">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="77,272,770,78" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::x08pmo8gnjt_l">
+        <property name="sourceAnchor" value="189,272" />
+        <property name="targetAnchor" value="189,114" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::21qbjq02fhl_l">
+        <property name="sourceAnchor" value="522,272" />
+        <property name="targetAnchor" value="522,164" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IEndCustomerCompany">
+      <property name="$shortcutReference" value="true" />
+      <property name="background_color" value="255, 192, 192" />
+      <property name="bounds" value="94,970,209,78" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="design:node:::f1c0r3rbmwh_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="494,979,431,62" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="design:link:::n96lulxnfut_l:f1c0r3rbmwh_n">
+        <property name="sourceAnchor" value="303,1009" />
+        <property name="targetAnchor" value="494,1009" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+  <link uin="lkwe38we9aq_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseFrontEndSession" role="Client" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseCompany" role="Supplier" />
+  </link>
+  <link uin="me818ukw1qt_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link2" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseFrontEndSession" role="Client" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseOperator" role="Supplier" />
+  </link>
+  <link uin="x08pmo8gnjt_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link3" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyFrontEndSession" role="Client" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompany" role="Supplier" />
+  </link>
+  <link uin="21qbjq02fhl_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link4" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyFrontEndSession" role="Client" />
+    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyOperator" role="Supplier" />
+  </link>
+</nodeSet>
