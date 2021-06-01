@@ -59,7 +59,7 @@
     <link uin="0yi9f0mwcjn_l">
       <property name="$metaclass" value="Note Link" />
       <property name="$name" value="Note Link1" />
-      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;" role="Client" />
+      <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;" role="Client" />
       <participant referencedUin="design:node:::o5sxggj5dvj_n" role="Supplier" />
     </link>
   </node>

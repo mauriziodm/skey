@@ -117,6 +117,7 @@
         <DCCReference Include="Model.SessionServer.pas"/>
         <DCCReference Include="Model.Base.BaseInterfaces.pas"/>
         <DCCReference Include="Model.Companies.CompanyInterfaces.pas"/>
+        <DCCReference Include="Model.Licenses.LicenseInterfaces.pas"/>
         <None Include="ModelSupport_SKeyCommon\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\default.txaPackage"/>
@@ -138,6 +139,24 @@
         <None Include="ModelSupport_SKeyCommon\Model\Companies\default.txvpck"/>
         <None Include="ModelSupport_SKeyCommon\Model\Companies\CompanyInterfaces\default.txaPackage"/>
         <None Include="ModelSupport_SKeyCommon\Model\Companies\CompanyInterfaces\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Licenses\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Licenses\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Licenses\LicenseInterfaces\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\Licenses\LicenseInterfaces\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\SessionServer\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\SessionServer\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\SessionServer\SessionServer_UseCase_SeaLevel.txvuse"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\Activity Diagram1.txvact"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\WithLocalSessionServer\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\WithLocalSessionServer\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\WithLocalSessionServer\WithLocalSessionServer.txvint"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\SimplifiedWithPassiveServers\default.txaPackage"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\SimplifiedWithPassiveServers\default.txvpck"/>
+        <None Include="ModelSupport_SKeyCommon\Model\OtherDiagrams\EntireLifecycle\SimplifiedWithPassiveServers\SimplifiedWithPassiveServers.txvint"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

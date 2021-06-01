@@ -28,24 +28,6 @@
       </reference>
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.CustomerIntf.ISWLicense.LicenseModel" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWLicense.GetLicenseModel()" />
-      <reference referencedUin="design:link:::8gxgxp7qwsdt27cse_l">
-        <property name="sourceAnchor" value="238,980" />
-        <property name="targetAnchor" value="238,1040" />
-        <property name="bendpoints" value="" />
-        <reference referencedUin="label:@label:design:link:::8gxgxp7qwsdt27cse_l">
-          <property name="bounds" value="169,1002,66,16" />
-        </reference>
-      </reference>
-      <reference referencedUin="delphi:l_gnt:src:SKeyCommon:Model.CustomerIntf.ISWLicense:Model.SWHouseIntf.ISWLicenseModel">
-        <property name="sourceAnchor" value="230,980" />
-        <property name="targetAnchor" value="230,1040" />
-        <property name="bendpoints" value="" />
-      </reference>
-      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.CustomerIntf.ISWLicense.LicenseModel">
-        <property name="sourceAnchor" value="222,980" />
-        <property name="targetAnchor" value="222,1040" />
-        <property name="bendpoints" value="" />
-      </reference>
       <reference referencedUin="design:link:::sa0kttwf7vr_l">
         <property name="sourceAnchor" value="414,570" />
         <property name="targetAnchor" value="840,570" />
@@ -198,59 +180,6 @@
       </reference>
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.PollSession(System.Integer,System.Integer,System.string,System.string,System.string,System.string)" />
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.CustomerIntf.ISWSessionManager.DisposeSession(System.Integer,System.Integer)" />
-    </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel">
-      <property name="$shortcutReference" value="true" />
-      <property name="background_color" value="224, 224, 224" />
-      <property name="bounds" value="60,1040,360,800" />
-      <property name="foreground_color" value="128, 128, 128" />
-      <property name="location_set_by_user" value="True" />
-      <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetMaxSessionCount(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetMaxSessionCount()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.MaxSessionCount" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetUserAuthentication(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetUserAuthentication()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.UserAuthentication" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetExpirationDaysTolerance(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetExpirationDaysTolerance()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.ExpirationDaysTolerance" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionServer(System.Boolean)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionServer()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionServer" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionServerPollingExpirationMinutes(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionServerPollingExpirationMinutes()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionServerPollingExpirationMinutes" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetPayload(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetPayload()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.Payload" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetExpirationDays(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetExpirationDays()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.ExpirationDays" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionServerPollingIntervalMinutes" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionServerPollingIntervalMinutes(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionServerPollingIntervalMinutes()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.MaxHWCount" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetMaxHWCount(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetMaxHWCount()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.MaxAppUserCount" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetMaxAppUserCount(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetMaxAppUserCount()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionPollingIntervalMinutes" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionPollingINtervalMinutes(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionPollingINtervalMinutes()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.OverbookingMaxCycles" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetOverbookingMaxCycles(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetOverbookingMaxCycles()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.ProductID" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetProductID(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetProductID()" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetSessionPollingExpirationMinutes(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetSessionPollingExpirationMinutes()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SessionPollingExpirationMinutes" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.ExpirationDaysWarning" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.SetExpirationDaysWarning(System.Integer)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel.GetExpirationDaysWarning()" />
     </reference>
     <reference referencedUin="design:node:::y5f4a8d9v3njn50ft_n">
       <property name="$shortcutReference" value="true" />
@@ -435,14 +364,6 @@
       </reference>
     </reference>
   </view>
-  <link uin="8gxgxp7qwsdt27cse_l">
-    <property name="$description" value="" />
-    <property name="$metaclass" value="Dependency Link" />
-    <property name="$name" value="Dependency Link2" />
-    <property name="@label" value="inherit from" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.CustomerIntf.ISWLicense" role="Client" />
-    <participant referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.ISWLicenseModel" role="Supplier" />
-  </link>
   <link uin="00sey00cs908cw0wr_l">
     <property name="$metaclass" value="Dependency Link" />
     <property name="$name" value="Dependency Link1" />

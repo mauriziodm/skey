@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="84z73i79kdm_n">
+    <property name="$metaclass" value="Start State" />
+    <property name="$name" value="Start State1" />
+  </node>
+  <node uin="o0d4aq83jr4fzgx4r_n">
+    <property name="$description" value="" />
+    <property name="$metaclass" value="System Boundary" />
+    <property name="$name" value="System Boundary1 (sea level)" />
+  </node>
+</nodeSet>

@@ -25,7 +25,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.ISWHouseFrontEndSession">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="80,697,756,78" />
+      <property name="bounds" value="80,697,798,78" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::lkwe38we9aq_l">
         <property name="sourceAnchor" value="212,697" />
@@ -56,7 +56,7 @@
     <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Companies.CompanyInterfaces.IMasterCompanyFrontEndSession">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="77,272,770,78" />
+      <property name="bounds" value="77,272,812,78" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::x08pmo8gnjt_l">
         <property name="sourceAnchor" value="189,272" />

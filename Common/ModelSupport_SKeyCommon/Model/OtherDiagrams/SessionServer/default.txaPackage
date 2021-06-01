@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="rqfae7v1sdh_n">
+    <property name="$metaclass" value="System Boundary" />
+    <property name="$name" value="SessionServer" />
+    <node uin="6jkusc8f005zktpci_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="1) poll for session" />
+      <property name="$rank" value="" />
+      <link uin="uqscuof02hp_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link1" />
+        <participant referencedUin="design:node:::6jkusc8f005zktpci_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::o5ewda93sem_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+      <link uin="olwaruj95oe_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link2" />
+        <participant referencedUin="design:node:::6jkusc8f005zktpci_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::7x70icthlwr_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+      <link uin="kvpvwpnwqrt_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link3" />
+        <participant referencedUin="design:node:::6jkusc8f005zktpci_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::un7qnpmo24i_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="ueg30zsxlmf_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="2) dispose session" />
+      <link uin="fw99bsxia93nb4ss_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link1" />
+        <participant referencedUin="design:node:::ueg30zsxlmf_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::z63kycrfz7k_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+      <link uin="6hvdjcdab51xn04hp_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link2" />
+        <participant referencedUin="design:node:::ueg30zsxlmf_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::jsk0lisp06m_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+      <link uin="xzf9m3kqht1v4rl5p_l">
+        <property name="$metaclass" value="Includes Link" />
+        <property name="$name" value="Includes Link3" />
+        <participant referencedUin="design:node:::ueg30zsxlmf_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::w19rblt9vck_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="o5ewda93sem_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="1.1) validate session server" />
+    </node>
+    <node uin="7x70icthlwr_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="1.2) validate license" />
+    </node>
+    <node uin="un7qnpmo24i_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="1.3.a) new or renew session" />
+    </node>
+    <node uin="bguf6yqg71k73jm0t_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="1.3.b) return an error response" />
+      <link uin="pssjtdw8w2prz9czn_l">
+        <property name="$metaclass" value="Extends Link" />
+        <property name="$name" value="Extends Link1" />
+        <participant referencedUin="design:node:::bguf6yqg71k73jm0t_n:rqfae7v1sdh_n" role="Client" />
+        <participant referencedUin="design:node:::6jkusc8f005zktpci_n:rqfae7v1sdh_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="z63kycrfz7k_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="2.1) get the license" />
+    </node>
+    <node uin="jsk0lisp06m_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="2.2) get the session" />
+    </node>
+    <node uin="w19rblt9vck_n">
+      <property name="$metaclass" value="Use Case" />
+      <property name="$name" value="2.3) set the session as disposed (if was active)" />
+    </node>
+  </node>
+  <node uin="xkdkq1w7vz1gksnef_n">
+    <property name="$metaclass" value="Actor" />
+    <property name="$name" value="SkeyClientComponent" />
+    <link uin="99f7b08eeshayccqq_l">
+      <property name="$metaclass" value="Association Link" />
+      <property name="$name" value="Association Link1" />
+      <property name="@stereotype" value="communicate" />
+      <participant referencedUin="design:node:::xkdkq1w7vz1gksnef_n" role="Client" />
+      <participant referencedUin="design:node:::6jkusc8f005zktpci_n:rqfae7v1sdh_n" role="Supplier" />
+    </link>
+    <link uin="x0z3cw55h2i_l">
+      <property name="$metaclass" value="Association Link" />
+      <property name="$name" value="Association Link2" />
+      <property name="@stereotype" value="communicate" />
+      <participant referencedUin="design:node:::xkdkq1w7vz1gksnef_n" role="Client" />
+      <participant referencedUin="design:node:::ueg30zsxlmf_n:rqfae7v1sdh_n" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>

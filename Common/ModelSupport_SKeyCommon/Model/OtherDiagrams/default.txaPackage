@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="uf8x9ya21wo_n">
+    <property name="$metaclass" value="Activity" />
+    <property name="$name" value="Activity1" />
+    <link uin="u8yi3ftcj3i_l">
+      <property name="$metaclass" value="Transition" />
+      <property name="$name" value="Transition1" />
+      <participant referencedUin="design:node:::uf8x9ya21wo_n" role="Client" />
+      <participant referencedUin="design:node:::p93mblgk6gg_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="acde1ziirhh_n">
+    <property name="$metaclass" value="Start State" />
+    <property name="$name" value="Start State1" />
+    <link uin="5x0is0z2i3f_l">
+      <property name="$metaclass" value="Transition" />
+      <property name="$name" value="Transition1" />
+      <participant referencedUin="design:node:::acde1ziirhh_n" role="Client" />
+      <participant referencedUin="design:node:::uf8x9ya21wo_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="p93mblgk6gg_n">
+    <property name="$metaclass" value="Decision" />
+    <property name="$name" value="Decision1" />
+    <link uin="zq51b6zpt8n_l">
+      <property name="$guard_condition" value="cond" />
+      <property name="$metaclass" value="Transition" />
+      <property name="$name" value="Transition1" />
+      <participant referencedUin="design:node:::p93mblgk6gg_n" role="Client" />
+      <participant referencedUin="design:node:::qgwdnrxsdxt_n" role="Supplier" />
+    </link>
+    <link uin="zl1kpqgmejl_l">
+      <property name="$metaclass" value="Transition" />
+      <property name="$name" value="Transition2" />
+      <participant referencedUin="design:node:::p93mblgk6gg_n" role="Client" />
+      <participant referencedUin="design:node:::wugr37daojm_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="qgwdnrxsdxt_n">
+    <property name="$metaclass" value="Activity" />
+    <property name="$name" value="Activity2" />
+  </node>
+  <node uin="wugr37daojm_n">
+    <property name="$metaclass" value="Activity" />
+    <property name="$name" value="Activity3" />
+  </node>
+</nodeSet>

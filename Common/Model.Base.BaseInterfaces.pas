@@ -66,7 +66,7 @@ type
     property Permission: TUserPermission read GetPermission write SetPermission;
   end;
 
-  IBaseSession<T_Company: IBaseCompany; T_User: IBaseUserWithPermissions> = interface
+  IBaseFrontEndSession<T_Company: IBaseCompany; T_User: IBaseUserWithPermissions> = interface
     procedure SetState(val: TLoginState);
     function GetState(): TLoginState;
     property State: TLoginState read GetState write SetState;

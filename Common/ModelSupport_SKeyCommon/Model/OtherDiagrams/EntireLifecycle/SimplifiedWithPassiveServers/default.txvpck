@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeSet version="1.0">
-  <view uin="qg9yhfycw4neev9wp_v">
+  <view uin="intacyyn513a02qym_v">
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.@unitclass">
+    <reference referencedUin="design:view:::5gzohq000x8i1p4mi_v">
       <property name="$shortcutReference" value="true" />
     </reference>
   </view>

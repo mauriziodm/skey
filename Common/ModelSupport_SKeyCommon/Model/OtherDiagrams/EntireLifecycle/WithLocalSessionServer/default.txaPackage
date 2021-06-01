@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="aoghi2olnij7jqiri_n">
+    <property name="$metaclass" value="Interaction Container" />
+    <property name="$name" value="Interaction container1" />
+    <node uin="n62qq89w9eph49kbf_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="SessionServerRESTController" />
+      <link uin="4u0jgargn4i_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="6u1i8fcdg4k_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::pkne6jyo0si_l" />
+        <link uin="c0z7ii1m9gi_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="PollSession" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::6u1i8fcdg4k_n:n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="dqtfdmycf00gbt3r_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::6u1i8fcdg4k_n:n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::l0k6si8t1kj_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+    </node>
+    <node uin="be2ud4mnq5tt5o6li_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="SessionManager" />
+      <property name="@Constructed" value="False" />
+      <link uin="ztpme6ss9mo_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <link uin="lqt2nc82poq_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="gjzwdvgw40p_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::c0z7ii1m9gi_l" />
+        <link uin="hp04ulsdbqi_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="LoadLicense" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::071th3rb95p_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <node uin="sadzwl87uyk_n">
+          <property name="$metaclass" value="Conditional Block" />
+          <property name="$name" value="Statement Block1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@StatementExpression" value="License.Exists and License.IsActive)" />
+          <property name="@StatementType" value="if" />
+          <property name="@StmtOrderNumber" value="1" />
+          <node uin="1dutlfsftuj_n">
+            <property name="$metaclass" value="Activation" />
+            <property name="$name" value="Activation1" />
+            <property name="@OrderNumber" value="0" />
+            <property name="@PredecessorUin" value="design:link:::g4mos3pdcil_l" />
+          </node>
+          <link uin="g4mos3pdcil_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link2" />
+            <property name="@label" value="Validate license &amp; session" />
+            <property name="@mod__extends" value="" />
+            <property name="@mod__implements" value="" />
+            <property name="@OrderNumber" value="2" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::sadzwl87uyk_n:gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+            <participant referencedUin="design:node:::1dutlfsftuj_n:sadzwl87uyk_n:gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+          </link>
+          <link uin="4ng0rm0zc1k_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link1" />
+            <property name="@label" value="PersistSession" />
+            <property name="@OrderNumber" value="3" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::sadzwl87uyk_n:gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+            <participant referencedUin="design:node:::265l5hxd9ii_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+          </link>
+        </node>
+        <link uin="x0br3wr2vs9ziag4l_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::6u1i8fcdg4k_n:n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="6fvj3wtp4o_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="2" />
+        <link uin="usgxtf81blj_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="4" />
+          <property name="@Iteration" value="Periodically" />
+          <property name="@label" value="PollLicense" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::6fvj3wtp4o_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::zfurc1t8mdl_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="41ok2h13fog_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="3" />
+        <link uin="rtdslv7eq1f_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="5" />
+          <property name="@label" value="Persist license" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::41ok2h13fog_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::2xxurjdh1li_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+    </node>
+    <node uin="gx10b5b667k_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="SKeyClientComponent" />
+      <property name="@Constructed" value="False" />
+      <link uin="wy52xfuuo1q_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="l0k6si8t1kj_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="1" />
+        <link uin="pkne6jyo0si_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="1" />
+          <property name="@Iteration" value="Periodically" />
+          <property name="@label" value="PollSession (JSON-RPC)" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::l0k6si8t1kj_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::6u1i8fcdg4k_n:n62qq89w9eph49kbf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="6wvm1glcniy0q8vi_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="n95hf1glcni8pz96k_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="9" />
+        <node uin="edcuh1glcni1yskfl_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::89z7f1glcni8vbsrr_l" />
+        </node>
+        <link uin="89z7f1glcni8vbsrr_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="10" />
+          <property name="@label" value="Persist session (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::n95hf1glcni8pz96k_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::edcuh1glcni1yskfl_n:n95hf1glcni8pz96k_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="yl8f9jzb0p2g22jt_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="3" />
+        <node uin="m2owc9jzb0pcmlzvk_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::21rjq9jzb0pveln0g_l" />
+        </node>
+        <link uin="21rjq9jzb0pveln0g_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="3" />
+          <property name="@label" value="Persist session (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::yl8f9jzb0p2g22jt_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::m2owc9jzb0pcmlzvk_n:yl8f9jzb0p2g22jt_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="gs626gtdkylhpo96i_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link3" />
+        <participant referencedUin="design:node:::gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="ixh0ogtdkyl0t2jpo_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="4" />
+        <link uin="yrrcrgtdkylaebhom_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="6" />
+          <property name="@Iteration" value="Periodically" />
+          <property name="@label" value="PollSession (JSON-RPC)" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::ixh0ogtdkyl0t2jpo_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::g811sgtdkylxh219r_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="8pyxc2m0xe107xt8f_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation5" />
+        <property name="@OrderNumber" value="7" />
+        <node uin="2bx752m0xe1dwwyqt_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::lsrod2m0xe15rp0qg_l" />
+        </node>
+        <link uin="lsrod2m0xe15rp0qg_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="9" />
+          <property name="@label" value="Persist session (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::8pyxc2m0xe107xt8f_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::2bx752m0xe1dwwyqt_n:8pyxc2m0xe107xt8f_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="704rvje1om6vajjht_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation6" />
+        <property name="@OrderNumber" value="2" />
+        <node uin="ia26jje1om616npeo_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::m2relje1om6g7n10j_l" />
+        </node>
+        <link uin="m2relje1om6g7n10j_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="2" />
+          <property name="@label" value="PersistSession (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::704rvje1om6vajjht_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::ia26jje1om616npeo_n:704rvje1om6vajjht_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="m1uy2uvhnjefqcl7n_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation7" />
+        <property name="@OrderNumber" value="6" />
+        <node uin="e02pwuvhnje3vug0m_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::ko40luvhnjei44ikk_l" />
+        </node>
+        <link uin="ko40luvhnjei44ikk_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="8" />
+          <property name="@label" value="PersistSession (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::m1uy2uvhnjefqcl7n_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::e02pwuvhnje3vug0m_n:m1uy2uvhnjefqcl7n_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="7c2flsb5k5o_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation8" />
+        <property name="@OrderNumber" value="5" />
+        <node uin="8o30l0n0t6k_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::102yi1f6pxn_l" />
+        </node>
+        <link uin="102yi1f6pxn_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@ChainNumber" value="7" />
+          <property name="@label" value="PersistSession (if needed)" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::7c2flsb5k5o_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::8o30l0n0t6k_n:7c2flsb5k5o_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+    </node>
+    <node uin="sqgaoow89qk_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="LicenseServerRESTController" />
+      <node uin="u38rsio46js_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::str2exy0tcs_l" />
+        <link uin="ubnhbzuyp5r_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::u38rsio46js_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::zfurc1t8mdl_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="n2fmyck0ix1qk055k_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="PollLicense" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::u38rsio46js_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="lajqtck0ix1vqnk3p_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="g811sgtdkylxh219r_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::yrrcrgtdkylaebhom_l" />
+        <link uin="zu5qv9tg56q33oocr_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::g811sgtdkylxh219r_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::ixh0ogtdkyl0t2jpo_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="np0rtnz9hvqa4pr6s_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="PollSession" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::g811sgtdkylxh219r_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="i5kmenz9hvqnx8n0q_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="isqwt0wtqkf_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="LicenseManager" />
+      <node uin="915lick0ix1wvw5dt_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::n2fmyck0ix1qk055k_l" />
+        <link uin="lw0l2z1zc03e212xk_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::u38rsio46js_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="znv7nxdu285ja5xmq_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="LoadLicense" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::z7cp5xdu285idm10l_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <node uin="a49flmad4mbhb8p8n_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation2" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::3dukhmad4mb2yxmvq_l" />
+        </node>
+        <link uin="3dukhmad4mb2yxmvq_l">
+          <property name="$condition" value="" />
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link2" />
+          <property name="@Arguments" value="" />
+          <property name="@Iteration" value="" />
+          <property name="@label" value="ValidateLicense" />
+          <property name="@mod__extends" value="" />
+          <property name="@mod__implements" value="" />
+          <property name="@Operation" value="" />
+          <property name="@OrderNumber" value="2" />
+          <property name="@Return" value="" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::a49flmad4mbhb8p8n_n:915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="aelssch0ovfx6ai4f_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link3" />
+          <property name="@label" value="PersistLicense" />
+          <property name="@OrderNumber" value="3" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::sj0euch0ovf5dcz1o_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="570wuxdu285tnp9oi_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <link uin="ujlhufmnl4b01ypkj_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="uzoe9uibdfs41aghe_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::ytfusuibdfsullx3t_l" />
+        <link uin="mnm03bt4gzq_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="wac00zxp6ql_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="LoadLicense" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::eny786epulr_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <node uin="hobygzc3jdo_n">
+          <property name="$metaclass" value="Activation" />
+          <property name="$name" value="Activation1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@PredecessorUin" value="design:link:::cj6kwy8hhxk_l" />
+        </node>
+        <link uin="cj6kwy8hhxk_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link2" />
+          <property name="@label" value="ValidateLicense" />
+          <property name="@OrderNumber" value="2" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::hobygzc3jdo_n:uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+    </node>
+    <node uin="jpwjri208y1bangho_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="IPersistence" />
+      <node uin="z7cp5xdu285idm10l_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::znv7nxdu285ja5xmq_l" />
+        <link uin="mkhom4e2fo611y4bm_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::z7cp5xdu285idm10l_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::915lick0ix1wvw5dt_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="p8e9wkvyaqh_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Load&lt;ISWLicense&gt;" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::z7cp5xdu285idm10l_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::vqj3mxsbcwm_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="sj0euch0ovf5dcz1o_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::aelssch0ovfx6ai4f_l" />
+        <link uin="lkvs0im8p1m_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Persist..." />
+          <property name="@OrderNumber" value="1" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::sj0euch0ovf5dcz1o_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::kg0murxzos_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="eny786epulr_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="3" />
+        <property name="@PredecessorUin" value="design:link:::wac00zxp6ql_l" />
+        <link uin="5n303tlv6es_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::eny786epulr_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="5sf76u4qujt0pvnut_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Load&lt;ISWLicense&gt;" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::eny786epulr_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::zc0mdu4qujtn6a33s_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="8y10773cls1ywa5jh_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="4" />
+        <property name="@PredecessorUin" value="design:link:::r389u73cls1xr567g_l" />
+        <link uin="247nakqepjq_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Persist..." />
+          <property name="@OrderNumber" value="1" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::8y10773cls1ywa5jh_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::igvsvcnbylm_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="lz0re8pfbdh_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="stqmtlw0rk43bmyuf_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="IPersistence" />
+      <node uin="071th3rb95p_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::hp04ulsdbqi_l" />
+        <link uin="z5zaj8hiklm_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::071th3rb95p_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::gjzwdvgw40p_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="v0qyrxt7h3h3qcwpf_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Load&lt;ISWLicense&gt;" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::071th3rb95p_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::kezdjxt7h3h4mu25k_n:lfmlkbka0e0m0ubqp_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="zfurc1t8mdl_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::usgxtf81blj_l" />
+        <link uin="str2exy0tcs_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="PollLicense (JSON-RPC)" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::zfurc1t8mdl_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::u38rsio46js_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <link uin="ly5sr55dueo_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::zfurc1t8mdl_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::6fvj3wtp4o_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="bix6ccs0asr_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <node uin="2xxurjdh1li_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="3" />
+        <property name="@PredecessorUin" value="design:link:::rtdslv7eq1f_l" />
+        <link uin="30bgetwgjk6el0xuh_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Persist..." />
+          <property name="@OrderNumber" value="1" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::2xxurjdh1li_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::dmkf0twgjk603pzhi_n:lfmlkbka0e0m0ubqp_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="265l5hxd9ii_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::4ng0rm0zc1k_l" />
+        <link uin="nhg1f0uf1lmc7rf6o_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link1" />
+          <property name="@label" value="io.Persist..." />
+          <property name="@OrderNumber" value="1" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::265l5hxd9ii_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::i7z8p0uf1lmgmrjzk_n:lfmlkbka0e0m0ubqp_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="g16z9xt7h3h3rs2ff_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::lfmlkbka0e0m0ubqp_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="qgfuwbkjm6n_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="SessionManager" />
+      <node uin="5pobcnz9hvqp6qxdi_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::np0rtnz9hvqa4pr6s_l" />
+        <link uin="dlx3cjhar0svz4flq_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::g811sgtdkylxh219r_n:sqgaoow89qk_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+        <node uin="bgn0hpdq12o_n">
+          <property name="$metaclass" value="Conditional Block" />
+          <property name="$name" value="Statement Block1" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@StatementExpression" value="License.Exists and License.IsActive" />
+          <property name="@StatementType" value="if" />
+          <property name="@StmtOrderNumber" value="1" />
+          <node uin="0lv45nojkgfqbvsk_n">
+            <property name="$metaclass" value="Activation" />
+            <property name="$name" value="Activation2" />
+            <property name="@OrderNumber" value="0" />
+            <property name="@PredecessorUin" value="design:link:::oizianojkgeyjauo_l" />
+          </node>
+          <link uin="oizianojkgeyjauo_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link2" />
+            <property name="@label" value="Validate license &amp; session" />
+            <property name="@mod__extends" value="" />
+            <property name="@mod__implements" value="" />
+            <property name="@OrderNumber" value="2" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::bgn0hpdq12o_n:5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+            <participant referencedUin="design:node:::0lv45nojkgfqbvsk_n:bgn0hpdq12o_n:5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Supplier" />
+          </link>
+          <link uin="r389u73cls1xr567g_l">
+            <property name="$metaclass" value="Message Link" />
+            <property name="$name" value="Message Link1" />
+            <property name="@label" value="PersistLicense&amp;Session" />
+            <property name="@OrderNumber" value="3" />
+            <property name="@Synchronization" value="call" />
+            <participant referencedUin="design:node:::bgn0hpdq12o_n:5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+            <participant referencedUin="design:node:::8y10773cls1ywa5jh_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+          </link>
+        </node>
+        <link uin="ytfusuibdfsullx3t_l">
+          <property name="$metaclass" value="Message Link" />
+          <property name="$name" value="Message Link3" />
+          <property name="@label" value="PollLicense" />
+          <property name="@OrderNumber" value="1" />
+          <property name="@ReturnArrow" value="True" />
+          <property name="@Synchronization" value="call" />
+          <participant referencedUin="design:node:::5pobcnz9hvqp6qxdi_n:qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::uzoe9uibdfs41aghe_n:isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <link uin="cxthhtckguf_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link2" />
+        <participant referencedUin="design:node:::qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <link uin="fqlhuuibdfstod8ap_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link3" />
+        <participant referencedUin="design:node:::qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::isqwt0wtqkf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+      <link uin="rynje73cls1zi3k8o_l">
+        <property name="$metaclass" value="Collaboration Link" />
+        <property name="$name" value="Collaboration Link1" />
+        <participant referencedUin="design:node:::qgfuwbkjm6n_n:aoghi2olnij7jqiri_n" role="Client" />
+        <participant referencedUin="design:node:::jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+      </link>
+    </node>
+    <node uin="lfmlkbka0e0m0ubqp_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="iORM" />
+      <node uin="kezdjxt7h3h4mu25k_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::v0qyrxt7h3h3qcwpf_l" />
+        <link uin="ayyx0gm3p1j0b6mfl_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::kezdjxt7h3h4mu25k_n:lfmlkbka0e0m0ubqp_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::071th3rb95p_n:stqmtlw0rk43bmyuf_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="i7z8p0uf1lmgmrjzk_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::nhg1f0uf1lmc7rf6o_l" />
+      </node>
+      <node uin="dmkf0twgjk603pzhi_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="3" />
+        <property name="@PredecessorUin" value="design:link:::30bgetwgjk6el0xuh_l" />
+      </node>
+    </node>
+    <node uin="pnkzu1oghccnur0sg_n">
+      <property name="$metaclass" value="Object" />
+      <property name="$name" value="iORM" />
+      <node uin="vqj3mxsbcwm_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation1" />
+        <property name="@OrderNumber" value="1" />
+        <property name="@PredecessorUin" value="design:link:::p8e9wkvyaqh_l" />
+        <link uin="mssqhrtxoke_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::vqj3mxsbcwm_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::z7cp5xdu285idm10l_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="kg0murxzos_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation2" />
+        <property name="@OrderNumber" value="2" />
+        <property name="@PredecessorUin" value="design:link:::lkvs0im8p1m_l" />
+      </node>
+      <node uin="zc0mdu4qujtn6a33s_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation3" />
+        <property name="@OrderNumber" value="3" />
+        <property name="@PredecessorUin" value="design:link:::5sf76u4qujt0pvnut_l" />
+        <link uin="jh05dlhigvp_l">
+          <property name="$metaclass" value="Return Link" />
+          <property name="$name" value="Return Link1" />
+          <participant referencedUin="design:node:::zc0mdu4qujtn6a33s_n:pnkzu1oghccnur0sg_n:aoghi2olnij7jqiri_n" role="Client" />
+          <participant referencedUin="design:node:::eny786epulr_n:jpwjri208y1bangho_n:aoghi2olnij7jqiri_n" role="Supplier" />
+        </link>
+      </node>
+      <node uin="igvsvcnbylm_n">
+        <property name="$metaclass" value="Activation" />
+        <property name="$name" value="Activation4" />
+        <property name="@OrderNumber" value="4" />
+        <property name="@PredecessorUin" value="design:link:::247nakqepjq_l" />
+      </node>
+    </node>
+  </node>
+  <node uin="w98go5dywni_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="PollSession from&#xD;&#xA;SKeyClientComponent&#xD;&#xA;[LOCAL SESSION SERVER case)" />
+    <link uin="t0aekhf5u6k_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="design:node:::l0k6si8t1kj_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+      <participant referencedUin="design:node:::w98go5dywni_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="px7e3b7sg7h_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="PollLicense from&#xD;&#xA;SessionServer&#xD;&#xA;(LOCAL SESSION SERVER case)" />
+    <link uin="d96wt26fcadrya02o_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="design:node:::6fvj3wtp4o_n:be2ud4mnq5tt5o6li_n:aoghi2olnij7jqiri_n" role="Client" />
+      <participant referencedUin="design:node:::px7e3b7sg7h_n" role="Supplier" />
+    </link>
+  </node>
+  <node uin="f547sk3cbwbb6btfs_n">
+    <property name="$metaclass" value="Note" />
+    <property name="$name" value="Note1" />
+    <property name="$note_text" value="PollSession from&#xD;&#xA;SKeyClientComponent&#xD;&#xA;(MASTER SESSION SERVER case)" />
+    <link uin="5we4sy4i3yo_l">
+      <property name="$metaclass" value="Note Link" />
+      <property name="$name" value="Note Link1" />
+      <participant referencedUin="design:node:::ixh0ogtdkyl0t2jpo_n:gx10b5b667k_n:aoghi2olnij7jqiri_n" role="Client" />
+      <participant referencedUin="design:node:::f547sk3cbwbb6btfs_n" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>

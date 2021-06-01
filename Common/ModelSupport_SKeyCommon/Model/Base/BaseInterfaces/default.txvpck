@@ -36,36 +36,36 @@
       <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseEntity.GetID()" />
       <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseEntity.ID" />
     </reference>
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;">
+    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;">
       <property name="$shortcutReference" value="true" />
       <property name="background_color" value="255, 192, 192" />
-      <property name="bounds" value="655,628,404,400" />
+      <property name="bounds" value="667,625,404,400" />
       <property name="hideOperation" value="False" />
       <property name="hideProperty" value="False" />
       <property name="location_set_by_user" value="True" />
       <property name="bounds_setted_by_user" value="True" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetState(Model.Base.BaseInterfaces.TLoginState)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetState()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.State" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetUser(T_User)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetUser()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.User" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetToken(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetToken()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.Token" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetCompany(T_Company)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetCompany()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.Company" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.Login()" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetLoginPassword(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetLoginPassword()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.LoginPassword" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.SetLoginUserName(System.string)" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.GetLoginUserName()" />
-      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.LoginUserName" />
-      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.Logout()" />
-      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseSession&lt;2&gt;.State">
-        <property name="sourceAnchor" value="1059,684" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetState(Model.Base.BaseInterfaces.TLoginState)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetState()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.State" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetUser(T_User)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetUser()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.User" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetToken(System.string)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetToken()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.Token" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetCompany(T_Company)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetCompany()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.Company" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.Login()" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetLoginPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetLoginPassword()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.LoginPassword" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.SetLoginUserName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.GetLoginUserName()" />
+      <reference referencedUin="delphi:e_property:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.LoginUserName" />
+      <reference referencedUin="delphi:e_method:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.Logout()" />
+      <reference referencedUin="delphi:l_ast:src:SKeyCommon:Model.Base.BaseInterfaces.IBaseFrontEndSession&lt;2&gt;.State">
+        <property name="sourceAnchor" value="1071,684" />
         <property name="targetAnchor" value="1155,684" />
         <property name="bendpoints" value="" />
       </reference>
@@ -111,7 +111,7 @@
       <property name="bounds" value="1155,848,202,76" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="design:link:::0yi9f0mwcjn_l:o5sxggj5dvj_n">
-        <property name="sourceAnchor" value="1059,886" />
+        <property name="sourceAnchor" value="1071,886" />
         <property name="targetAnchor" value="1155,886" />
         <property name="bendpoints" value="" />
       </reference>

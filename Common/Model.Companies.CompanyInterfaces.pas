@@ -15,7 +15,8 @@ type
   ISWHouseCompany = interface(IBaseCompany)
   end;
 
-  ISWHouseFrontEndSession = interface(IBaseSession<ISWHouseCompany, ISWHouseOperator>)
+  ISWHouseFrontEndSession = interface(IBaseFrontEndSession<Model.Companies.CompanyInterfaces.ISWHouseCompany,
+    Model.Companies.CompanyInterfaces.ISWHouseOperator>)
   end;
 
   IMasterCompany = interface(IBaseCompany)
@@ -27,7 +28,8 @@ type
     property MasterCompanyID: Integer read GetMasterCompanyID write SetMasterCompanyID;
   end;
 
-  IMasterCompanyFrontEndSession = interface(IBaseSession<IMasterCompany, IMasterCompanyOperator>)
+  IMasterCompanyFrontEndSession = interface(IBaseFrontEndSession<Model.Companies.CompanyInterfaces.IMasterCompany,
+    Model.Companies.CompanyInterfaces.IMasterCompanyOperator>)
   end;
 
   IEndCustomerCompany = interface(IBaseCompany)

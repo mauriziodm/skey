@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="0whnq4g0gfg_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::0xtolfd1s1p_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.ISWLicense" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.ISWLicenseModel" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.TSWLicenseState" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.ISWLicenseUser" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.ISWProduct" />
+      <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.Licenses.LicenseInterfaces.ISWSessionManager" />
+    </reference>
+  </view>
+</nodeSet>

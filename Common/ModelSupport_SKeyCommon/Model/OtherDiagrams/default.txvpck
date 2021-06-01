@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="isz51c0zro940kjfp_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::6r4yfpben4b0yypml_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="@__package_fqn" value="Model.OtherDiagrams.SessionServer" />
+      <property name="bounds" value="10,10,158,102" />
+      <reference referencedUin="design:view:::lb9ppmv9z4o_v" />
+    </reference>
+    <reference referencedUin="design:view:::0rdprt82kdj_v">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

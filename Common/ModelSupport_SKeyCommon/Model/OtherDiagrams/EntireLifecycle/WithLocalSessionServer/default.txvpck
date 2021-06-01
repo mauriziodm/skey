@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodeSet version="1.0">
-  <view uin="qg9yhfycw4neev9wp_v">
+  <view uin="nsddpmpaydm462zj_v">
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
-    <reference referencedUin="delphi:e_class:src:SKeyCommon:Model.SWHouseIntf.@unitclass">
+    <reference referencedUin="design:view:::vxzfwaf46ij7x70un_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,155,42" />
     </reference>
   </view>
 </nodeSet>

@@ -36,6 +36,7 @@ contains
   Model.CustomerIntf in 'Model.CustomerIntf.pas',
   Model.SessionServer in 'Model.SessionServer.pas',
   Model.Base.BaseInterfaces in 'Model.Base.BaseInterfaces.pas',
-  Model.Companies.CompanyInterfaces in 'Model.Companies.CompanyInterfaces.pas';
+  Model.Companies.CompanyInterfaces in 'Model.Companies.CompanyInterfaces.pas',
+  Model.Licenses.LicenseInterfaces in 'Model.Licenses.LicenseInterfaces.pas';
 
 end.
